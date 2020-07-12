@@ -1,13 +1,4 @@
-2020년 7월 12일 일요일
-[유림] [오후 7:37] 이모티콘
-[최쥬쥬] [오후 7:37] 갠츄네
-[최쥬쥬] [오후 7:38] 먼저가있으께 ㅎㅎ 나도 택시가
-[최쥬쥬] [오후 7:38] 안잡혀..
-[유림] [오후 8:09] 오디오디
-[최쥬쥬] [오후 8:10] 탐탐이졍
-[유림] [오후 8:11] 바로 ㄲ 할겡
-[최쥬쥬] [오후 8:12] 오케이 ㅎㅎ
-[유림] [오후 10:45] 
+
 # Created by https://www.toptal.com/developers/gitignore/api/maven,eclipse
 # Edit at https://www.toptal.com/developers/gitignore?templates=maven,eclipse
 
@@ -36,41 +27,58 @@ local.properties
 # CDT-specific (C/C++ Development Tooling)
 .cproject
 
-# CDT- auto...
-[최쥬쥬] [오후 11:02] https://m.blog.naver.com/PostView.nhn?blogId=gingsero&logNo=220430999416&proxyReferer=https:%2F%2Fwww.google.com%2F
-[최쥬쥬] [오후 11:24] jdbc:oracle:thin:@server:1521:db
-[유림] [오후 11:26] SELECT utl_inaddr.get_host_address( SYS_CONTEXT('USERENV', 'SERVER_HOST')) IP FROM dual;
-[유림] [오후 11:31] SELECT sys_context('USERENV','IP_ADDRESS') FROM DUAL;
-[최쥬쥬] [오후 11:37] GRANT connect, resource, create view, create procedure TO scott;
-[최쥬쥬] [오후 11:37] SELECT PRIVILEGE FROM DBA_SYS_PRIVS 
-     WHERE GRANTEE ='아이디(대문자)';
-[최쥬쥬] [오후 11:50] 
-# Created by https://www.toptal.com/developers/gitignore/api/maven,eclipse
-# Edit at https://www.toptal.com/developers/gitignore?templates=maven,eclipse
+# CDT- autotools
+.autotools
 
-### Eclipse ###
-.metadata
-bin/
-tmp/
-*.tmp
-*.bak
-*.swp
-*~.nib
-local.properties
-.settings/
-.loadpath
-.recommenders
+# Java annotation processor (APT)
+.factorypath
 
-# External tool builders
-.externalToolBuilders/
+# PDT-specific (PHP Development Tools)
+.buildpath
 
-# Locally stored "Eclipse launch configurations"
-*.launch
+# sbteclipse plugin
+.target
 
-# PyDev specific (Python IDE for Eclipse)
-*.pydevproject
+# Tern plugin
+.tern-project
 
-# CDT-specific (C/C++ Development Tooling)
-.cproject
+# TeXlipse plugin
+.texlipse
 
-# CDT- auto...
+# STS (Spring Tool Suite)
+.springBeans
+
+# Code Recommenders
+.recommenders/
+
+# Annotation Processing
+.apt_generated/
+.apt_generated_test/
+
+# Scala IDE specific (Scala & Java development for Eclipse)
+.cache-main
+.scala_dependencies
+.worksheet
+
+# Uncomment this line if you wish to ignore the project description file.
+# Typically, this file would be tracked if it contains build/dependency configurations:
+#.project
+
+### Eclipse Patch ###
+# Spring Boot Tooling
+.sts4-cache/
+
+### Maven ###
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+# https://github.com/takari/maven-wrapper#usage-without-binary-jar
+.mvn/wrapper/maven-wrapper.jar
+
+# End of https://www.toptal.com/developers/gitignore/api/maven,eclipse
