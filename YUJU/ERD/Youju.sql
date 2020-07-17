@@ -21,7 +21,7 @@ CREATE TABLE mem
 	mname varchar2(10) NOT NULL,
 	mid varchar2(20) NOT NULL,
 	mpw varchar2(20) NOT NULL,
-	maddress varchar2(100),
+	maddress varchar2(100) DEFAULT 'N',
 	mphone varchar2(20) NOT NULL,
 	memail varchar2(30) NOT NULL,
 	regdate DATE DEFAULT sysdate,
@@ -29,7 +29,7 @@ CREATE TABLE mem
 	PRIMARY KEY (mcode)
 );
 SELECT * FROM MEM;
-INSERT INTO mem(mcode,mname,mid,mpw,mphone,memail) VALUES (1,'³ëÀ¯¸²','yl','1111','01034502766','yyj2766@naver.com');
+INSERT INTO mem(mcode,mname,mid,mpw,mphone,memail) VALUES (1,'ë…¸ìœ ë¦¼','yl','1111','01034502766','yyj2766@naver.com');
 
 
 
