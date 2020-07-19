@@ -1,0 +1,280 @@
+/*header*/
+#Adver {
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    font-size: 13px;
+    word-break: keep-all;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#input {
+    width: 87%;
+    margin-top: 9px;
+    height: 47%;
+    background-color: #eeee;
+    border-style: none;
+
+}
+
+#btn {
+    margin-top: 12px;
+    margin-left: 17px;
+    border: none;
+}
+
+#logo {
+    display: inline-block;
+    width: 15%;
+    height: 80px;
+    line-height: 80px;
+    padding-left: 40px;
+    float: left;
+}
+
+#top {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0px auto;
+    clear: both;
+    overflow: hidden;
+    padding: 20px 30px;
+    height: 58px;
+    position: relative;
+}
+
+#logo img {
+    width: 80%;
+    cursor: pointer;
+}
+
+#search {
+    width: 57%;
+    float: left;
+    background-color: #eeee;
+    margin-top: 12px;
+    height: 44px;
+    border-radius: 19px;
+}
+
+#search1 input {
+    width: 87%;
+    margin-top: 9px;
+    height: 47%;
+    background-color: #eeee;
+    border-style: none;
+
+}
+
+#search1 button {
+    margin-top: 12px;
+    margin-left: 17px;
+    border: none;
+}
+
+#login {
+    width: 21%;
+    float: left;
+    display: inline-block;
+    margin-top: 26px;
+    margin-left: 24px;
+    cursor: pointer;
+}
+
+#login a {
+    text-decoration: none;
+    color: black;
+}
+
+hr {
+    border: solid 0.1px #eeee;
+}
+
+#menu {
+    width: 100%;
+    height: 44px;
+}
+
+#menu ul {
+    margin-left: 109px;
+    /* float: left; */
+    list-style: none;
+    height: 37px;
+}
+
+#menu li {
+    font-weight: bolder;
+    text-align: center;
+    font-size: larger;
+    /* margin: 0 67px; */
+    width: 160px;
+    height: 33px;
+    float: left;
+    padding-top: 12px;
+    margin: 0px 8px;
+
+}
+
+#menu li:hover {
+    color: tomato;
+    border-bottom: solid 5px tomato;
+    cursor: pointer;
+}
+
+/*phone*/
+
+#phone {
+    text-align: center;
+}
+
+h1 {
+    font-size: 26px;
+    font-weight: 500;
+    margin: 90px 0 40px 0;
+}
+#pagemenu {
+    background: hsla(0, 0%, 98%, 1);
+    width: 78%;
+    height: 105px;
+    border: solid 1px black;
+    padding: 41px 0 40px 0;
+    margin-left: 152px;
+    
+}
+#pagemenu li a{
+    color: black;
+    font-weight: 700;
+}
+
+#pagemenu li {
+    float: left;
+    padding: 0 74px;
+    list-style: none;
+    cursor: pointer;
+}
+#pagemenu ul {
+    height: 106px;
+    margin: 0;
+    padding: 0;
+}
+
+
+#pagemenu li img {
+    width: 83px;
+}
+
+#order {
+    border-right: 1px solid black;
+}
+
+#FandQ a, #FandQ img{
+    opacity: 0.4;
+}
+
+#info a {
+    opacity: 0.4; 
+}
+#info{
+    border-right: 1px solid black;
+}
+#info img{
+    opacity: 0.4;
+}
+
+#coupon {
+    border-right: 1px solid black;
+}
+
+#coupon a { 
+    opacity: 0.4;
+}
+#coupon img{
+    opacity: 0.4;
+}
+
+#QandA {
+    border-right: 1px solid black;
+}
+#QandA a{
+    opacity: 0.4;
+}
+#QandA img{
+    opacity: 0.4;
+}
+
+#s_list {
+    height: 85px;
+    margin: 1px 180px 0 152px;
+    padding-top: 59px;
+}
+
+#s_list a {
+    color: black;
+    font-size: 16px;
+}
+#order a:hover{
+    color: tomato;
+    opacity: unset;
+    cursor: pointer;
+}
+#info a:hover{
+    color: tomato;
+    opacity: unset;
+    cursor: pointer;
+}
+#coupon a:hover{
+    color: tomato;
+    opacity: unset;
+    cursor: pointer;
+}
+#QandA a:hover{
+    color: tomato;
+    opacity: unset;
+    cursor: pointer;
+}
+#FandQ a:hover{
+    color: tomato;
+    opacity: unset;
+    cursor: pointer;
+}
+/*footer*/
+footer {
+    background-color: black;
+    width: 79%;
+    height: 332px;
+    color: white;
+    padding: 30px 174px 0 145px;
+}
+
+h2 {
+    font-size: 34px;
+    letter-spacing: -2px;
+    margin-top: 11px;
+    margin-bottom: 18px;
+}
+
+
+a {
+    color: #858585ee;
+}
+
+#agree a {
+    color: white;
+    font-weight: bold;
+}
+
+#tel {
+    margin-bottom: 34px;
+}
+
+#address {
+    margin-top: 31px;
+    margin-bottom: 18px;
+}
+
+footer hr {
+    border: solid 1px #7d7d7dee
+}

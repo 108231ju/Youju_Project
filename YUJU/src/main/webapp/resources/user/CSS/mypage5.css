@@ -1,0 +1,96 @@
+/*phone*/
+
+
+
+#order5 {
+    border-right: 1px solid black;
+}
+#order5 a {
+    opacity: 0.4;
+}
+#order5 img {
+    opacity: 0.4;
+}
+
+#info5{
+    border-right: 1px solid black;
+}
+#info5 a{
+    opacity: 0.4;
+}
+#info5 img{
+    opacity: 0.4;
+}
+
+#coupon5 {
+    border-right: 1px solid black;
+}
+#coupon5 a{
+    opacity: 0.4;;
+}
+
+#coupon5 img{
+    opacity: 0.4;;
+}
+
+#QandA5 {
+    border-right: 1px solid black;
+}
+#QandA5 a{
+    opacity: 0.4;
+}
+#QandA5 img{
+    opacity: 0.4;
+}
+
+/*toggle*/
+#contact,#contact2,#contact3,#contact4,#contact5,#contact6,#contact7,#contact8,#contact9,#contact10,#contact11,#contact12,#contact13,#contact14,#contact15,#contact16,#contact17,#contact18,#contact19,#contact20,#contact21,#contact22
+{
+    display: none;
+    background: hsl(0, 0%, 95%);
+    color: #494949;
+    padding: 10px;
+}
+#toggle,#toggle2,#toggle3,#toggle4,#toggle5,#toggle6,#toggle7,#toggle8,#toggle9,#toggle10,#toggle11,#toggle12,#toggle13,#toggle14,#toggle15,#toggle16,#toggle17,#toggle18,#toggle19,#toggle20,#toggle21,#toggle22{
+    color: black;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+#FAQlist{
+    height: auto;
+    margin: 49px 179px 50px 152px;
+}
+#FAQlist hr{
+    margin: 17px 0 0 0;
+}
+h5{
+    font-size: 25px;
+    font-weight: 100;
+}
+#order5 a:hover{
+    color: tomato;
+    opacity: unset;
+    cursor: pointer;
+}
+#info5 a:hover{
+    color: tomato;
+    opacity: unset;
+    cursor: pointer;
+}
+#coupon5 a:hover{
+    color: tomato;
+    opacity: unset;
+    cursor: pointer;
+}
+#QandA5 a:hover{
+    color: tomato;
+    opacity: unset;
+    cursor: pointer;
+}
+#FandQ5 a:hover{
+    color: tomato;
+    opacity: unset;
+    cursor: pointer;
+}
+
+

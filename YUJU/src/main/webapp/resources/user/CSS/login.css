@@ -1,0 +1,280 @@
+/*header*/
+#Adver {
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    font-size: 13px;
+    word-break: keep-all;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#logo {
+    display: inline-block;
+    width: 15%;
+    height: 80px;
+    line-height: 80px;
+    padding-left: 40px;
+    float: left;
+}
+
+#top {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0px auto;
+    clear: both;
+    overflow: hidden;
+    padding: 20px 30px;
+    height: 58px;
+    position: relative;
+}
+
+#logo img {
+    width: 80%;
+    cursor: pointer;
+}
+
+#search {
+    width: 57%;
+    float: left;
+    background-color: #eeee;
+    margin-top: 12px;
+    height: 44px;
+    border-radius: 19px;
+}
+
+#search1 input {
+    width: 87%;
+    margin-top: 9px;
+    height: 47%;
+    background-color: #eeee;
+    border-style: none;
+
+}
+
+#search1 button {
+    margin-top: 12px;
+    margin-left: 17px;
+    border: none;
+}
+
+#login {
+    width: 21%;
+    float: left;
+    display: inline-block;
+    margin-top: 26px;
+    margin-left: 24px;
+    cursor: pointer;
+}
+
+#login a {
+    text-decoration: none;
+    color: black;
+}
+
+hr {
+    border: solid 0.1px #eeee;
+}
+
+#menu {
+    width: 100%;
+    height: 44px;
+}
+
+#menu ul {
+    margin-left: 109px;
+    /* float: left; */
+    list-style: none;
+    height: 37px;
+}
+
+#menu li {
+    font-weight: bolder;
+    text-align: center;
+    font-size: larger;
+    /* margin: 0 67px; */
+    width: 160px;
+    height: 33px;
+    float: left;
+    padding-top: 12px;
+    margin: 0px 8px;
+
+}
+
+#menu li:hover {
+    color: tomato;
+    border-bottom: solid 5px tomato;
+    cursor: pointer;
+}
+
+/*login*/
+#loginf {
+    width: 38%;
+    height: 708px;
+    padding: 50px 468px;
+}
+h1 {
+    text-align: center;
+    color: tomato;
+    font-size: 33px;
+    letter-spacing: -2px;
+}
+span{
+    text-align: center;
+    color: black;
+    font-weight: 100;
+}
+
+
+#id{
+    width: 95%;
+    height: 19px;
+    border-radius: 5px;
+    border: solid 1px #e2e2e2ee;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+#password{
+    width: 95%;
+    height: 19px;
+    border-radius: 5px;
+    border: solid 1px #e2e2e2ee;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+#btn1{
+    background-color: black;
+    color: white;
+    width: 101%;
+    height: 53px;
+    border-radius: 5px;
+    border: solid 1px #979494ee;
+    padding: 15px;
+    margin-bottom: 4px;
+    cursor: pointer;
+}
+#btn2{
+    width: 101%;
+    height: 53px;
+    border-radius: 5px;
+    border: solid 1px #979494ee;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: white;
+    cursor: pointer;
+}
+#SNS{
+    width: 100%;
+    height: 175px;
+}
+#btn3 {
+    width: 49.5%;
+    height: 53px;
+    border-radius: 5px;
+    border: solid 1px #979494ee;
+    padding: 15px 55px;
+    margin-bottom: 10px;
+    background-color: rgba(69, 100, 155, 1);
+    color: white;
+    cursor: pointer;
+}
+#btn4{
+    width: 49.5%;
+    height: 53px;
+    border-radius: 5px;
+    border: solid 1px #979494ee;
+    padding: 15px 55px;
+    margin-bottom: 10px;
+    background-color: white;
+    cursor: pointer;
+}
+#btn5 {
+    width: 49.5%;
+    height: 53px;
+    border-radius: 5px;
+    border: solid 1px #979494ee;
+    padding: 15px 72px;
+    /* margin-bottom: 4px; */
+    background-color: white;
+    margin: 0 140px;
+    /* margin: 30px 30px -81px 30px; */
+    position: relative;
+    bottom: -19px;
+    cursor: pointer;
+}
+
+#find {
+    margin-left: 412px;
+    cursor: pointer;
+}
+#findp{
+    cursor: pointer;
+}
+h3 {
+    text-align: center;
+    margin: 36px 0;
+}
+#facebook{
+    width: 27px;
+    padding: -12px;
+    position: relative;
+    top: 7px;
+    left: -11px;
+}
+#google{
+    width: 27px;
+    padding: -12px;
+    position: relative;
+    top: 7px;
+    left: -11px;
+}
+#apple{
+    width: 24px;
+    padding: -12px;
+    position: relative;
+    top: 10px;
+    left: -11px;
+}
+#text{
+    margin-bottom: 2px;
+}
+/*footer*/
+footer {
+    background-color: black;
+    width: 79%;
+    height: 332px;
+    color: white;
+    padding: 30px 174px 0 145px;
+}
+
+h2 {
+    font-size: 34px;
+    letter-spacing: -2px;
+    margin-top: 11px;
+    margin-bottom: 18px;
+}
+
+
+a {
+    color: #858585ee;
+}
+
+#agree a {
+    color: white;
+    font-weight: bold;
+}
+
+#tel {
+    margin-bottom: 34px;
+}
+
+#address {
+    margin-top: 31px;
+    margin-bottom: 18px;
+}
+
+footer hr {
+    border: solid 1px #7d7d7dee
+}
