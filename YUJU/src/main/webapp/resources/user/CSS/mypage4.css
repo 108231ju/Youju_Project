@@ -1,0 +1,80 @@
+/*phone*/
+
+
+
+#order4 {
+    border-right: 1px solid black;
+}
+#order4 a {
+    opacity: 0.4;
+}
+#order4 img {
+    opacity: 0.4;
+}
+
+
+#FandQ4 a, #FandQ4 img{
+    opacity: 0.4;
+}
+
+
+#info4{
+    border-right: 1px solid black;
+}
+#info4 a{
+    opacity: 0.4;
+}
+#info4 img{
+    opacity: 0.4;
+}
+
+#coupon4 {
+    border-right: 1px solid black;
+}
+#coupon4 a{
+    opacity: 0.4;;
+}
+
+#coupon4 img{
+    opacity: 0.4;;
+}
+
+#QandA4 {
+    border-right: 1px solid black;
+}
+
+#order4 a:hover{
+    color: tomato;
+    opacity: unset;
+    cursor: pointer;
+}
+#info4 a:hover{
+    color: tomato;
+    opacity: unset;
+    cursor: pointer;
+}
+#coupon4 a:hover{
+    color: tomato;
+    opacity: unset;
+    cursor: pointer;
+}
+#QandA4 a:hover{
+    color: tomato;
+    opacity: unset;
+    cursor: pointer;
+}
+#FandQ4 a:hover{
+    color: tomato;
+    opacity: unset;
+    cursor: pointer;
+}
+#s_list {
+    height: 85px;
+    margin: 1px 180px 0 152px;
+    padding-top: 59px;
+}
+
+#s_list a {
+    color: black;
+    font-size: 16px;
+}
