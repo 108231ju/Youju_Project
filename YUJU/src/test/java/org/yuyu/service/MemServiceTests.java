@@ -6,6 +6,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.yuyu.domain.MemVO;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
@@ -18,12 +19,24 @@ public class MemServiceTests {
 	@Setter(onMethod_=@Autowired)
 	private MemService memService;
 	
+
+	/*
+	
 	@Test
-	public void testGetList() {
+	public void testinsert() {
+		MemVO memVO = new MemVO();
+		memVO.setMcode(2);
+		memVO.setMname("최현주");
+		memVO.setMemail("juju@gmail.com");
+		memVO.setMphone("010-7657-1604");
+		memVO.setMid("juju");
+		memVO.setMpw("1111");
 		
-		log.info(memService);
+		memService.insert(memVO);
+		
 	}
 	
+	*/
 
 }
 

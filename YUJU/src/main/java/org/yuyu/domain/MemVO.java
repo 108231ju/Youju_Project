@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 public class MemVO {
-	private String mcode;
+	private int mcode;
 	private String mname;
 	private String mid;
 	private String mpw;
