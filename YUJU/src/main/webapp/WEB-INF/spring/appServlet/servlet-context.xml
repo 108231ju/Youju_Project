@@ -22,8 +22,7 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="org.yuyu.project" />
-	
-	<context:component-scan base-package="org.yuyu.controller" />
+		<context:component-scan base-package="org.yuyu.controller" />
 	
 	
 	

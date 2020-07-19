@@ -37,7 +37,6 @@
 	
 	
 	<context:component-scan base-package="org.yuyu.sample"/>
-	
 	<context:component-scan base-package="org.yuyu.service"/>
 	<!--mapper 패키지 추가-->
 	<mybatis-spring:scan base-package="org.yuyu.mapper"/>
