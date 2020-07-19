@@ -9,6 +9,7 @@ public interface MemMapper {
 	// 회원 전체 데이터 조회
 	public List<MemVO> getList();
 	
+<<<<<<< HEAD
 	// 회원 데이터 삽입
 	public void insert(MemVO memVO);
 	
@@ -24,6 +25,9 @@ public interface MemMapper {
 	//회원 데이터 수정
 	public int update(MemVO memVO);
 	
+=======
+
+>>>>>>> refs/heads/master
 }
 
 

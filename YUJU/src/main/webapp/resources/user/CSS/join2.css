@@ -1,0 +1,105 @@
+#phone1 {
+    text-align: center;
+}
+
+h1 {
+    font-size: 26px;
+    font-weight: 500;
+    margin: 58px 0 40px 0;
+}
+
+#joinmenu1 {
+    width: 100%;
+    height: 105px;
+    border: solid 1px black;
+    padding: 0 337px;
+}
+
+#joinmenu1 ul {
+    height: 106px;
+    margin: 0;
+}
+
+#joinmenu1 li {
+    float: left;
+    padding: 13px 62px;
+    list-style: none;
+}
+
+#joinmenu1 li img {
+    width: 58px;
+}
+
+#identity1 {
+    opacity: 0.4;
+}
+
+#agree1 {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+#joinform1 {
+    opacity: 0.4;
+}
+
+#finish1 {
+    opacity: 0.4;
+}
+
+/*약관동의*/
+#content {
+    width: 37%;
+    margin: 45px 478px;
+    text-align: left;
+    color: black;
+}
+#content a{
+    color: black;
+}
+#contenta {
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: -2px;
+    color: black;
+}
+
+#content hr {
+    margin: 30px 0;
+    border: 0.5px solid #e0e0e0ee;
+}
+
+#content1 {
+    border: 1px solid #e0e0e0ee;
+    padding: 23px 17px;
+    margin-top: 25px;
+}
+
+#content1 a {
+    font-size: 14px;
+    color: black;
+}
+
+#content1 span {
+    color: tomato;
+    font-size: 14px;
+    color: black;
+}
+
+#content1 div {
+    margin: 0 0 17px 0;
+}
+
+#show {
+    float: right;
+    cursor: pointer;
+    
+}
+#next{
+    width: 207px;
+    height: 50px;
+    background-color: #eeee;
+    border: 1px;
+    border-radius: 4px;
+    margin: 0 173px;
+}

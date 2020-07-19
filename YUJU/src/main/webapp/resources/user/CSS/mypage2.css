@@ -1,0 +1,117 @@
+/*phone*/
+
+#phone {
+    text-align: center;
+}
+
+h1 {
+    font-size: 26px;
+    font-weight: 500;
+    margin: 90px 0 40px 0;
+}
+#pagemenu {
+    background: hsla(0, 0%, 98%, 1);
+    width: 78%;
+    height: 105px;
+    border: solid 1px black;
+    padding: 41px 0 40px 0;
+    margin-left: 152px;
+    
+}
+#pagemenu li a{
+    color: black;
+    font-weight: 700;
+}
+
+#pagemenu li {
+    float: left;
+    padding: 0 74px;
+    list-style: none;
+}
+#pagemenu ul {
+    height: 106px;
+    margin: 0;
+    padding: 0;
+}
+
+
+#pagemenu li img {
+    width: 83px;
+}
+
+#order2 {
+    border-right: 1px solid black;
+}
+#order2 a {
+    opacity: 0.4;
+}
+#order2 img {
+    opacity: 0.4;
+}
+
+
+#FandQ2 a, #FandQ2 img{
+    opacity: 0.4;
+}
+
+
+#info2{
+    border-right: 1px solid black;
+}
+
+
+#coupon2 {
+    border-right: 1px solid black;
+}
+
+#coupon2 a { 
+    opacity: 0.4;
+}
+#coupon2 img{
+    opacity: 0.4;
+}
+
+#QandA2 {
+    border-right: 1px solid black;
+}
+#QandA2 a{
+    opacity: 0.4;
+}
+#QandA2 img{
+    opacity: 0.4;
+}
+#order2 a:hover{
+    color: tomato;
+    opacity: unset;
+    cursor: pointer;
+}
+#info2 a:hover{
+    color: tomato;
+    opacity: unset;
+    cursor: pointer;
+}
+#coupon2 a:hover{
+    color: tomato;
+    opacity: unset;
+    cursor: pointer;
+}
+#QandA2 a:hover{
+    color: tomato;
+    opacity: unset;
+    cursor: pointer;
+}
+#FandQ2 a:hover{
+    color: tomato;
+    opacity: unset;
+    cursor: pointer;
+}
+#s_list {
+    height: 85px;
+    margin: 1px 180px 0 152px;
+    padding-top: 59px;
+}
+
+#s_list a {
+    color: black;
+    font-size: 16px;
+}
