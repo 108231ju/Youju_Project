@@ -1,0 +1,71 @@
+/*phone*/
+
+
+
+#order3 {
+    border-right: 1px solid black;
+}
+#order3 a {
+    opacity: 0.4;
+}
+#order3 img {
+    opacity: 0.4;
+}
+
+
+#FandQ3 a, #FandQ3 img{
+    opacity: 0.4;
+}
+
+
+#info3{
+    border-right: 1px solid black;
+}
+#info3 a{
+    opacity: 0.4;
+}
+#info3 img{
+    opacity: 0.4;
+}
+
+#coupon3 {
+    border-right: 1px solid black;
+}
+
+
+
+#QandA3 {
+    border-right: 1px solid black;
+}
+#QandA3 a{
+    opacity: 0.4;
+}
+#QandA3 img{
+    opacity: 0.4;
+}
+#order3 a:hover{
+    color: tomato;
+    opacity: unset;
+    cursor: pointer;
+}
+#info3 a:hover{
+    color: tomato;
+    opacity: unset;
+    cursor: pointer;
+}
+#coupon3 a:hover{
+    color: tomato;
+    opacity: unset;
+    cursor: pointer;
+}
+#QandA3 a:hover{
+    color: tomato;
+    opacity: unset;
+    cursor: pointer;
+}
+#FandQ3 a:hover{
+    color: tomato;
+    opacity: unset;
+    cursor: pointer;
+}
+

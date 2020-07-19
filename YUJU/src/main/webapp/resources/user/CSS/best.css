@@ -1,0 +1,215 @@
+/*header*/
+#Adver {
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    font-size: 13px;
+    word-break: keep-all;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#logo {
+    display: inline-block;
+    width: 15%;
+    height: 80px;
+    line-height: 80px;
+    padding-left: 40px;
+    float: left;
+}
+
+#top {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0px auto;
+    clear: both;
+    overflow: hidden;
+    padding: 20px 30px;
+    height: 58px;
+    position: relative;
+}
+
+#logo img {
+    width: 80%;
+    cursor: pointer;
+}
+
+#search {
+    width: 57%;
+    float: left;
+    background-color: #eeee;
+    margin-top: 12px;
+    height: 44px;
+    border-radius: 19px;
+}
+
+#input {
+    width: 87%;
+    margin-top: 9px;
+    height: 47%;
+    background-color: #eeee;
+    border-style: none;
+
+}
+
+#btn {
+    margin-top: 12px;
+    margin-left: 17px;
+    border: none;
+}
+
+#login {
+    width: 21%;
+    float: left;
+    display: inline-block;
+    margin-top: 26px;
+    margin-left: 24px;
+    cursor: pointer;
+}
+
+#login a {
+    text-decoration: none;
+    color: black;
+}
+
+hr {
+    border: solid 0.1px #eeee;
+}
+
+#menu {
+    width: 100%;
+    height: 44px;
+}
+
+#menu ul {
+    margin-left: 109px;
+    /* float: left; */
+    list-style: none;
+    height: 37px;
+}
+
+#menu li {
+    font-weight: bolder;
+    text-align: center;
+    font-size: larger;
+    /* margin: 0 67px; */
+    width: 160px;
+    height: 33px;
+    float: left;
+    padding-top: 12px;
+    margin: 0px 8px;
+
+}
+
+#menu li:hover {
+    color: tomato;
+    border-bottom: solid 5px tomato;
+    cursor: pointer;
+}
+
+/*contant*/
+#contant {
+    padding: 20px 133px 3px 139px;
+}
+#tag{
+    float: left;
+    width: 100%;
+}
+#contant a {
+    font-size: 13px;
+}
+
+#catagory {width: 216px;
+    margin-top: 51px;
+    float: left;
+}
+
+#catagory ul {
+    list-style: none;
+    margin-left: -40px;
+}
+
+#option, #today, #sale, #best, #catagory1, #catagory2, #catagory3 {padding: 21px 0;
+    border-bottom: 1px solid #e8e8e8;
+    
+}
+#down1 li, #down2 li, #down3 li {
+    padding: 12px 0 12px 10px;
+    margin: 4px 0 4px 0;
+    font-size: 14px;
+}
+#down1 ul, #down2 ul, #down3 ul {
+    border-bottom: 1px solid #e8e8e8;
+    padding-bottom: 19px;
+    padding-left: 0;
+    /* width: 30px; */
+    margin-left: 0px;
+}
+
+/*height auto 로 바꾸기*/
+#item {
+    width: 82%;
+    height: 942px;
+    margin-top: 74px;
+    float: left;
+}
+
+#catagory1,#catagory2,#catagory3,#today,#sale {font-size: 15px;}
+
+#down1,
+#down2,
+#down3 {
+    display: none;
+
+}
+#best{
+    font-size: 18px;
+    font-weight: bolder;
+}
+#option{
+    font-size: 18px;
+    font-weight: bolder;
+}
+/*footer*/
+footer {
+    background-color: black;
+    width: 79%;
+    height: 332px;
+    color: white;
+    padding: 30px 174px 0 145px;
+    float: left;
+}
+
+h2 {
+    font-size: 34px;
+    letter-spacing: -2px;
+    margin-top: 11px;
+    margin-bottom: 18px;
+}
+
+
+a {
+    color: #858585ee;
+}
+
+#agree a {
+    color: white;
+    font-weight: bold;
+}
+
+#tel {
+    margin-bottom: 34px;
+}
+
+#address {
+    margin-top: 31px;
+    margin-bottom: 18px;
+}
+
+footer hr {
+    border: solid 1px #7d7d7dee
+}
+
+.hovering{ background-color: #f3f3f3;}

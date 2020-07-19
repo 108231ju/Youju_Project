@@ -1,7 +1,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
-<html>
+
+<html lang="ko">
 <head>
+<meta charset="UTF-8">
 	<title>Home</title>
 </head>
 <body>
@@ -9,6 +11,7 @@
 	Hello world!  
 </h1>
 
-<P>  The time on the server is ${serverTime}. </P>
+<!-- <P>  The time on the server is ${serverTime}. </P> -->
+<P> ${result} , ${list.maddress}</P>
 </body>
 </html>

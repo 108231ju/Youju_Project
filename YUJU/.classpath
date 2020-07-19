@@ -7,13 +7,27 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry excluding="**" kind="src" output="target/classes" path="src/main/resources">
+<<<<<<< HEAD
+=======
 		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
+>>>>>>> branch 'master' of https://github.com/108231ju/Youju_Project.git
+		<attributes>
+<<<<<<< HEAD
+=======
+			<attribute name="test" value="true"/>
+			<attribute name="optional" value="true"/>
+>>>>>>> branch 'master' of https://github.com/108231ju/Youju_Project.git
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry excluding="**" kind="src" output="target/test-classes" path="src/test/resources">
 		<attributes>
 			<attribute name="test" value="true"/>
+<<<<<<< HEAD
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
@@ -21,6 +35,8 @@
 		<attributes>
 			<attribute name="test" value="true"/>
 			<attribute name="optional" value="true"/>
+=======
+>>>>>>> branch 'master' of https://github.com/108231ju/Youju_Project.git
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
