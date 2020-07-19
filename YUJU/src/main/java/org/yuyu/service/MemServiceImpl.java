@@ -19,5 +19,33 @@ public class MemServiceImpl implements MemService  {
 		return memMapper.getList();
 	}
 
+	@Override
+	public void insert(MemVO memVO) {
+		// TODO Auto-generated method stub
+		
+		memMapper.insertSelectKey(memVO);
+		
+	}
+
+	@Override
+	public MemVO read(int mcode) {
+		// TODO Auto-generated method stub
+		return memMapper.read(mcode);
+	}
+
+	@Override
+	public boolean delete(int mcode) {
+		// TODO Auto-generated method stub
+		return memMapper.delete(2) == 1;
+	}
+
+	@Override
+	public boolean modify(MemVO memVO) {
+		// TODO Auto-generated method stub
+		return memMapper.update(memVO) == 1;
+	}
+
 }
+
+
 
