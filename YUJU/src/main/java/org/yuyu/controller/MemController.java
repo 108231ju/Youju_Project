@@ -1,23 +1,22 @@
 package org.yuyu.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.yuyu.service.MemService;
+
 import lombok.AllArgsConstructor;
+import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 
 @Controller
 @RequestMapping("/user/*")
-<<<<<<< HEAD
 @Log4j
 @AllArgsConstructor
-public class MemController{
-=======
 public class MemController {
->>>>>>> refs/heads/master
 	
-<<<<<<< HEAD
-=======
 	@Setter(onMethod_=@Autowired)
 	private MemService memService;
 	
@@ -146,7 +145,6 @@ public class MemController {
 
 		
 	}
->>>>>>> refs/heads/master
 }
 
 
