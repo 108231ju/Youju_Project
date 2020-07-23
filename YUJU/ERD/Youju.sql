@@ -1,4 +1,3 @@
-
 /* Drop Tables */
 
 DROP TABLE porder CASCADE CONSTRAINTS;
@@ -10,10 +9,27 @@ DROP TABLE mem CASCADE CONSTRAINTS;
 DROP TABLE product CASCADE CONSTRAINTS;
 DROP TABLE store_mem CASCADE CONSTRAINTS;
 
+<<<<<<< HEAD
+=======
+CREATE SEQUENCE seq_mem;
+CREATE SEQUENCE seq_store_mem;
+CREATE SEQUENCE seq_product;
+DROP SEQUENCE seq_mem;
+DROP SEQUENCE seq_store_mem;
+DROP SEQUENCE seq_product;
+
+
+>>>>>>> branch 'master' of https://github.com/108231ju/Youju_Project.git
 
 
 
 /* Create Tables */
+<<<<<<< HEAD
+=======
+SELECT * FROM mem;
+
+
+>>>>>>> branch 'master' of https://github.com/108231ju/Youju_Project.git
 
 CREATE TABLE mem
 (
@@ -97,7 +113,7 @@ CREATE TABLE product
 CREATE TABLE store_mem
 (
 	scode number NOT NULL,
-	sname varchar2(30) NOT NULL,
+	sname varchar2(100) NOT NULL,
 	sid varchar2(20) NOT NULL,
 	spw varchar2(20) NOT NULL,
 	stel number NOT NULL,
@@ -107,7 +123,13 @@ CREATE TABLE store_mem
 	updatedate DATE DEFAULT sysdate,
 	PRIMARY KEY (scode)
 );
+<<<<<<< HEAD
 
+=======
+SELECT * FROM store_mem;
+INSERT INTO store_mem(scode,sname,sid,spw,sphone,semail,sowner) VALUES (1,'아디다스','adidas','1111','01011111111','adidas@naver.com','아디다스만든사람');
+DELETE FROM store_mem WHERE scode =2;
+>>>>>>> branch 'master' of https://github.com/108231ju/Youju_Project.git
 
 CREATE TABLE ulike
 (
@@ -181,6 +203,3 @@ ALTER TABLE product
 ;
 
 SELECT * FROM MEM;
-
-
-
