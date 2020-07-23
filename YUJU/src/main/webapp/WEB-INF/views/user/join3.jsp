@@ -36,7 +36,7 @@
         </nav>
         <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
         <div>
-            <form action="${path}/user/register" method="post">
+            <form action="/user/join4" method="post">
                 <div id="member2">
                     <input type="text" placeholder="이름 입력 (필수)" id="name" name="mname" />
                     <input type="text" placeholder="아이디 입력 (필수)" id="id" name="mid" />

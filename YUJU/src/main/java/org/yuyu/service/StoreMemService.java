@@ -17,6 +17,7 @@ public interface StoreMemService {
 	
 	public boolean modify(StoreMemVO storeMemVO);
 
+	public StoreMemVO login_check(String sid, String spw);
 }
 
 

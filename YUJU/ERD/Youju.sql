@@ -1,4 +1,3 @@
-
 /* Drop Tables */
 
 DROP TABLE porder CASCADE CONSTRAINTS;
@@ -10,19 +9,32 @@ DROP TABLE mem CASCADE CONSTRAINTS;
 DROP TABLE product CASCADE CONSTRAINTS;
 DROP TABLE store_mem CASCADE CONSTRAINTS;
 
+<<<<<<< HEAD
+=======
 CREATE SEQUENCE seq_mem;
 CREATE SEQUENCE seq_store_mem;
+CREATE SEQUENCE seq_product;
 DROP SEQUENCE seq_mem;
+DROP SEQUENCE seq_store_mem;
+DROP SEQUENCE seq_product;
 
+
+>>>>>>> branch 'master' of https://github.com/108231ju/Youju_Project.git
 
 
 select * from mem 
 		where mid = 'juju' and mpw = '1111';
 /* Create Tables */
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> refs/heads/master
 SELECT * FROM mem;
 
-update mem set mpw ='1111', maddress='N', mphone= '01034502766', memail='novely2766@gmail.com', 
-mname='노유림'   updatedate = sysdate where mcode=1;
+
+>>>>>>> branch 'master' of https://github.com/108231ju/Youju_Project.git
+
 CREATE TABLE mem
 (
 	mcode number NOT NULL,
@@ -38,6 +50,8 @@ CREATE TABLE mem
 );
 SELECT * FROM MEM;
 INSERT INTO mem(mcode,mname,mid,mpw,mphone,memail) VALUES (1,'노유림','yl','1111','01034502766','yyj2766@naver.com');
+
+
 
 
 CREATE TABLE orderlist
@@ -94,9 +108,6 @@ CREATE TABLE product
 	pcolor varchar2(20) NOT NULL,
 	pprice number NOT NULL,
 	pimg varchar2(200) NOT NULL,
-	cate1 varchar2(50) NOT NULL,
-	cate2 varchar2(50) NOT NULL,
-	cate3 varchar2(50) NOT NULL,
 	regdate DATE DEFAULT sysdate,
 	updatedate DATE DEFAULT sysdate,
 	PRIMARY KEY (pcode)
@@ -106,19 +117,23 @@ CREATE TABLE product
 CREATE TABLE store_mem
 (
 	scode number NOT NULL,
-	sname varchar2(30) NOT NULL,
+	sname varchar2(100) NOT NULL,
 	sid varchar2(20) NOT NULL,
 	spw varchar2(20) NOT NULL,
-	sphone varchar2(20) NOT NULL,
+	stel number NOT NULL,
 	semail varchar2(40) NOT NULL,
-	sowner varchar2(100) NOT NULL,
+	sowner varchar2(10) NOT NULL,
 	regdate DATE DEFAULT sysdate,
 	updatedate DATE DEFAULT sysdate,
 	PRIMARY KEY (scode)
 );
+<<<<<<< HEAD
+
+=======
 SELECT * FROM store_mem;
 INSERT INTO store_mem(scode,sname,sid,spw,sphone,semail,sowner) VALUES (1,'아디다스','adidas','1111','01011111111','adidas@naver.com','아디다스만든사람');
-
+DELETE FROM store_mem WHERE scode =2;
+>>>>>>> branch 'master' of https://github.com/108231ju/Youju_Project.git
 
 CREATE TABLE ulike
 (
@@ -131,13 +146,6 @@ CREATE TABLE ulike
 
 
 /* Create Foreign Keys */
-
-
-ALTER TABLE store_mem
-	ADD FOREIGN KEY (sowner)
-	REFERENCES mem (mcode)
-;
-
 
 ALTER TABLE orderlist
 	ADD FOREIGN KEY (mcode)
@@ -199,6 +207,3 @@ ALTER TABLE product
 ;
 
 SELECT * FROM MEM;
-
-
-

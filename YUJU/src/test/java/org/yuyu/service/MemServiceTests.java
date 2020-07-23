@@ -20,12 +20,11 @@ public class MemServiceTests {
 	private MemService memService;
 	
 
-	/*
+	
 	
 	@Test
 	public void testinsert() {
 		MemVO memVO = new MemVO();
-		memVO.setMcode(2);
 		memVO.setMname("최현주");
 		memVO.setMemail("juju@gmail.com");
 		memVO.setMphone("010-7657-1604");
@@ -36,7 +35,7 @@ public class MemServiceTests {
 		
 	}
 	
-	*/
+	
 
 }
 

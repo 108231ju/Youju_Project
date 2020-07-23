@@ -47,6 +47,11 @@ public class StoreMemServiceImpl implements StoreMemService  {
 		return storeMemMapper.update(storeMemVO) == 1;
 	}
 
+	@Override
+	public StoreMemVO login_check(String sid, String spw) {
+		return storeMemMapper.login_check(sid,spw);
+	}
+
 }
 
 

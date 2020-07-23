@@ -11,7 +11,7 @@ public class StoreMemVO {
 	private String sname;
 	private String sid;
 	private String spw;
-	private String stel;
+	private String sphone;
 	private String semail;
 	private String sowner;
 	private Date regdate;

@@ -1,52 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.yuyu.mapper.MemMapper">
-	<select id="getList" resultType="org.yuyu.domain.MemVO">
-		SELECT * FROM mem
-	</select>
-	
-	<insert id="insert">
-		INSERT INTO mem(mcode,mname,mid,mpw,mphone,memail) 
-		VALUES (#{mcode},#{mname},#{mid},#{mpw},#{mphone},#{memail})
-	</insert>
-	
-	<insert id="insertSelectKey">
-		<selectKey keyProperty="mcode" order="BEFORE" resultType="int">
-			select seq_mem.nextval from dual
-		</selectKey>
-		INSERT INTO mem(mcode,mname,mid,mpw,mphone,memail) 
-		VALUES (#{mcode},#{mname},#{mid},#{mpw},#{mphone},#{memail})
-	</insert>
-	
-	<select id="read" resultType="org.yuyu.domain.MemVO">
-		select * from mem where mcode = #{mcode}
-	</select>
-	
-	<delete id="delete">
-	delete from mem where mcode = #{mcode}
-	</delete>
-	
-	<update id="update">
-		update mem set mpw =#{mpw}, maddress=#{maddress}, mphone= #{mphone}, memail=#{memail}, 
-		mname=#{mname} , updatedate = sysdate where mcode=#{mcode}
-	</update>
-	
-	
-	<select id="login" resultType="org.yuyu.domain.MemVO">
-		select * from mem 
-		where mid = #{mid} and mpw = #{mpw}
-	</select>
-	
-	<insert id="register">
-	INSERT INTO mem (
-	mname
-	, mid
-	, mpw
-	, mphone
-	, memail
-	) VALUES (
-	#{mname},#{mid},#{mpw},#{mphone},#{memail}
-	)
-	</insert>
+   <select id="getList" resultType="org.yuyu.domain.MemVO">
+      SELECT * FROM mem
+   </select>
+   
+   <insert id="insert">
+      INSERT INTO mem(mcode,mname,mid,mpw,mphone,memail) 
+      VALUES (#{mcode},#{mname},#{mid},#{mpw},#{mphone},#{memail})
+   </insert>
+   
+   <insert id="insertSelectKey">
+      <selectKey keyProperty="mcode" order="BEFORE" resultType="int">
+         select seq_mem.nextval from dual
+      </selectKey>
+      INSERT INTO mem(mcode,mname,mid,mpw,mphone,memail) 
+      VALUES (#{mcode},#{mname},#{mid},#{mpw},#{mphone},#{memail})
+   </insert>
+   
+   <select id="read" resultType="org.yuyu.domain.MemVO">
+      select * from mem where mcode = #{mcode}
+   </select>
+   
+   <delete id="delete">
+   delete from mem where mcode = #{mcode}
+   </delete>
+   
+   <update id="update">
+      update mem set mpw =#{mpw}, maddress=#{maddress}, mphone= #{mphone}, memail=#{memail}, 
+      mname=#{mname} , updatedate = sysdate where mcode=#{mcode}
+   </update>
+   
 </mapper>
