@@ -2,6 +2,7 @@ package org.yuyu.service;
 
 import java.util.List;
 
+
 import org.yuyu.domain.MemVO;
 
 public interface MemService {
@@ -15,6 +16,9 @@ public interface MemService {
 	public boolean delete(int mcode);
 	
 	public boolean modify(MemVO memVO);
+	
+
+	
 
 }
 

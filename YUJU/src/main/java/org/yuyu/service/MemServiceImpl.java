@@ -2,6 +2,10 @@ package org.yuyu.service;
 
 import java.util.List;
 
+import javax.inject.Inject;
+import javax.xml.stream.events.Namespace;
+
+import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.yuyu.domain.MemVO;
@@ -14,6 +18,7 @@ public class MemServiceImpl implements MemService  {
 	@Setter(onMethod_= @Autowired)
 	MemMapper memMapper;
 
+	
 	@Override
 	public List<MemVO> getList() {
 		return memMapper.getList();
@@ -44,7 +49,8 @@ public class MemServiceImpl implements MemService  {
 		// TODO Auto-generated method stub
 		return memMapper.update(memVO) == 1;
 	}
-
+	
+	
 }
 
 

@@ -48,7 +48,7 @@
     <hr>
 
     <div id="loginf">
-        <form action="#" id="loginform">
+        <form action="/user/indexuser" method="post" id="loginform">
             <h1>오늘 사면 내일 도착!
                 <br><span>무료배송으로 내일 받는 브랜디 LOGIN</span></h1>
             <input type="text" placeholder="아이디 입력" id="id" name="Id" />

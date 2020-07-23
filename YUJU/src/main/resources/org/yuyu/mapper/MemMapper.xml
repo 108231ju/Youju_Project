@@ -32,4 +32,21 @@
 		mname=#{mname} , updatedate = sysdate where mcode=#{mcode}
 	</update>
 	
+	
+	<select id="login" resultType="org.yuyu.domain.MemVO">
+		select * from mem 
+		where mid = #{mid} and mpw = #{mpw}
+	</select>
+	
+	<insert id="register">
+	INSERT INTO mem (
+	mname
+	, mid
+	, mpw
+	, mphone
+	, memail
+	) VALUES (
+	#{mname},#{mid},#{mpw},#{mphone},#{memail}
+	)
+	</insert>
 </mapper>

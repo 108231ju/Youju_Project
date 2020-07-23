@@ -16,9 +16,10 @@ DROP SEQUENCE seq_mem;
 
 
 
-
+select * from mem 
+		where mid = 'juju' and mpw = '1111';
 /* Create Tables */
-SELECT * FROM mem
+SELECT * FROM mem;
 
 update mem set mpw ='1111', maddress='N', mphone= '01034502766', memail='novely2766@gmail.com', 
 mname='노유림'   updatedate = sysdate where mcode=1;

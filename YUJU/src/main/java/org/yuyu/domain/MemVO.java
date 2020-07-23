@@ -4,7 +4,7 @@ import java.util.Date;
 
 import lombok.Data;
 
-@Data
+ @Data
 public class MemVO {
 	private int mcode;
 	private String mname;
