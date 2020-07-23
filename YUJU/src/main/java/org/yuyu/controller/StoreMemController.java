@@ -16,29 +16,39 @@ import lombok.AllArgsConstructor;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import java.io.PrintWriter;
+
 @Controller
-@RequestMapping("/admin/*")
+@RequestMapping("/storeMem/*")
 @Log4j
 @AllArgsConstructor
 public class StoreMemController{
 	
 	private StoreMemService storeMemService;
 	
+	
+	
 	@GetMapping("/list")
 	public void list(Model model) {
 		log.info("member list.....");
 		model.addAttribute("list",storeMemService.getList());
 	}
-	
+
+
+	@GetMapping("/register-proc")
+	public void registerOk(){
+	}
+
+
 	@PostMapping("/register")
 	public String register(StoreMemVO storeMemVO, RedirectAttributes rttr) {
 		log.info("register......");
 		
 		storeMemService.insert(storeMemVO);
-		
-		rttr.addFlashAttribute("result",storeMemVO.getScode());
-		
-		return "redirect:/admin/list";
+
+		return "/storeMem/register-proc";
 		
 	}
 	
@@ -51,33 +61,104 @@ public class StoreMemController{
 	
 	@PostMapping("/modify")
 	public String modify(StoreMemVO storeMemVO, RedirectAttributes rttr) {
+
 		log.info("modify : "+ storeMemVO.getScode());
-		
-		if(storeMemService.modify(storeMemVO)) {
-			rttr.addAttribute("result", "success");
+
+		if(storeMemService.modify(storeMemVO) == true){
 		}
-		
-		return "redirect:/admin/list";
+		return "redirect:/storeMem/info-mem-page";
 	}
 	
-	@PostMapping("/remove")
-	public String modify(@RequestParam("scode") int scode, RedirectAttributes rttr) {
-		log.info("remove : "+ scode);
-		
-		if(storeMemService.delete(scode)) {
-			rttr.addAttribute("result", "success");
+	@GetMapping("/remove")
+	public String modify(HttpSession httpSession) {
+
+		StoreMemVO storeMem = (StoreMemVO)httpSession.getAttribute("loginStoreMem");
+		if(storeMemService.delete(storeMem.getScode()) != false) {
+			log.info("remove : "+ storeMem.getScode());
+			httpSession.removeAttribute("loginStoreMem");
 		}
-		
-		return "redirect:/admin/list";
+		return "/storeMem/signout-proc";
 	}
 	
 	@GetMapping("/index")
-	public void index(Model model){
-		model.addAttribute("storeMem",storeMemService.read(1));
+	public void index(){
 	}
-	@GetMapping("/login")
+
+	@GetMapping("/register-page")
+	public void register(){
+	}
+	@GetMapping("/signout-page")
+	public void signout(){
+	}
+
+
+	@GetMapping("/login-page")
 	public void login(){
 	}
+
+	@GetMapping("/login-fail-proc")
+	public void loginFail(){
+	}
+
+	@GetMapping("/no-login-proc")
+	public void noLogin(){
+	}
+
+	@GetMapping("/logout-proc")
+	public void logout(HttpSession httpSession){
+		httpSession.removeAttribute("loginStoreMem");
+	}
+
+	@PostMapping("/logincheck")
+	public String loginCheck(String sid, String spw, HttpSession httpSession){
+
+		if(httpSession.getAttribute("loginStoreMem") != null){
+			httpSession.removeAttribute("loginStoreMem");
+		}
+
+		StoreMemVO storeMemVO = storeMemService.login_check(sid,spw);
+
+		if(storeMemVO != null ){
+			httpSession.setAttribute("loginStoreMem",storeMemVO);
+			return "/storeMem/index";
+		}
+
+		else{
+			return "/storeMem/login-fail-proc";
+		}
+
+	}
+	
+	@GetMapping("/info-product-page")
+	public void infoProductPage(){
+	}
+	@GetMapping("/info-mem-page")
+	public void infoMemPage(Model model ,HttpSession httpSession){
+		StoreMemVO storeMemVO = (StoreMemVO) httpSession.getAttribute("loginStoreMem");
+		StoreMemVO storeMemVO2 = storeMemService.read(storeMemVO.getScode());
+
+		model.addAttribute("smem",storeMemVO2);
+	}
+	@GetMapping("/info-delivery-page")
+	public void infoDeliveryPage(){
+	}
+	@GetMapping("/info-order-page")
+	public void infoOrderPage(){
+	}
+
+	@GetMapping("/update-product-page")
+	public void updateProductPage(){
+	}
+
+
+
+	@GetMapping("/question-product-page")
+	public void questionProductPage(){
+	}
+
+
+
+
 
 }
 

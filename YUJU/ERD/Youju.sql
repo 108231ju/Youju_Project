@@ -1,4 +1,3 @@
-
 /* Drop Tables */
 
 DROP TABLE porder CASCADE CONSTRAINTS;
@@ -12,13 +11,19 @@ DROP TABLE store_mem CASCADE CONSTRAINTS;
 
 CREATE SEQUENCE seq_mem;
 CREATE SEQUENCE seq_store_mem;
+CREATE SEQUENCE seq_product;
 DROP SEQUENCE seq_mem;
+DROP SEQUENCE seq_store_mem;
+DROP SEQUENCE seq_product;
+
 
 
 
 
 /* Create Tables */
-SELECT * FROM mem
+SELECT * FROM mem;
+
+
 
 update mem set mpw ='1111', maddress='N', mphone= '01034502766', memail='novely2766@gmail.com', 
 mname='노유림'   updatedate = sysdate where mcode=1;
@@ -105,7 +110,7 @@ CREATE TABLE product
 CREATE TABLE store_mem
 (
 	scode number NOT NULL,
-	sname varchar2(30) NOT NULL,
+	sname varchar2(100) NOT NULL,
 	sid varchar2(20) NOT NULL,
 	spw varchar2(20) NOT NULL,
 	sphone varchar2(20) NOT NULL,
@@ -117,7 +122,7 @@ CREATE TABLE store_mem
 );
 SELECT * FROM store_mem;
 INSERT INTO store_mem(scode,sname,sid,spw,sphone,semail,sowner) VALUES (1,'아디다스','adidas','1111','01011111111','adidas@naver.com','아디다스만든사람');
-
+DELETE FROM store_mem WHERE scode =2;
 
 CREATE TABLE ulike
 (
@@ -198,6 +203,3 @@ ALTER TABLE product
 ;
 
 SELECT * FROM MEM;
-
-
-

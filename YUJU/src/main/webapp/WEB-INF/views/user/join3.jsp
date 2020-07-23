@@ -35,8 +35,39 @@
             </ul>
         </nav>
         <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-        <div id="member1">
-            <form action="https://www.w3schools.com/action_page.php" id="memberform" method="get" name="frm">
+        <div>
+            <form action="/user/join4" method="post">
+                <div id="member2">
+                    <input type="text" placeholder="이름 입력 (필수)" id="name" name="mname" />
+                    <input type="text" placeholder="아이디 입력 (필수)" id="id" name="mid" />
+                    <hr>
+                    <input type="text" placeholder="비밀번호 입력 (필수)" id="password" name="mpw" />
+                    <input type="password" placeholder="비밀번호 재입력 (필수)" id="repassword" name="repassword" />
+                    <hr>
+                    <input type="text" placeholder="휴대폰 번호입력 (필수)" id="phonenum" name="mphone" />
+
+                    <input type="email" placeholder="이메일 입력 (필수)" id="email" name="memail" />
+                    <hr>
+                </div>
+                <div>
+                    <input type="text" id="sample4_post" placeholder="우편번호" name="ZipCode" readonly>
+                    <input type="button" onclick="juso()" value="우편번호검색" id="sample4_btn">
+                    <br><input type="text" id="sample4_roadAddress" placeholder="Street Address" name="mm"
+                        readonly>
+                    <input type="text" id="sample4_jibunAddress" placeholder="Lot Number Address" name="Jibun" readonly>
+                    <input type="text" id="sample4_detailAddress" placeholder="Street Address (Line 2)"
+                        name="maddress">
+                    <input type="text" id="sample4_extraAddress" placeholder="Detailed Address" name="ExtraAddr"
+                        readonly>
+                    <hr>
+                </div>
+
+                <button type="submit" >다음</button>
+            </form>
+            
+            <!-- 
+            
+                        <form action="https://www.w3schools.com/action_page.php" id="memberform" method="get" name="frm">
                 <div id="member2">
                     <input type="text" placeholder="이름 입력 (필수)" id="name" name="name" />
                     <input type="text" placeholder="아이디 입력 (필수)" id="id" name="id" />
@@ -64,6 +95,8 @@
 
                 <button type="button" id="next" onclick="chkSubmit()">다음</button>
             </form>
+             
+            -->
 
 
 

@@ -12,7 +12,7 @@
 	</insert>
 	
 	<insert id="insertSelectKey">
-		<selectKey keyProperty="mcode" order="BEFORE" resultType="int">
+		<selectKey keyProperty="scode" order="BEFORE" resultType="int">
 			select seq_store_mem.nextval from dual
 		</selectKey>
 		INSERT INTO store_mem(scode,sname,sid,spw,sphone,semail,sowner) 
@@ -28,8 +28,12 @@
 	</delete>
 	
 	<update id="update">
-		update store_mem set spw =#{spw}, sphone= #{sphone}, semail=#{semail}, 
+		update store_mem set spw =#{spw}, sphone= #{sphone}, semail=#{semail}, sowner=#{sowner},
 		sname=#{sname} , updatedate = sysdate where scode=#{scode}
 	</update>
+
+	<select id="login_check" resultType="org.yuyu.domain.StoreMemVO">
+		select * from store_mem where sid=#{sid} and spw=#{spw}
+	</select>
 	
 </mapper>
