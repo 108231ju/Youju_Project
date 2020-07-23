@@ -12,6 +12,29 @@
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<annotation-driven />
 
+<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+
+    <!-- Enables the Spring MVC @Controller programming model -->
+    <annotation-driven />
+
+
+    <!-- Interceptor 빈(bean) 생성 -->
+    <beans:bean name="loginInterceptor" class="org.yuyu.controller.LoginInterceptor"/>
+
+    <!-- Interceptor 등록/설정 -->
+    <interceptors>
+        <interceptor>
+            <mapping path="/storeMem/index"/>
+            <mapping path="/storeMem/info-delivery-page"/>
+            <mapping path="/storeMem/info-mem-page"/>
+            <mapping path="/storeMem/info-order-page"/>
+            <mapping path="/storeMem/update-product-page"/>
+            <mapping path="/storeMem/question-product-page"/>
+            <beans:ref bean="loginInterceptor"/>
+        </interceptor>
+    </interceptors>
+
+
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
 
@@ -24,6 +47,7 @@
 	<context:component-scan base-package="org.yuyu.project" />
 	
 	<context:component-scan base-package="org.yuyu.controller" />
+	
 	
 	
 	

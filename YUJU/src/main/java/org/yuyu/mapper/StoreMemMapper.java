@@ -2,6 +2,7 @@ package org.yuyu.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
 import org.yuyu.domain.StoreMemVO;
 
 public interface StoreMemMapper {
@@ -23,5 +24,8 @@ public interface StoreMemMapper {
 	
 	//스토어회원 데이터 수정
 	public int update(StoreMemVO storeMemVO);
+
+	//스토어회원 로그인시 아이디,비번체크
+	public StoreMemVO login_check(@Param("sid") String sid,@Param("spw") String spw);
 	
 }
