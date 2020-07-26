@@ -15,6 +15,7 @@ public class MemVO {
 	private String memail;
 	private Date regdate;
 	private Date updatedate;
+
 }
 
 
