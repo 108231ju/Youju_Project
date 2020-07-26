@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.yuyu.mapper.ReviewMapper">
+
+	<select id="getList" resultType="org.yuyu.domain.ReviewVO">
+		SELECT * FROM preview where scode = #{scode}
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO preview(rcode,scode,pcode,mcode,review) 
+		VALUES (#{rcode},#{scode},#{pcode},#{mcode},#{review})
+	</insert>
+	
+	<insert id="insertSelectKey">
+		<selectKey keyProperty="rcode" order="BEFORE" resultType="int">
+			select seq_review.nextval from dual
+		</selectKey>
+		INSERT INTO preview(prcode,scode,pcode,mcode,review) 
+		VALUES (#{rcode},#{scode},#{pcode},#{mcode},#{review})
+	</insert>
+	
+	<select id="read" resultType="org.yuyu.domain.ReviewVO">
+		select * from review where rcode = #{rcode}
+	</select>
+	
+	<delete id="delete">
+	delete from review where rcode = #{rcode}
+	</delete>
+	
+	<update id="update">
+		update review set review=#{review},  updatedate = sysdate where rcode=#{rcode}
+	</update>
+	
+</mapper>

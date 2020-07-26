@@ -156,6 +156,11 @@ public class StoreMemController{
 	public void questionProductPage(){
 	}
 
+	
+	@GetMapping("/find-info-page")
+	public void findInfoPage(){
+	}
+
 
 
 
