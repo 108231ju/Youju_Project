@@ -2,7 +2,7 @@
     function acyncMovePage(url){
         // ajax option
         var ajaxOption = {
-                url : "../HTML/join2.html",
+                url : "/user/join2",
                 async : true,
                 type : "GET",
                 dataType : "html",

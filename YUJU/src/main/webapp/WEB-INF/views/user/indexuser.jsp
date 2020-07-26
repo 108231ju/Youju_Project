@@ -30,7 +30,7 @@
                 </form>
             </div>
             <div id="login">
-                <a>로그아웃</a>ㅣ<a onclick="location.href='/user/mypage1'">마이페이지</a>ㅣ<a onclick="location.href='/user/like'">찜&장바구니</a>
+                <a onclick="location.href='/user/logout'">로그아웃</a>ㅣ<a onclick="location.href='/user/mypage1'">마이페이지</a>ㅣ<a onclick="location.href='/user/like'">찜&장바구니</a>
             </div>
         </div>
     </header>

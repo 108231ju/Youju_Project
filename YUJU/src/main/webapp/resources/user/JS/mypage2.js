@@ -1,7 +1,7 @@
 function acyncMovePage2(url) {
     // ajax option
     var ajaxOption = {
-        url: "../HTML/mypage1.html",
+        url: "/user/mypage1",
         async: true,
         type: "GET",
         dataType: "html",
@@ -18,7 +18,7 @@ function acyncMovePage2(url) {
 function acyncMovePage1(url) {
     // ajax option
     var ajaxOption = {
-        url: "../HTML/mypage2.html",
+        url: "/user/mypage2",
         async: true,
         type: "GET",
         dataType: "html",
@@ -35,7 +35,7 @@ function acyncMovePage1(url) {
 function acyncMovePage3(url) {
     // ajax option
     var ajaxOption = {
-        url: "../HTML/mypage3.html",
+        url: "/user/mypage3",
         async: true,
         type: "GET",
         dataType: "html",
@@ -52,7 +52,7 @@ function acyncMovePage3(url) {
 function acyncMovePage4(url) {
     // ajax option
     var ajaxOption = {
-        url: "../HTML/mypage4.html",
+        url: "/user/mypage4",
         async: true,
         type: "GET",
         dataType: "html",
@@ -69,7 +69,7 @@ function acyncMovePage4(url) {
 function acyncMovePage5(url) {
     // ajax option
     var ajaxOption = {
-        url: "../HTML/mypage5.html",
+        url: "/user/mypage5",
         async: true,
         type: "GET",
         dataType: "html",

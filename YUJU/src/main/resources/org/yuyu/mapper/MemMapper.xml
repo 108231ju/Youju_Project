@@ -7,16 +7,16 @@
    </select>
    
    <insert id="insert">
-      INSERT INTO mem(mcode,mname,mid,mpw,mphone,memail) 
-      VALUES (#{mcode},#{mname},#{mid},#{mpw},#{mphone},#{memail})
+      INSERT INTO mem(mcode,mname,mid,mpw,mphone,memail,maddress) 
+      VALUES (#{mcode},#{mname},#{mid},#{mpw},#{mphone},#{memail},#{maddress})
    </insert>
    
    <insert id="insertSelectKey">
       <selectKey keyProperty="mcode" order="BEFORE" resultType="int">
          select seq_mem.nextval from dual
       </selectKey>
-      INSERT INTO mem(mcode,mname,mid,mpw,mphone,memail) 
-      VALUES (#{mcode},#{mname},#{mid},#{mpw},#{mphone},#{memail})
+      INSERT INTO mem(mcode,mname,mid,mpw,mphone,memail,maddress) 
+      VALUES (#{mcode},#{mname},#{mid},#{mpw},#{mphone},#{memail},#{maddress})
    </insert>
    
    <select id="read" resultType="org.yuyu.domain.MemVO">
@@ -32,4 +32,7 @@
       mname=#{mname} , updatedate = sysdate where mcode=#{mcode}
    </update>
    
+   <select id="loginOk" resultType="org.yuyu.domain.MemVO">
+		select * from mem where mid=#{mid} and mpw=#{mpw}
+	</select>
 </mapper>

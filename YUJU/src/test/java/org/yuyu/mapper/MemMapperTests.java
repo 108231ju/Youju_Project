@@ -25,7 +25,7 @@ public class MemMapperTests {
       
       memMapper.getList().forEach(mem->log.info(mem));
    }
-   
+   /*
    //회원등록 테스트
    @Test
    public void testinsert() {
@@ -66,6 +66,6 @@ public class MemMapperTests {
       
    }
    
-
+*/
 }
 

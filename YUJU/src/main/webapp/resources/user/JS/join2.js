@@ -12,7 +12,7 @@ function acyncMovePage(url) {
         $("input:checkbox[name=all2]").is(":checked") == true) {
         //작업
         var ajaxOption = {
-            url: "../HTML/join3.html",
+            url: "/user/join3",
             async: true,
             type: "GET",
             dataType: "html",

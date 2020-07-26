@@ -36,7 +36,7 @@
         </nav>
         <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
         <div>
-            <form action="/user/join4" method="post">
+            <form action="/user/join4"  method="post">
                 <div id="member2">
                     <input type="text" placeholder="이름 입력 (필수)" id="name" name="mname" />
                     <input type="text" placeholder="아이디 입력 (필수)" id="id" name="mid" />
@@ -48,18 +48,20 @@
 
                     <input type="email" placeholder="이메일 입력 (필수)" id="email" name="memail" />
                     <hr>
-                </div>
-                <div>
-                    <input type="text" id="sample4_post" placeholder="우편번호" name="ZipCode" readonly>
+                	 <input type="text" id="sample4_post" placeholder="우편번호" name="maddress" readonly>
                     <input type="button" onclick="juso()" value="우편번호검색" id="sample4_btn">
-                    <br><input type="text" id="sample4_roadAddress" placeholder="Street Address" name="mm"
+                    <br><input type="text" id="sample4_roadAddress" placeholder="Street Address" name="maddress"
                         readonly>
-                    <input type="text" id="sample4_jibunAddress" placeholder="Lot Number Address" name="Jibun" readonly>
+                    <input type="text" id="sample4_jibunAddress" placeholder="Lot Number Address" name="maddress" readonly>
                     <input type="text" id="sample4_detailAddress" placeholder="Street Address (Line 2)"
                         name="maddress">
-                    <input type="text" id="sample4_extraAddress" placeholder="Detailed Address" name="ExtraAddr"
+                    <input type="text" id="sample4_extraAddress" placeholder="Detailed Address" name="maddress"
                         readonly>
                     <hr>
+                
+                </div>
+                <div>
+                  
                 </div>
 
                 <button type="submit" >다음</button>

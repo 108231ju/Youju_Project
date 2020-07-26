@@ -9,6 +9,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.yuyu.domain.MemVO;
+import org.yuyu.domain.StoreMemVO;
 import org.yuyu.mapper.MemMapper;
 
 import lombok.Setter;
@@ -50,7 +51,10 @@ public class MemServiceImpl implements MemService  {
 		return memMapper.update(memVO) == 1;
 	}
 	
-	
+	@Override
+	public MemVO loginOk(String mid, String mpw) {
+		return memMapper.loginOk(mid,mpw);
+	}
 }
 
 

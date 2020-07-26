@@ -2,7 +2,9 @@ package org.yuyu.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
 import org.yuyu.domain.MemVO;
+import org.yuyu.domain.StoreMemVO;
 
 public interface MemMapper {
    
@@ -23,5 +25,7 @@ public interface MemMapper {
    
    //회원 데이터 수정
    public int update(MemVO memVO);
+
+   public MemVO loginOk(@Param("mid") String mid,@Param("mpw") String mpw);
    
 }
