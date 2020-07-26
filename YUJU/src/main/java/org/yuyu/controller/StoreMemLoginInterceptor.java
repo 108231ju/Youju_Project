@@ -1,15 +1,14 @@
 package org.yuyu.controller;
 
-import lombok.extern.java.Log;
-import lombok.extern.log4j.Log4j;
-import org.springframework.stereotype.Controller;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import org.yuyu.domain.StoreMemVO;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import lombok.extern.log4j.Log4j;
 
 @Log4j
 public class StoreMemLoginInterceptor extends HandlerInterceptorAdapter {
