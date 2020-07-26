@@ -34,7 +34,7 @@
     <![endif]-->
 </head>
 
-<body>
+<body style="background-color: #FFFFFF">
 
 <!-- ============================================================== -->
 <!-- Preloader - style you can find in spinners.css -->
@@ -64,20 +64,20 @@
                 <!-- ============================================================== -->
                 <div class="navbar-brand">
                     <!-- Logo icon -->
-                    <a href="index.html">
+                    <a href="/storeMem/index">
                         <b class="logo-icon">
                             <!-- Dark Logo icon -->
-                            <img src="../resources/admin/src/assets/images/logo-icon.png" alt="homepage"
+                            <img style="width:35%" src="../resources/admin/logoicon.png" alt="homepage"
                                  class="dark-logo"/>
                             <!-- Light Logo icon -->
-                            <img src="../resources/admin/src/assets/images/logo-icon.png" alt="homepage"
+                            <img style="width:35%" src="../resources/admin/logoicon.png" alt="homepage"
                                  class="light-logo"/>
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
                         <span class="logo-text">
                                 <!-- dark Logo text -->
-                                <img src="../resources/admin/src/assets/images/logo-text.png" alt="homepage"
+                                <img style="width:50%" src="../resources/admin/full_logo.png" alt="homepage"
                                      class="dark-logo"/>
                             <!-- Light Logo text -->
                                 <img src="../resources/admin/src/assets/images/logo-light-text.png" class="light-logo"

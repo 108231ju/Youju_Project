@@ -68,7 +68,7 @@
 					</div>
 
 					<div class="text-center p-t-12">
-						<a class="txt2" href="#">
+						<a class="txt2" href="/storeMem/find-info-page">
 							아이디 / 비밀번호 찾기
 						</a>
 					</div>

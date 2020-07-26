@@ -3,16 +3,13 @@ package org.yuyu.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.omg.CORBA.PUBLIC_MEMBER;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.yuyu.domain.MemVO;
-import org.yuyu.domain.StoreMemVO;
 import org.yuyu.service.MemService;
 
 import lombok.AllArgsConstructor;
@@ -128,39 +125,39 @@ public class MemController {
    }
    @RequestMapping("/login")
    public String login() {
-	   return "user/login";
+      return "user/login";
    }
    @GetMapping("/market")
    public void market(Model model) {
-	   
+      
 
       
    }
    
    @GetMapping("/logout")
-	public void logout(HttpSession httpSession){
-		httpSession.removeAttribute("loginMem");
-	}
+   public void logout(HttpSession httpSession){
+      httpSession.removeAttribute("loginMem");
+   }
    
-	@PostMapping("/loginOk")
-	public String loginCheck(String mid, String mpw, HttpSession httpSession){
+   @PostMapping("/loginOk")
+   public String loginCheck(String mid, String mpw, HttpSession httpSession){
 
-		if(httpSession.getAttribute("loginMem") != null){
-			httpSession.removeAttribute("loginMem");
-		}
+      if(httpSession.getAttribute("loginMem") != null){
+         httpSession.removeAttribute("loginMem");
+      }
 
-		MemVO MemVO = memService.loginOk(mid,mpw);
+      MemVO MemVO = memService.loginOk(mid,mpw);
 
-		if(MemVO != null ){
-			httpSession.setAttribute("loginMem",MemVO);
-			return "/user/indexuser";
-		}
+      if(MemVO != null ){
+         httpSession.setAttribute("loginMem",MemVO);
+         return "/user/indexuser";
+      }
 
-		else{
-			return "/user/loginfail";
-		}
+      else{
+         return "/user/loginfail";
+      }
 
-	}
+   }
    @GetMapping("/marketadd")
    public void marketadd(Model model) {
 
@@ -203,5 +200,4 @@ public class MemController {
       
    }
 }
-
 
