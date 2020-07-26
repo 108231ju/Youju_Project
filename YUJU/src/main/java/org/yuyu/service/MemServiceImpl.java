@@ -36,7 +36,7 @@ public class MemServiceImpl implements MemService  {
 	@Override
 	public boolean delete(int mcode) {
 		// TODO Auto-generated method stub
-		return memMapper.delete(2) == 1;
+		return memMapper.delete(mcode) == 1;
 	}
 
 	@Override

@@ -1,8 +1,6 @@
 package org.yuyu.controller;
 
-import lombok.extern.java.Log;
 import lombok.extern.log4j.Log4j;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import org.yuyu.domain.StoreMemVO;
@@ -12,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 @Log4j
-public class LoginInterceptor extends HandlerInterceptorAdapter {
+public class StoreMemLoginInterceptor extends HandlerInterceptorAdapter {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 

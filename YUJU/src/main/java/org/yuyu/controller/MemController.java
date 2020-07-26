@@ -1,10 +1,14 @@
 package org.yuyu.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.yuyu.domain.MemVO;
 import org.yuyu.service.MemService;
 
 import lombok.AllArgsConstructor;
@@ -75,15 +79,31 @@ public class MemController {
 	}
 	
 	@GetMapping("/join3")
-	public void join3(Model model) {
-
+	public void join3(Model model) {		
+		
+	}
+	
+	@PostMapping("/join4")
+	public void register(HttpServletRequest httpServletRequest) {
+		
+		MemVO memVO = new MemVO();
+		memVO.setMname(httpServletRequest.getParameter("mname"));
+		memVO.setMid(httpServletRequest.getParameter("mid"));
+		memVO.setMpw(httpServletRequest.getParameter("mpw"));
+		memVO.setMphone(httpServletRequest.getParameter("mphone"));
+		memVO.setMaddress(httpServletRequest.getParameter("maddress"));
+		memVO.setMemail(httpServletRequest.getParameter("memail"));
+		
+		
+		log.info("register......");
+		
+		memService.insert(memVO);
+	
 		
 	}
 	
 	@GetMapping("/join4")
 	public void join4(Model model) {
-
-		
 	}
 	
 	@GetMapping("/like")

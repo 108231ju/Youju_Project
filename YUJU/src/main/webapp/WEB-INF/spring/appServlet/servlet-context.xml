@@ -12,14 +12,9 @@
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<annotation-driven />
 
-<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
-
-    <!-- Enables the Spring MVC @Controller programming model -->
-    <annotation-driven />
-
 
     <!-- Interceptor 빈(bean) 생성 -->
-    <beans:bean name="loginInterceptor" class="org.yuyu.controller.LoginInterceptor"/>
+    <beans:bean name="loginInterceptor" class="org.yuyu.controller.StoreMemLoginInterceptor"/>
 
     <!-- Interceptor 등록/설정 -->
     <interceptors>

@@ -215,10 +215,12 @@ iframe {
 
 /*------------------------------------------------------------------
 [  ]*/
-.login100-form {
-  width: 290px;
-}
 
+/*
+.login100-form {
+  width: 310px;
+}
+*/
 .login100-form-title {
   font-family: font1;
   font-size: 24px;

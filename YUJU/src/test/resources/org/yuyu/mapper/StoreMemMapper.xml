@@ -28,7 +28,7 @@
 	</delete>
 	
 	<update id="update">
-		update store_mem set spw =#{spw}, sphone= #{sphone}, semail=#{semail}, sowner=${sowner},
+		update store_mem set spw =#{spw}, sphone= #{sphone}, semail=#{semail}, sowner=#{sowner},
 		sname=#{sname} , updatedate = sysdate where scode=#{scode}
 	</update>
 
