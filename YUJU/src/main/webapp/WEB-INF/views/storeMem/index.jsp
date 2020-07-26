@@ -42,65 +42,36 @@
         <!-- *************************************************************** -->
         <!-- Start First Cards -->
         <!-- *************************************************************** -->
-        <div class="card-group">
-            <div class="card border-right">
-                <div class="card-body">
-                    <div class="d-flex d-lg-flex d-md-block align-items-center">
-                        <div>
-                            <div class="d-inline-flex align-items-center">
-                                <h2 class="text-dark mb-1 font-weight-medium">236</h2>
-                                <span
-                                        class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none">+18.33%</span>
-                            </div>
-                            <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">New Clients</h6>
-                        </div>
-                        <div class="ml-auto mt-md-3 mt-lg-0">
-                            <span class="opacity-7 text-muted"><i data-feather="user-plus"></i></span>
-                        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="card border-dark">
+                    <div style="background-color: #000000" class="card-header">
+                        <h4 class="mb-0 text-white">판매 현황</h4>
                     </div>
-                </div>
-            </div>
-            <div class="card border-right">
-                <div class="card-body">
-                    <div class="d-flex d-lg-flex d-md-block align-items-center">
-                        <div>
-                            <h2 class="text-dark mb-1 w-100 text-truncate font-weight-medium"><sup
-                                    class="set-doller">$</sup>18,306</h2>
-                            <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Earnings of Month
-                            </h6>
+                    <div class="card-body row">
+                        <div class="text-center">
+                            <img style="width: 50%; margin-left: 30px" src="/resources/admin/pay_ready_icon.png"/>
+                            <h3 class="card-title">0건</h3>
                         </div>
-                        <div class="ml-auto mt-md-3 mt-lg-0">
-                            <span class="opacity-7 text-muted"><i data-feather="dollar-sign"></i></span>
+                        <img style="width: 8%" src="/resources/admin/next_icon.png"/>
+                        <div class="text-center">
+                            <img style="width: 60%" src="/resources/admin/ready_product_icon.png"/>
+                            <h3 class="card-title">0건</h3>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card border-right">
-                <div class="card-body">
-                    <div class="d-flex d-lg-flex d-md-block align-items-center">
-                        <div>
-                            <div class="d-inline-flex align-items-center">
-                                <h2 class="text-dark mb-1 font-weight-medium">1538</h2>
-                                <span
-                                        class="badge bg-danger font-12 text-white font-weight-medium badge-pill ml-2 d-md-none d-lg-block">-18.33%</span>
-                            </div>
-                            <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">New Projects</h6>
+                        <img style="width: 8%" src="/resources/admin/next_icon.png">
+                        <div class="text-center">
+                            <img style="width: 60%" src="/resources/admin/ready_delivery_icon.png"/>
+                            <h3 class="card-title">0건</h3>
                         </div>
-                        <div class="ml-auto mt-md-3 mt-lg-0">
-                            <span class="opacity-7 text-muted"><i data-feather="file-plus"></i></span>
+                        <img style="width: 8%" class="col-sm-1" src="/resources/admin/next_icon.png">
+                        <div class="text-center">
+                            <img style="width: 60%" src="/resources/admin/deliverying_icon.png"/>
+                            <h3 class="card-title">0건</h3>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <div class="d-flex d-lg-flex d-md-block align-items-center">
-                        <div>
-                            <h2 class="text-dark mb-1 font-weight-medium">864</h2>
-                            <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Projects</h6>
-                        </div>
-                        <div class="ml-auto mt-md-3 mt-lg-0">
-                            <span class="opacity-7 text-muted"><i data-feather="globe"></i></span>
+                        <img style="width: 8%"src="/resources/admin/next_icon.png">
+                        <div class="text-center">
+                            <img style="width: 60%" src="/resources/admin/complete_icon.png"/>
+                            <h3 class="card-title">0건</h3>
                         </div>
                     </div>
                 </div>
@@ -116,22 +87,22 @@
             <div class="col-lg-4 col-md-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Total Sales</h4>
+                        <h4 class="card-title">총 매출 현황</h4>
                         <div id="campaign-v2" class="mt-2" style="height:283px; width:100%;"></div>
                         <ul class="list-style-none mb-0">
                             <li>
                                 <i class="fas fa-circle text-primary font-10 mr-2"></i>
-                                <span class="text-muted">Direct Sales</span>
+                                <span class="text-muted">판매</span>
                                 <span class="text-dark float-right font-weight-medium">$2346</span>
                             </li>
                             <li class="mt-3">
                                 <i class="fas fa-circle text-danger font-10 mr-2"></i>
-                                <span class="text-muted">Referral Sales</span>
+                                <span class="text-muted">반품</span>
                                 <span class="text-dark float-right font-weight-medium">$2108</span>
                             </li>
                             <li class="mt-3">
                                 <i class="fas fa-circle text-cyan font-10 mr-2"></i>
-                                <span class="text-muted">Affiliate Sales</span>
+                                <span class="text-muted">교환</span>
                                 <span class="text-dark float-right font-weight-medium">$1204</span>
                             </li>
                         </ul>
