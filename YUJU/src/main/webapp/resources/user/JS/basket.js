@@ -1,7 +1,7 @@
 function acyncMovePage1(url) {
     // ajax option
     var ajaxOption = {
-        url: "../HTML/basket.html",
+        url: "/user/basket",
         async: true,
         type: "GET",
         dataType: "html",
@@ -18,7 +18,7 @@ function acyncMovePage1(url) {
 function acyncMovePage2(url) {
     // ajax option
     var ajaxOption = {
-        url: "../HTML/like.html",
+        url: "/user/like",
         async: true,
         type: "GET",
         dataType: "html",

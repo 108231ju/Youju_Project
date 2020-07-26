@@ -51,10 +51,10 @@ h1 {
     margin: 31px 428px;
     text-align: left;
 }
-#member2{
-    margin-top: 30px;
-    width: 595px;
-}
+#member2 {
+    /* margin-top: 30px; */
+    margin: 53px 30px 30px 447px;
+    width: 595px;}
 #member2 hr{
 border: 1px solid #eee;
 margin: 15px 0;
