@@ -16,6 +16,7 @@
     <beans:bean name="loginInterceptor" class="org.yuyu.controller.StoreMemLoginInterceptor"/>
 
     <!-- store Interceptor 등록/설정 -->
+
     <interceptors>
         <interceptor>
             <mapping path="/storeMem/index"/>
