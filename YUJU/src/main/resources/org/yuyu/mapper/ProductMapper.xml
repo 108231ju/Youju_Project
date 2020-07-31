@@ -6,6 +6,10 @@
 		SELECT * FROM product
 	</select>
 	
+		<select id="getListForStore" resultType="org.yuyu.domain.ProductVO">
+		SELECT * FROM product where scode=#{scode}
+	</select>
+	
 	<insert id="insert">
 		INSERT INTO product(pcode,scode,pname,psize,pcolor,pprice,pimg,cate1,cate2,cate3)
 		VALUES (#{pcode},#{scode},#{pname},#{psize},#{pcolor},#{pprice}#{pimg},#{cate1},#{cate2},#{cate3})

@@ -7,9 +7,12 @@ import java.util.List;
 
 public interface ProductMapper {
 	
-	// 회원 전체 데이터 조회
+	// 상품 전체 데이터 조회
 	public List<ProductVO> getList();
 	
+	// 스토어 회원이 등록한 상품 전체 데이터 조회
+	public List<ProductVO> getListForStore(int scode);
+
 	// 회원 데이터 삽입
 	public void insert(MemVO memVO);
 	

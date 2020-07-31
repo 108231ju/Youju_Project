@@ -4,7 +4,7 @@ DROP TABLE order_detail CASCADE CONSTRAINTS;
 DROP TABLE orderlist CASCADE CONSTRAINTS;
 DROP TABLE product_qna CASCADE CONSTRAINTS;
 DROP TABLE review CASCADE CONSTRAINTS;
-DROP TABLE like CASCADE CONSTRAINTS;
+DROP TABLE likeitem CASCADE CONSTRAINTS;
 DROP TABLE mem CASCADE CONSTRAINTS;
 DROP TABLE product CASCADE CONSTRAINTS;
 DROP TABLE store_mem CASCADE CONSTRAINTS;
@@ -17,6 +17,13 @@ CREATE SEQUENCE seq_productqna; /* 상품 Q&A 번호 자동 업데이트 */
 CREATE SEQUENCE seq_review; /* 상품 리뷰 자동 번호 업데이트 */
 CREATE SEQUENCE seq_onum; /*주문 일련 번호 자동 업데이트*/
 
+DROP SEQUENCE seq_mem;
+DROP SEQUENCE seq_store_mem;
+DROP SEQUENCE seq_product;
+DROP SEQUENCE seq_orderlist;
+DROP SEQUENCE seq_productqna;
+DROP SEQUENCE seq_review;
+DROP SEQUENCE seq_onum;
 
 
 /* Create Tables */
@@ -39,7 +46,7 @@ INSERT INTO mem(mcode,mname,mid,mpw,mphone,memail) VALUES (1,'노유림','yl','1
 
 
 
-
+DROP TABLE store_mem;
 CREATE TABLE store_mem
 (
 	scode number NOT NULL,
@@ -59,7 +66,7 @@ CREATE TABLE store_mem
 SELECT * FROM store_mem;
 INSERT INTO store_mem(scode,sname,sid,spw,sphone,semail,sowner) VALUES (1,'아디다스','adidas','1111','01011111111','adidas@naver.com','아디다스만든사람');
 
-
+DROP TABLE product;
 CREATE TABLE product
 (
 	pcode number NOT NULL,
@@ -68,7 +75,6 @@ CREATE TABLE product
 	psize varchar2(5) NOT NULL,
 	pcolor varchar2(50) NOT NULL,
 	pprice number NOT NULL,
-	pimg varchar2(200) NOT NULL,
 	cate1 varchar2(50) NOT NULL,
 	cate2 varchar2(50) NOT NULL,
 	cate3 varchar2(50) NOT NULL,
@@ -77,8 +83,27 @@ CREATE TABLE product
 	PRIMARY KEY (pcode)
 );
 
+SELECT * FROM product
 
 
+INSERT INTO product (pcode,scode,pname,psize,pcolor,pprice,cate1,cate2,cate3) VALUES (1,1,'블링블링블라우쯔','L','흰색',15000,'best','브랜드','상의');
+
+SELECT o.OCODE ,p.PNAME ,o.P_DETAIL ,r.REVIEW ,r.UPDATEDATE 
+      FROM ORDER_DETAIL o,PRODUCT p,REVIEW r,MEM m
+      WHERE m.MCODE = 1;
+     
+ALTER TABLE product
+	ADD FOREIGN KEY (scode)
+	REFERENCES store_mem (scode)
+;
+
+
+
+
+CREATE SEQUENCE SEQ_MP_FILE_NO
+START WITH 1
+increment BY 1
+nomaxvalue nocache;	
 CREATE TABLE orderlist
 (
 	ocode number NOT NULL,
@@ -90,6 +115,7 @@ CREATE TABLE orderlist
 	PRIMARY KEY (ocode)
 );
 
+INSERT INTO orderlist(ocode,mcode,totalprice,state) values(1,1,60000,'결제진행');
 ALTER TABLE orderlist
 	ADD FOREIGN KEY (ocode)
 	REFERENCES order_detail (ocode)
@@ -102,6 +128,8 @@ ALTER TABLE orderlist
 ;
 
 
+
+DROP TABLE order_detail;
 CREATE TABLE order_detail
 (
 	ocode number NOT NULL,
@@ -112,10 +140,13 @@ CREATE TABLE order_detail
 	total NUMBER NOT NULL, 
 	regdate DATE DEFAULT sysdate,
 	updatedate DATE DEFAULT sysdate,
-	PRIMARY KEY (ocode)
+	PRIMARY KEY (ocode,onum)
 );
+SELECT * FROM order_detail;
+INSERT INTO order_detail (ocode, onum, pcode,p_detail,amount,total) values(1,1,1,'/yellow/L',2,30000);
+INSERT INTO order_detail (ocode, onum, pcode,p_detail,amount,total) values(1,2,1,'/yellow/XL',2,30000);
 
-ALTER TABLE orderlist
+ALTER TABLE order_detail
 	ADD FOREIGN KEY (pcode)
 	REFERENCES product (pcode)
 ;
@@ -133,6 +164,11 @@ CREATE TABLE product_qna
 	PRIMARY KEY (qnacode)
 );
 
+CREATE SEQUENCE SEQ_TB_FILE_IDX 
+START WITH 1
+INCREMENT BY 1
+NOMAXVALUE
+NOCACHE;
 
 ALTER TABLE product_qna
 	ADD FOREIGN KEY (pcode)
@@ -158,6 +194,9 @@ CREATE TABLE review
 	updatedate DATE DEFAULT sysdate,
 	PRIMARY KEY (rcode)
 );
+
+SELECT rowwn, rcode, sname , pname, ocode FROM 
+
 
 
 

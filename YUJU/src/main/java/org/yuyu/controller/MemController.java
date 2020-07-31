@@ -27,8 +27,8 @@ public class MemController {
    
    @GetMapping("/index")
    public void index(Model model) {
-
-      
+	  
+	   
    }
    @GetMapping("/nologin")
    public void nologin(Model model) {
@@ -53,7 +53,6 @@ public class MemController {
    
    @GetMapping("/best")
    public void best(Model model) {
-
       
    }
    @GetMapping("/brand")
@@ -140,7 +139,7 @@ public class MemController {
    }
    
    @PostMapping("/loginOk")
-   public String loginCheck(String mid, String mpw, HttpSession httpSession){
+   public String loginCheck(Model model, String mid, String mpw, HttpSession httpSession){
 
       if(httpSession.getAttribute("loginMem") != null){
          httpSession.removeAttribute("loginMem");
@@ -150,9 +149,8 @@ public class MemController {
 
       if(MemVO != null ){
          httpSession.setAttribute("loginMem",MemVO);
-         return "/user/indexuser";
+         return "/user/index";
       }
-
       else{
          return "/user/loginfail";
       }
@@ -165,9 +163,11 @@ public class MemController {
    }
    
    @GetMapping("/mypage1")
-   public void mypage1(Model model) {
-
-      
+   public void mypage1(Model model, HttpSession session) {
+	   
+	   if(session.getAttribute("loginMem") == null) {
+		   session.setAttribute("islogin", "1");   
+	   }
    }
    
    @GetMapping("/mypage2")
