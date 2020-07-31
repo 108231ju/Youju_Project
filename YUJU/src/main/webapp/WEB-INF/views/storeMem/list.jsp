@@ -14,8 +14,8 @@
 
 <!-- <P>  The time on the server is ${serverTime}. </P> -->
 <c:forEach items="${list}" var="mem">
-	<p><c:out value="${mem.mcode}"/></p>
-	<p><c:out value="${mem.mname}"/></p>
+	<p><c:out value="${mem.rcode}"/></p>
+	<p><c:out value="${mem.ocdoe}"/></p>
 </c:forEach>
 </body>
 </html>

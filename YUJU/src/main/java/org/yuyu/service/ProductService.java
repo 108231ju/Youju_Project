@@ -9,6 +9,8 @@ public interface ProductService {
 	
 	public List<ProductVO> getList();
 	
+	public List<ProductVO> getListForStore(int scode);
+	
 	public void insert(ProductVO productVO);
 	
 	public ProductVO read(int pcode);

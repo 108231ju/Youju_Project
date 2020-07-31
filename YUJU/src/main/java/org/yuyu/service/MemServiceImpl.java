@@ -55,6 +55,8 @@ public class MemServiceImpl implements MemService  {
 	public MemVO loginOk(String mid, String mpw) {
 		return memMapper.loginOk(mid,mpw);
 	}
+
+	
 }
 
 

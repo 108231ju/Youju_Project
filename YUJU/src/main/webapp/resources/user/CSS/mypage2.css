@@ -1,117 +1,200 @@
 /*phone*/
-
 #phone {
-    text-align: center;
+	text-align: center;
 }
 
 h1 {
-    font-size: 26px;
-    font-weight: 500;
-    margin: 90px 0 40px 0;
+	font-size: 26px;
+	font-weight: 500;
+	margin: 90px 0 40px 0;
 }
+
 #pagemenu {
-    background: hsla(0, 0%, 98%, 1);
-    width: 78%;
-    height: 105px;
-    border: solid 1px black;
-    padding: 41px 0 40px 0;
-    margin-left: 152px;
-    
+	background: hsla(0, 0%, 98%, 1);
+	width: 78%;
+	height: 105px;
+	border: solid 1px black;
+	padding: 41px 0 40px 0;
+	margin-left: 152px;
 }
-#pagemenu li a{
-    color: black;
-    font-weight: 700;
+
+#pagemenu li a {
+	color: black;
+	font-weight: 700;
 }
 
 #pagemenu li {
-    float: left;
-    padding: 0 74px;
-    list-style: none;
-}
-#pagemenu ul {
-    height: 106px;
-    margin: 0;
-    padding: 0;
+	float: left;
+	padding: 0 74px;
+	list-style: none;
 }
 
+#pagemenu ul {
+	height: 106px;
+	margin: 0;
+	padding: 0;
+}
 
 #pagemenu li img {
-    width: 83px;
+	width: 83px;
 }
 
 #order2 {
-    border-right: 1px solid black;
+	border-right: 1px solid black;
 }
+
 #order2 a {
-    opacity: 0.4;
+	opacity: 0.4;
 }
+
 #order2 img {
-    opacity: 0.4;
+	opacity: 0.4;
 }
 
-
-#FandQ2 a, #FandQ2 img{
-    opacity: 0.4;
+#FandQ2 a, #FandQ2 img {
+	opacity: 0.4;
 }
 
-
-#info2{
-    border-right: 1px solid black;
+#info2 {
+	border-right: 1px solid black;
 }
-
 
 #coupon2 {
-    border-right: 1px solid black;
+	border-right: 1px solid black;
 }
 
-#coupon2 a { 
-    opacity: 0.4;
+#coupon2 a {
+	opacity: 0.4;
 }
-#coupon2 img{
-    opacity: 0.4;
+
+#coupon2 img {
+	opacity: 0.4;
 }
 
 #QandA2 {
-    border-right: 1px solid black;
-}
-#QandA2 a{
-    opacity: 0.4;
-}
-#QandA2 img{
-    opacity: 0.4;
-}
-#order2 a:hover{
-    color: tomato;
-    opacity: unset;
-    cursor: pointer;
-}
-#info2 a:hover{
-    color: tomato;
-    opacity: unset;
-    cursor: pointer;
-}
-#coupon2 a:hover{
-    color: tomato;
-    opacity: unset;
-    cursor: pointer;
-}
-#QandA2 a:hover{
-    color: tomato;
-    opacity: unset;
-    cursor: pointer;
-}
-#FandQ2 a:hover{
-    color: tomato;
-    opacity: unset;
-    cursor: pointer;
-}
-#s_list {
-    height: 85px;
-    margin: 1px 180px 0 152px;
-    padding-top: 59px;
+	border-right: 1px solid black;
 }
 
-#s_list a {
-    color: black;
-    font-size: 16px;
+#QandA2 a {
+	opacity: 0.4;
+}
+
+#QandA2 img {
+	opacity: 0.4;
+}
+
+#order2 a:hover {
+	color: tomato;
+	opacity: unset;
+	cursor: pointer;
+}
+
+#info2 a:hover {
+	color: tomato;
+	opacity: unset;
+	cursor: pointer;
+}
+
+#coupon2 a:hover {
+	color: tomato;
+	opacity: unset;
+	cursor: pointer;
+}
+
+#QandA2 a:hover {
+	color: tomato;
+	opacity: unset;
+	cursor: pointer;
+}
+
+#FandQ2 a:hover {
+	color: tomato;
+	opacity: unset;
+	cursor: pointer;
+}
+
+#s_list2 {
+	height: auto;
+	margin: 1px 180px 0 152px;
+	padding-top: 59px;
+}
+
+#text {
+	float: left;
+	/* margin-left: 30px; */
+	/* margin-bottom: 10px; */
+	margin: 10px 0 10px 30px;
+}
+
+#s_list2 a {
+	color: black;
+	font-size: 16px;
+}
+/*form*/
+#member1 {
+	margin: 31px 428px;
+	text-align: left;
+}
+
+#member2 {
+	/* margin-top: 30px; */
+	margin: 0px 300px 30px 300px;
+	width: 595px;
+}
+
+#member2 div {
+	margin-bottom: 20px;
+}
+
+#sample4_post {
+	width: 59px;
+	margin-bottom: 9px;
+	border: 1px solid #ddde;
+	border-radius: 4px;
+    margin-right: 446px;
+	padding: 14px;
+}
+#btnphone {
+   background: black;
+    border: 1px solid;
+    color: white;
+    font-size: 19px;
+    font-weight: lighter;
+    padding: 17px 80px;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+#sample4_roadAddress, #sample4_jibunAddress, #sample4_detailAddress,
+	#sample4_extraAddress {
+	width: 525px;
+	height: 11px;
+	border: 1px solid #ddde;
+	border-radius: 4px;
+	margin-left: 20px;
+	padding: 14px;
+}
+
+#sample4_btn {
+	width: 106px;
+	padding: 4px;
+	height: 39px;
+	font-size: 11px;
+	margin-left: 0px;
+}
+
+.sample4 hr {
+	width: 595px;
+	margin: 25px 0;
+}
+
+#id, #name, #password, #phonenum, #email, #repassword {
+	width: 525px;
+	height: 11px;
+	border: 1px solid #ddde;
+	border-radius: 4px;
+	margin-left: 20px;
+	margin-bottom: 15px;
+	padding: 14px;
 }

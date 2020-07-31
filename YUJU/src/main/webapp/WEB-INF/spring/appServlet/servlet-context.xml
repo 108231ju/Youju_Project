@@ -34,14 +34,9 @@
     <!-- Mem Interceptor 등록/설정 -->
     <interceptors>
         <interceptor>
-            <mapping path="/user/indexuser"/>
-            <mapping path="/user/mypage1"/>
-            <mapping path="/user/mypage2"/>
-            <mapping path="/user/mypage3"/>
-            <mapping path="/user/mypage4"/>
-            <mapping path="/user/like"/>
-            <mapping path="/user/basket"/>
-           
+            <mapping path="/user/*"/>
+            <exclude-mapping path="/user/login"/>
+
             <beans:ref bean="memloginInterceptor"/>
         </interceptor>
     </interceptors>
@@ -54,12 +49,11 @@
       <beans:property name="prefix" value="/WEB-INF/views/" />
       <beans:property name="suffix" value=".jsp" />
    </beans:bean>
-   
    <context:component-scan base-package="org.yuyu.project" />
-   
+
    <context:component-scan base-package="org.yuyu.controller" />
-   
-   
-   
-   
+   <!-- 멀티파트 리졸버 -->
+
+ 
+
 </beans:beans>
