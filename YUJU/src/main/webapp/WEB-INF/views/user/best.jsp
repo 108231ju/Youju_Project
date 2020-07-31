@@ -13,7 +13,8 @@
 </head>
 
 <body>
-    <%@include file="../user/includes/header.jsp" %>
+   <%@include file="../user/includes/header.jsp" %>
+
     <hr>
     <nav id="menu">
         <ul>

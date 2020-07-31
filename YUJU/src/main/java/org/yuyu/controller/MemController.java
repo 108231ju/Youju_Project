@@ -1,7 +1,5 @@
 package org.yuyu.controller;
 
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -11,13 +9,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.yuyu.domain.MemOrderListVO;
-import org.yuyu.domain.MemReviewVO;
 import org.yuyu.domain.MemVO;
 import org.yuyu.service.MemOrderListService;
 import org.yuyu.service.MemReviewService;
 import org.yuyu.service.MemService;
-import org.yuyu.service.StoreMemService;
 
 import lombok.AllArgsConstructor;
 import lombok.Setter;

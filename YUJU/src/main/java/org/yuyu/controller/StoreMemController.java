@@ -1,5 +1,10 @@
 package org.yuyu.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,18 +12,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
+import org.yuyu.domain.ProductVO;
 import org.yuyu.domain.StoreMemVO;
-import org.yuyu.service.MemService;
+import org.yuyu.service.ProductService;
 import org.yuyu.service.StoreMemService;
 
 import lombok.AllArgsConstructor;
-import lombok.Setter;
 import lombok.extern.log4j.Log4j;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-import java.io.PrintWriter;
 
 @Controller
 @RequestMapping("/storeMem/*")
@@ -28,12 +28,15 @@ public class StoreMemController{
 	
 	private StoreMemService storeMemService;
 	
+	private ProductService productService
+	;
+	
 	
 	
 	@GetMapping("/list")
 	public void list(Model model) {
 		log.info("member list.....");
-		model.addAttribute("list",storeMemService.getList());
+		model.addAttribute("list",storeMemService.getList()); // List<storMem>
 	}
 
 
@@ -109,6 +112,10 @@ public class StoreMemController{
 		httpSession.removeAttribute("loginStoreMem");
 	}
 
+	@GetMapping("/logincheck")
+	public String loginCheck2() {
+		return "/storeMem/no-login-proc";
+	}
 	@PostMapping("/logincheck")
 	public String loginCheck(String sid, String spw, HttpSession httpSession){
 
@@ -149,13 +156,52 @@ public class StoreMemController{
 	}
 
 	@GetMapping("/update-product-page")
-	public void updateProductPage(){
+	public void updateProductPage(Model model){
+		
 	}
-
+	
+	
+	
+	@GetMapping("/searchforitem")
+	public String searchforitem(Model model,@RequestParam("search") String search,RedirectAttributes rttr,HttpSession httpSession){
+		
+		StoreMemVO storeMemVO = (StoreMemVO) httpSession.getAttribute("loginStoreMem");
+		List<ProductVO> plist =productService.getListForStore(storeMemVO.getScode());
+		List<ProductVO> searchlist = new ArrayList<>();
+		int check =0;
+		if(search.equals("")) {
+		}
+		else {
+			for(int i=0; i< plist.size();i++) {
+				
+				if(plist.get(i).getPname().contains(search)){
+					searchlist.add(plist.get(i));
+					log.info("searchitem"+plist.get(i).getPname());
+					check++;
+				}
+			}
+		}
+		
+		if(check > 0) {
+			log.info(check);
+			log.info("find Item");
+			rttr.addFlashAttribute("result",searchlist.size());
+			rttr.addFlashAttribute("searchlist",searchlist);
+		}
+		else {
+			rttr.addFlashAttribute("result","2");
+		}
+		rttr.addFlashAttribute("search",search);
+		return "redirect:/storeMem/update-product-page";
+	}
 
 
 	@GetMapping("/question-product-page")
 	public void questionProductPage(){
+	}
+	
+	@GetMapping("/register-product-page")
+	public void registerProductPage(){
 	}
 
 	
