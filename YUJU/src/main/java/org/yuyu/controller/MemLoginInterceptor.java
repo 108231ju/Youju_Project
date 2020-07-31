@@ -10,28 +10,36 @@ import org.yuyu.domain.MemVO;
 
 public class MemLoginInterceptor extends HandlerInterceptorAdapter {
 
-	@Override
-	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)throws Exception {
+	@Override //controller실행전
+	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
+			throws Exception {
 
-    HttpSession session = request.getSession();
-    MemVO MemVO = (MemVO)session.getAttribute("loginMem");
+		HttpSession session = request.getSession();
+		MemVO memVO = null;
+		memVO = (MemVO) session.getAttribute("loginMem");
 
+		if (memVO == null) { //로그인 안됬을 떼 islogin에 디폴트값으로 '0'할당
+			session.setAttribute("islogin", "0");  
+			return true;
+		}
+		else {
+			System.out.println("[postHandle]" + memVO.getMid());
+			return true;
 
-    if(MemVO == null){
-        response.sendRedirect(request.getContextPath()+"/user/nologin");
-        return false;
-    }
-    else{
-    	System.out.println("[postHandle]"+MemVO.getMid());
-        return true;
-    }
-}
+		}
 
-	@Override
+	}
+
+	@Override //controller 실행후 //view 실행전
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
 			ModelAndView modelAndView) throws Exception {
-		System.out.println("[postHandle]");
-		super.postHandle(request, response, handler, modelAndView);
+		
+		HttpSession session = request.getSession();
+		
+		if(session.getAttribute("islogin").equals("1")) { //islogin이 '1'인 경우 ==> 로그인 안했을때 '로그인을 먼저 해주세요' 알림창을 띄워야하는 페이지
+			 response.sendRedirect(request.getContextPath() + "/user/nologin");
+		}
+
 	}
 
 	@Override
@@ -42,3 +50,4 @@ public class MemLoginInterceptor extends HandlerInterceptorAdapter {
 	}
 
 }
+

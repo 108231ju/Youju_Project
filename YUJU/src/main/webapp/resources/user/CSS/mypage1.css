@@ -205,16 +205,7 @@ h1 {
     opacity: 0.4;
 }
 
-#s_list {
-    height: 85px;
-    margin: 1px 180px 0 152px;
-    padding-top: 59px;
-}
 
-#s_list a {
-    color: black;
-    font-size: 16px;
-}
 #order a:hover{
     color: tomato;
     opacity: unset;
@@ -238,6 +229,105 @@ h1 {
 #FandQ a:hover{
     color: tomato;
     opacity: unset;
+    cursor: pointer;
+}
+/*order*/
+#s_list1 {
+	height: auto;
+	margin: 1px 180px 0 152px;
+	padding-top: 59px;
+}
+#s_list1 a {
+	color: black;
+	font-size: 16px;
+}
+#s_list1 table {
+    width: 100%;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.933);
+    border-collapse: collapse;
+    margin-bottom: 60px;
+}
+  #s_list1 th, #s_list1 td {
+    /*border-bottom: 1px solid #dcdcdcee;*/
+    padding: 14px 0px;
+}
+#date{
+    font-size: 24px;
+    text-align: left;
+    border-bottom: 2px solid black;
+}
+#add{
+    text-align: right;
+    font-size: 20px;
+    border-bottom: 2px solid black;
+    
+}
+#null1{
+	border-bottom: 2px solid black;
+}
+#order_p{
+    font-size: 24px;
+    text-align: left;
+    font-weight: bolder;
+    border-bottom: 1px solid #949292ee;
+}
+#null{
+	border-bottom: 1px solid #dcdcdcee;
+}
+#null2{
+	border-bottom: 1px solid #949292ee;
+}
+#item {
+    text-align: left;
+    font-size: 15px;
+    font-weight: bolder;
+    border-bottom: 1px solid #dcdcdcee;
+}
+#p_img{
+    text-align: left;
+    width: 18%;
+    border-bottom: 1px solid #dcdcdcee;
+}
+span{
+    color: #b7b7b7;
+    font-weight: lighter;
+}
+#p_name{
+    text-align: left;
+    font-size: 15px;
+    border-bottom: 1px solid #dcdcdcee;
+}
+
+#i_price, #i_state{
+    font-size: 15px;
+    border-bottom: 1px solid #dcdcdcee;
+}
+
+#price, #state{
+    font-size: 18px;
+    font-weight: bolder;
+    border-bottom: 1px solid #dcdcdcee;
+}
+#p_img {
+    text-align: left;
+    padding: 8px;
+    width: 14%;
+    /* width: 14px; */
+    border-bottom: 1px solid #dcdcdcee;
+}
+
+#p_img img{
+    width: 87px;
+}
+#s_list1 button {
+    background: black;
+    border: 1px solid;
+    color: white;
+    font-size: 19px;
+    font-weight: lighter;
+    padding: 20px 97px;
+    border-radius: 5px;
+    margin: 20px 20px 50px 20px;
     cursor: pointer;
 }
 /*footer*/

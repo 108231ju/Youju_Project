@@ -1,5 +1,4 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 
 <!DOCTYPE html>
@@ -48,14 +47,14 @@
 
                     <input type="email" placeholder="이메일 입력 (필수)" id="email" name="memail" />
                     <hr>
-                	 <input type="text" id="sample4_post" placeholder="우편번호" name="maddress" readonly>
+                	 <input type="text" id="sample4_post" placeholder="우편번호" name="maddress1" readonly>
                     <input type="button" onclick="juso()" value="우편번호검색" id="sample4_btn">
-                    <br><input type="text" id="sample4_roadAddress" placeholder="Street Address" name="maddress"
+                    <br><input type="text" id="sample4_roadAddress" placeholder="Street Address" name="maddress2"
                         readonly>
-                    <input type="text" id="sample4_jibunAddress" placeholder="Lot Number Address" name="maddress" readonly>
+                    <input type="text" id="sample4_jibunAddress" placeholder="Lot Number Address" name="maddress3" readonly>
                     <input type="text" id="sample4_detailAddress" placeholder="Street Address (Line 2)"
-                        name="maddress">
-                    <input type="text" id="sample4_extraAddress" placeholder="Detailed Address" name="maddress"
+                        name="maddress4">
+                    <input type="text" id="sample4_extraAddress" placeholder="Detailed Address" name="maddress5"
                         readonly>
                     <hr>
                 

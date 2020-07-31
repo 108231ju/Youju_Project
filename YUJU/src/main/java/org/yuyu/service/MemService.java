@@ -19,4 +19,6 @@ public interface MemService {
 
    public MemVO loginOk(String mid, String mpw);
 
+
+
 }

@@ -25,7 +25,9 @@ public interface MemMapper {
    
    //회원 데이터 수정
    public int update(MemVO memVO);
-
+   
+   //회원 로그인
    public MemVO loginOk(@Param("mid") String mid,@Param("mpw") String mpw);
+ 
    
 }

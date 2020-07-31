@@ -1,5 +1,7 @@
 package org.yuyu.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -9,8 +11,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.yuyu.domain.MemOrderListVO;
+import org.yuyu.domain.MemReviewVO;
 import org.yuyu.domain.MemVO;
+import org.yuyu.service.MemOrderListService;
+import org.yuyu.service.MemReviewService;
 import org.yuyu.service.MemService;
+import org.yuyu.service.StoreMemService;
 
 import lombok.AllArgsConstructor;
 import lombok.Setter;
@@ -25,10 +32,14 @@ public class MemController {
    @Setter(onMethod_=@Autowired)
    private MemService memService;
    
+   private MemReviewService memReviewService;
+
+   private MemOrderListService memOrderListService;
+   
    @GetMapping("/index")
    public void index(Model model) {
-
-      
+	  
+	   
    }
    @GetMapping("/nologin")
    public void nologin(Model model) {
@@ -36,8 +47,10 @@ public class MemController {
       
    }
    @GetMapping("/basket")
-   public void basket(Model model) {
-
+   public void basket(Model model, HttpSession session) {
+	   if(session.getAttribute("loginMem") == null) {
+		   session.setAttribute("islogin", "1");   
+	   }
       
    }
    @GetMapping("/beauty")
@@ -53,7 +66,6 @@ public class MemController {
    
    @GetMapping("/best")
    public void best(Model model) {
-
       
    }
    @GetMapping("/brand")
@@ -96,7 +108,11 @@ public class MemController {
       memVO.setMid(httpServletRequest.getParameter("mid"));
       memVO.setMpw(httpServletRequest.getParameter("mpw"));
       memVO.setMphone(httpServletRequest.getParameter("mphone"));
-      memVO.setMaddress(httpServletRequest.getParameter("maddress"));
+      memVO.setMaddress1(httpServletRequest.getParameter("maddress1"));
+      memVO.setMaddress2(httpServletRequest.getParameter("maddress2"));
+      memVO.setMaddress3(httpServletRequest.getParameter("maddress3"));
+      memVO.setMaddress4(httpServletRequest.getParameter("maddress4"));
+      memVO.setMaddress5(httpServletRequest.getParameter("maddress5"));
       memVO.setMemail(httpServletRequest.getParameter("memail"));
       
       
@@ -113,8 +129,10 @@ public class MemController {
    }
    
    @GetMapping("/like")
-   public void like(Model model) {
-
+   public void like(Model model, HttpSession session) {
+	   if(session.getAttribute("loginMem") == null) {
+		   session.setAttribute("islogin", "1");   
+	   }
       
    }
    
@@ -140,19 +158,18 @@ public class MemController {
    }
    
    @PostMapping("/loginOk")
-   public String loginCheck(String mid, String mpw, HttpSession httpSession){
+   public String loginCheck(Model model, String mid, String mpw, HttpSession httpSession){
 
       if(httpSession.getAttribute("loginMem") != null){
          httpSession.removeAttribute("loginMem");
       }
 
-      MemVO MemVO = memService.loginOk(mid,mpw);
+      MemVO memVO = memService.loginOk(mid,mpw);
 
-      if(MemVO != null ){
-         httpSession.setAttribute("loginMem",MemVO);
-         return "/user/indexuser";
+      if(memVO != null ){
+         httpSession.setAttribute("loginMem",memVO);
+         return "/user/index";
       }
-
       else{
          return "/user/loginfail";
       }
@@ -165,33 +182,81 @@ public class MemController {
    }
    
    @GetMapping("/mypage1")
-   public void mypage1(Model model) {
-
-      
+   public void mypage1(Model model, HttpSession session) {
+	   
+	   if(session.getAttribute("loginMem") == null) {
+		   session.setAttribute("islogin", "1");   
+	   }
+	   else {
+			  MemVO memVO = (MemVO) session.getAttribute("loginMem");
+			  model.addAttribute("order",memOrderListService.getList(memVO.getMcode()));
+		   
+	   }
    }
    
    @GetMapping("/mypage2")
-   public void mypage2(Model model) {
+   public void mypage2(Model model ,HttpSession httpSession){
 
+		MemVO memVO = (MemVO) httpSession.getAttribute("loginMem");
+		MemVO memVO2 = memService.read(memVO.getMcode());
+
+		model.addAttribute("mem",memVO2);
+  
+}
+   @GetMapping("/updatemypage2")
+   public void updatemypage2(Model model, HttpSession session) {
+
+	   MemVO memVO = (MemVO) session.getAttribute("loginMem");
+		MemVO memVO2 = memService.read(memVO.getMcode());
+
+		model.addAttribute("mem",memVO2);
+	   
+
+		//model.addAttribute("mem", (MemVO) session.getAttribute("loginMem"));
+		
+		
       
    }
-   
+   @PostMapping("/updateOk")
+   public void updateOk(Model model, HttpSession session,HttpServletRequest httpServletRequest) {
+	   MemVO memVO = new MemVO();
+	   MemVO memVO1 = (MemVO) session.getAttribute("loginMem");
+	   memVO1.setMname(httpServletRequest.getParameter("mname"));
+	      memVO1.setMpw(httpServletRequest.getParameter("mpw"));
+	      memVO1.setMphone(httpServletRequest.getParameter("mphone"));
+	      memVO1.setMaddress1(httpServletRequest.getParameter("maddress1"));
+	      memVO1.setMaddress2(httpServletRequest.getParameter("maddress2"));
+	      memVO1.setMaddress3(httpServletRequest.getParameter("maddress3"));
+	      memVO1.setMaddress4(httpServletRequest.getParameter("maddress4"));
+	      memVO1.setMaddress5(httpServletRequest.getParameter("maddress5"));
+	      memVO1.setMemail(httpServletRequest.getParameter("memail"));
+	   memService.modify(memVO1);
+      
+   }
    @GetMapping("/mypage3")
-   public void mypage3(Model model) {
-
+   public void mypage3(Model model, HttpSession session) {
+	   if(session.getAttribute("loginMem") == null) {
+		   session.setAttribute("islogin", "1");   
+	   }
+	  MemVO memVO = (MemVO) session.getAttribute("loginMem");
+	  model.addAttribute("list",memReviewService.getList(memVO.getMcode()));
       
    }
    
    @GetMapping("/mypage4")
-   public void mypage4(Model model) {
-
+   public void mypage4(Model model, HttpSession session) {
+	   if(session.getAttribute("loginMem") == null) {
+		   session.setAttribute("islogin", "1");   
+	   }
       
    }
    
    @GetMapping("/mypage5")
-   public void mypage5(Model model) {
+   public void mypage5(Model model, HttpSession session) {
 
-      
+	   if(session.getAttribute("loginMem") == null) {
+		   session.setAttribute("islogin", "1");   
+	   } 
    }
    
    @GetMapping("/today")
