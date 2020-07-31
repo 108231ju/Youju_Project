@@ -68,13 +68,25 @@
     opacity: unset;
     cursor: pointer;
 }
-#s_list {
-    height: 85px;
+#s_list4 {
+    height: auto;
     margin: 1px 180px 0 152px;
     padding-top: 59px;
 }
 
-#s_list a {
+#s_list4 a {
     color: black;
     font-size: 16px;
+}
+#s_list4 table {
+    width: 100%;
+    border-top: 1px solid rgba(0, 0, 0, 0.933);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.933);
+    border-collapse: collapse;
+    margin-bottom: 26px;
+  }
+  #s_list4 th, #s_list4 td {
+    border-bottom: 1px solid #dcdcdcee;
+    padding: 14px 15px;
+    font-size: 15px;
 }

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.yuyu.mapper.MemOrderListMapper">
+
+	<select id="getList" resultType="org.yuyu.domain.MemOrderListVO">
+		SELECT o.OCODE ,p.PIMG ,sm.SNAME ,p.PNAME ,o.P_DETAIL ,o.AMOUNT ,o.TOTAL ,o.UPDATEDATE,o2.STATE 
+		FROM ORDER_DETAIL o,PRODUCT p,MEM m,STORE_MEM sm,ORDERLIST o2 
+		WHERE m.MCODE = #{mcode}		
+	</select>
+	
+	
+</mapper>

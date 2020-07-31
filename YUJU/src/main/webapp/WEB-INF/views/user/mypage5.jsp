@@ -1,5 +1,4 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 
 <!DOCTYPE html>
@@ -17,27 +16,7 @@
 </head>
 
 <body>
-    <header>
-        <div>
-            <img href="#" id="Adver" src="https://image.brandi.me/home/banner/bannerImage_148115_1590975673.jpg">
-        </div>
-        <div id="top">
-            <div id="logo" onclick="location.href='/user/index'">
-                <img src="https://www.brandi.co.kr/static/3.47.2/images/logo@3x.png">
-            </div>
-            <div>
-                <form method="GET" action="#" id="search">
-                    <button id="btn">검색</button>
-                    <input id="input" type="text" name="q">
-                </form>
-            </div>
-            <div id="login">
-                <a onclick="location.href='/user/login'">로그인</a>ㅣ<a onclick="location.href='/user/join1'">회원가입</a>ㅣ<a
-                    onclick="location.href='/user/mypage1'">마이페이지</a>ㅣ<a onclick="location.href='/user/like'">찜&장바구니</a>
-            </div>
-
-        </div>
-    </header>
+     <%@include file="../user/includes/header.jsp" %>
     <hr>
     <nav id="menu">
         <ul>
@@ -89,7 +68,7 @@
         <br><a id="toggle2">▶ 환불은 언제 되나요?</a>
         <hr>
         <div id="contact2">
-            1) 1) 주문취소 하신 경우
+             1) 주문취소 하신 경우
             <br>- 주문 취소 접수일로부터 하기와 같이 소요됩니다.
             <br>
             <br>2) 환불 하신 경우

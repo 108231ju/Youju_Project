@@ -36,6 +36,7 @@
         <interceptor>
             <mapping path="/user/*"/>
             <exclude-mapping path="/user/login"/>
+
             <beans:ref bean="memloginInterceptor"/>
         </interceptor>
     </interceptors>

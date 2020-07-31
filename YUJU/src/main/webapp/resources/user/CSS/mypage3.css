@@ -69,3 +69,41 @@
     cursor: pointer;
 }
 
+/*Review*/
+#s_list3 {
+    height: auto;
+    margin: 1px 180px 0 152px;
+    padding-top: 59px;
+}
+
+#s_list3 a {
+    color: black;
+    font-size: 16px;
+}
+#s_list3 table {
+    width: 100%;
+    border-top: 1px solid rgba(0, 0, 0, 0.933);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.933);
+    border-collapse: collapse;
+    margin-bottom: 26px;
+  }
+  #s_list3 th, #s_list3 td {
+    /* border-bottom: 1px solid #dcdcdcee; */
+    padding: 14px 15px;
+}
+
+#r_date {
+    text-align: left;
+    font-size: 20px;
+}
+#r_name{
+    text-align: left;
+    font-size: 15px;
+}
+#r_detail{text-align: right;
+    color: #b7b7b7;}
+#r_con{text-align: left;
+    color: #b7b7b7;
+font-size: 15px;}
+
+

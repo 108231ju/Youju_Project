@@ -139,6 +139,7 @@ public class StoreMemController{
 	@GetMapping("/info-product-page")
 	public void infoProductPage(){
 	}
+	
 	@GetMapping("/info-mem-page")
 	public void infoMemPage(Model model ,HttpSession httpSession){
 		StoreMemVO storeMemVO = (StoreMemVO) httpSession.getAttribute("loginStoreMem");
@@ -146,6 +147,7 @@ public class StoreMemController{
 
 		model.addAttribute("smem",storeMemVO2);
 	}
+	
 	@GetMapping("/info-delivery-page")
 	public void infoDeliveryPage(){
 	}
