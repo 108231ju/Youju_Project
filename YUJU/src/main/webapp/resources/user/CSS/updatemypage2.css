@@ -264,8 +264,8 @@ h1 {
 
 #member2 {
 	/* margin-top: 30px; */
-	margin: 0px 300px 30px 300px;
-	width: 595px;
+	width: 50%;
+    float: left;
 }
 
 #member2 div {
@@ -273,12 +273,12 @@ h1 {
 }
 
 #sample4_post {
-	width: 59px;
-	margin-bottom: 9px;
-	border: 1px solid #ddde;
-	border-radius: 4px;
-    margin-right: 446px;
-	padding: 14px;
+	    width: 59px;
+    margin-bottom: 9px;
+    border: 1px solid #ddde;
+    border-radius: 4px;
+    margin-right: 6px;
+    padding: 14px;
 }
 #btnphone {
    background: black;
@@ -304,10 +304,10 @@ h1 {
 
 #sample4_btn {
 	width: 106px;
-	padding: 4px;
-	height: 39px;
-	font-size: 11px;
-	margin-left: 0px;
+    padding: 10px;
+    height: 43px;
+    font-size: 11px;
+    margin-right: 55%;
 }
 
 .sample4 hr {

@@ -11,7 +11,7 @@ public class OrderDetailVO {
 	private int pcode; //상품번호
 	private int amount; // 상품 주문 수량
 	private String p_detail; //주문 상품의 상세정보 ex) 빨강/L , 코발트블루/F
-	private int totalprice; //주문 총 가격 
+	private int total; //주문 총 가격 
 	private Date updatedate;
 	private Date regdate;
 

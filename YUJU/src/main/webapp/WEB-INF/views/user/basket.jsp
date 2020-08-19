@@ -1,76 +1,127 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
 
 <!DOCTYPE html>
 <html lang="ko">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>join</title>
-    <link rel="stylesheet" href="/resources/user/CSS/like.css" />
-    <link rel="stylesheet" href="/resources/user/CSS/basket.css" />
-    <script language="javascript" src="/resources/user/JS/basket.js" type="text/javascript"></script>
-    <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
-
-
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>basket</title>
+<link rel="stylesheet" href="/resources/user/CSS/like.css" />
+<link rel="stylesheet" href="/resources/user/CSS/basket.css" />
+<script language="javascript" src="/resources/user/JS/basket.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
 </head>
 
 <body>
-      <%@include file="../user/includes/header.jsp" %>
-    <hr>
-    <nav id="menu">
-        <ul>
-            <li onclick="location.href='/user/index'">HOME</li>
-            <li onclick="location.href='/user/best'">BEST</li>
-            <li onclick="location.href='/user/today'">하루배송</li>
-            <li onclick="location.href='/user/market'">쇼핑몰·마켓</li>
-            <li onclick="location.href='/user/brand'">브랜드</li>
-            <li onclick="location.href='/user/beauty'">뷰티</li>
-            <li onclick="location.href='/user/event'">EVENT</li>
-        </ul>
-    </nav>
-    <hr>
-
-    <div id="phone">
-        <nav>
-            
-            <ul>
-                <li id="like2"  onclick="acyncMovePage2();">찜한상품</li>
-                <li id="basket2"  onclick="acyncMovePage1();">장바구니</li>
-            </ul>
-            <hr>
-        </nav>
-        <div id="basketlist">
-            <a>장바구니에 담은 상품이 없습니다.</a>
-        </div>
-    </div>
-
-
-    <footer>
-        <div id="tel">
-            <h2>고객센터 1234-1234</h2>
-            <a>영업시간 : AM 10:00 ~ PM 17:00 (주말 및 공유일 휴무)
-                <br>점심시간 : PM 12:30 ~ PM 13:30</a>
-        </div>
-        <hr>
-        <div id="address">
-            <a>
-                회사명 : ㈜브랜디 | 대표이사 : 서정민 | 사업자등록번호 : 220-88-93187 | 통신판매업신고 : 2016-서울강남-00359 | 호스팅사업자 : (주)브랜디
-                <br>주소 : (06223) 서울특별시 강남구 테헤란로 32길 26 청송빌딩
-                <br>개인정보관리책임자 : 윤석호(privacy@brandi.co.kr)
-                <br>브랜디는 통신판매중개자로서 통신판매 당사자가 아니며, 판매자가 등록한 상품정보 및 거래에 브랜디는 책임을 지지 않습니다.
-            </a>
-        </div>
-        <div id="agree">
-            <a>이용약관</a>ㅣ<a>개인정보처리방침</a>ㅣ<a>사업자정보확인</a>
-        </div>
-    </footer>
+	<%@include file="../user/includes/header.jsp"%>
+	<%@include file="../user/includes/menu.jsp"%>
+	<div id="phone">
+		<nav>
+			<ul>
+				<li id="like2" onclick="acyncMovePage2();">찜한상품</li>
+				<li id="basket2" onclick="acyncMovePage1();">장바구니</li>
+			</ul>
+			<hr>
+		</nav>
+		
+		<div id="basketlist">	
+			<div id="b_select">
+				<input type="checkbox" name="ck1" value="all" id="ck1" onclick="checkAll();">
+				<a id="all">전체선택</a>
+				<button id="alldelete" onclick="location.href='/user/allbasketdeleteOk'">전체삭제</button>
+			</div>
+					
+			<div>		
+				<form id="form" action="/user/basketupdateOk" method="post">
+					<a id="title">브랜디 배송상품</a>
+					<c:forEach items="${list}" var="basket">
+					<c:set var="sum" value="${basket.bamount}" />
+					<table id="orderTB">
+						<thead>
+							<tr>
+								<th id="sname2">
+									[<c:out value="${basket.sname}" />]
+								</th>
+								<th id="null2"></th>
+								<th id="amount2">수량</th>
+								<th id="price2">주문금액</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td id="check">
+									<input type="checkbox" name="ck2" value="all" id="ck2"> 
+									<img src="https://image.brandi.me/cproduct/2020/06/26/17371833_1593146130_image1_M.jpg">
+								</td>
+								<td id="proname">
+									<a id="pname2"><c:out value="${basket.pname}" /></a>
+									<input type="hidden" id="pcode" name="pcode" class="pcode" value="<c:out value='${basket.pcode}' />"/>	
+									<button id="nmbtn" onclick="location.href='/user/basketdeleteOk?pcode=${basket.pcode}'">X</button>
+									<br> 
+									<a id="nmdetail" class="p_detail"><c:out value="${basket.bcolor}" />/<c:out value="${basket.bsize}" /></a>
+								</td>
+								<td id="proamount">
+									
+									<input type="text" class="amount" id="bamount" name="bamount" value="<c:out value="${basket.bamount}"/>" /> 
+									
+									<button id="update" type="submit">수정하기</button>
+									<input type='hidden' name='p_detail' value="<c:out value='${basket.bcolor}' />/<c:out value='${basket.bsize}' />"/>
+									<input type='hidden' name='total' value="<c:out value='${basket.pprice*sum}' />"/>
+								</td>
+								<td id="prototal">
+									<a class="proprice"><c:out value="${basket.pprice*sum}" /></a><a id="won">원</a> 
+									<br>
+									<button id="probtn" onclick="location.href='/user/buy'">바로주문</button>
+								</td>
+							</tr>
+						</tbody>				
+					</table>
+					</c:forEach>
+				</form>
+				
+				<a id="pricetitle">총 결제예상금액</a>
+								
+				<div id="alldiv">
+					<a id="allsum">총 상품금액 <input id="realTotal"/>원 + 총 배송비 0 원</a>
+				</div>
+				<form id="actionform" method="post"></form>
+				<button id="buy" >결제하기</button>
+			</div>
+		</div>
+	</div>
+	<%@include file="../user/includes/footer.jsp"%>
 </body>
 <script>
-   
+	$(document).ready(function() {
+		var sum = 0;
+		$(".proprice").each(function() {
+			sum += Number($(this).text())
+		});
+		$("#realTotal").val(sum);
+		
+		
+		var objForm = $("#actionform");
+		
+		$("#buy").click(function(e){			
+			e.preventDefault(); //이벤트의 기본기능 제거
+			var list = $("#form").children().clone(true);
+			$("#actionform").append(list);
+					
+			var str ="";
+			//input아닐때 <a></a> $("#아이디").text() , input -> $("#아이디").val()
+			/*orderlist*/
+			str += "<input type='hidden' name='mcode' value='"+${loginMem.getMcode()}+"'/>";
+			str += "<input type='hidden' name='totalprice' value='"+$("#realTotal").val()+"'/>";
+							
+			console.log(str);
+			$("#actionform").append(str);
+			$("#actionform").attr("action","/user/buy");
+			$("#actionform").submit();
+				
+		});
+	});	
 </script>
-
-
 </html>

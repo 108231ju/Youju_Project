@@ -8,12 +8,14 @@ import java.net.URLDecoder;
 import java.nio.file.Files;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
 import javax.servlet.http.HttpSession;
+
+import lombok.Setter;
+import net.coobird.thumbnailator.Thumbnailator;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -23,30 +25,18 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import org.yuyu.domain.AttachFileDTO;
-import org.yuyu.domain.ProductDetailVO;
-import org.yuyu.domain.ProductImgVO;
-import org.yuyu.domain.ProductVO;
-import org.yuyu.domain.StateVO;
-import org.yuyu.domain.StoreMemVO;
-import org.yuyu.service.CategoryService;
-import org.yuyu.service.OrderDetailService;
+
+import lombok.AllArgsConstructor;
+import lombok.extern.log4j.Log4j;
+import org.yuyu.domain.*;
+import org.yuyu.mapper.ProductDetailMapper;
 import org.yuyu.service.ProductDetailService;
 import org.yuyu.service.ProductImgService;
 import org.yuyu.service.ProductService;
 import org.yuyu.service.StoreMemService;
-
-import lombok.AllArgsConstructor;
-import lombok.Setter;
-import lombok.extern.log4j.Log4j;
-import net.coobird.thumbnailator.Thumbnailator;
 
 @Controller
 @RequestMapping("/storeMem/*")
@@ -66,13 +56,6 @@ public class StoreMemController {
 
     @Setter(onMethod_ = @Autowired)
     private ProductImgService productImgService;
-
-    
-    @Setter(onMethod_ = @Autowired)
-    private OrderDetailService orderService;
-    
-    @Setter(onMethod_ = @Autowired)
-    private CategoryService categoryService;
 
 
     @GetMapping("/list")
@@ -126,12 +109,7 @@ public class StoreMemController {
     }
 
     @GetMapping("/index")
-    public void index(HttpSession httpSession,Model model) {
-
-        StoreMemVO storeMem = (StoreMemVO) httpSession.getAttribute("loginStoreMem");
-    	List<StateVO> states = orderService.selectState(storeMem.getScode());
-    	model.addAttribute("statelist",states);
-	
+    public void index() {
     }
 
     @GetMapping("/register-page")
@@ -183,10 +161,10 @@ public class StoreMemController {
 
     }
 
-    @PostMapping("/uploadFormAction")
+    @PostMapping("C:\\\\upload\\\\")
     public void uploadFormAction(MultipartFile[] pimg, Model model) {
 
-        String uploadFolder = "C:\\upload\\";
+        String uploadFolder = "/Users/noyulim/upload";
         for (MultipartFile multipartFile : pimg) {
             log.info("---------------------------");
             log.info("Upload File name :" + multipartFile.getOriginalFilename());
@@ -207,6 +185,12 @@ public class StoreMemController {
     }
 
 
+    @GetMapping("/info-product-page")
+    public void infoProductPage(Model model) {
+
+        log.info("info-product-page......s");
+        model.addAttribute("products",productService.getListForStore(1));
+    }
 
     @GetMapping("/info-mem-page")
     public void infoMemPage(Model model, HttpSession httpSession) {
@@ -221,32 +205,7 @@ public class StoreMemController {
     }
 
     @GetMapping("/info-order-page")
-    public void infoOrderPage(Model model, HttpSession httpSession) {
-
-        StoreMemVO storeMemVO = (StoreMemVO) httpSession.getAttribute("loginStoreMem");
-        
-        orderService.readPerStore(storeMemVO.getScode()).forEach(item -> log.info(item));
-    	model.addAttribute("orderlist",orderService.readPerStore(storeMemVO.getScode()));
-    	
-    }
-    
-    @GetMapping("/modyState")
-    public String modyStateProc(int ocode, int onum, String state,RedirectAttributes rttr){
-    	int result = orderService.updateState(ocode, onum, state);
-    	if(result > 0) {
-    		System.out.println("업데이트 썽꽁 :) ");
-
-    	}
-    	
-    
-    	 return "redirect:/storeMem/info-order-page";
-    	
-    }
-    
-    @GetMapping("/order-proc-page")
-    public void orderProcPage(Model model,HttpSession httpSession) {
-
-        StoreMemVO storeMemVO = (StoreMemVO) httpSession.getAttribute("loginStoreMem");
+    public void infoOrderPage() {
     }
 
     @GetMapping("/update-product-page")
@@ -299,176 +258,73 @@ public class StoreMemController {
 
     @GetMapping("/register-product-page")
     public void registerProductPage(Model model) {
-
-        model.addAttribute("catelist", categoryService.getList());
         model.addAttribute("pcode", productService.showPcode());
     }
 
-    @GetMapping("/info-product-page")
-    public void infoProductPage(Model model,HttpSession httpSession) {
-
-        StoreMemVO storeMemVO = (StoreMemVO) httpSession.getAttribute("loginStoreMem");
-        model.addAttribute("products",productService.getListForStore(storeMemVO.getScode()));
-        model.addAttribute("catelist", categoryService.getList());
-    }
-
-    @GetMapping("/modify-product-page")
-    public void modifyProductPage(Model model,int pcode) {
-	   List<String> colorlist = productDetailService.getProductColor(pcode);
-       List<String> sizelist = productDetailService.getProductSize(pcode);
-       Collections.reverse(sizelist);
-       Collections.reverse(colorlist);
-        model.addAttribute("product", productService.read(pcode));
-        model.addAttribute("details", productDetailService.readWithPcode(pcode));
-        model.addAttribute("colors",String.join(",", colorlist));
-        model.addAttribute("sizes", String.join(",",sizelist));
-        model.addAttribute("catelist", categoryService.getList());
-    }
-    
-    @PostMapping("/modify-product-proc")
-    public void modifyProductPage(int pcode,String pname, int best, int today, int pprice, String catecode, String color, String size, String pcolor, String psize,String amount) {
-    	
-    	log.info(pcolor+psize+amount+"**************************");
-        ProductDetailVO productDetailVO = new ProductDetailVO();
-        productDetailVO.setPcode(pcode);
-        productDetailService.deleteProductDetail(pcode);
-        
-    	ProductVO product = new ProductVO();
-    	product = productService.read(pcode);
-    	product.setPname(pname);
-    	product.setPprice(pprice);
-    	product.setToday(today);
-    	product.setBest(best);
-    	product.setCateCode(catecode);
-    	
-    	productService.modify(product);
-    	
-        String[] sizes = {};
-        String[] colors = {};
-        
-        if (!color.equals("")) {
-            colors = color.split(",");
-        }
-        
-
-        if (!size.equals("")) {
-            sizes = size.split(",");
-        }
-
-        if (!size.equals("") && !color.equals("")){
-            colors = color.split(",");
-            sizes = size.split(",");
-        }
-        
-        String[] amounts = amount.split(",");
-        
-        int count = 0;
-        
-            for (int i = 0; i < sizes.length; i++) {
-            	if(colors.length == 0) {
-            		productDetailVO.setPsize(sizes[i]);
-            		productDetailVO.setPsize(sizes[i]);
-            		productDetailVO.setAmount(Integer.parseInt(amounts[i]));
-                    productDetailVO.setPcolor("N");
-                    productDetailService.insert(productDetailVO);
-            	}
-            	else {
-            		for (int j = 0; j < colors.length; j++, count++) {                           
-            			if (count == amounts.length)
-                            break;
-            			productDetailVO.setPcolor(colors[j]);
-                        productDetailVO.setPsize(sizes[i]);
-                        productDetailVO.setAmount(Integer.parseInt(amounts[count]));
-                        productDetailService.insert(productDetailVO);
-                        log.info(productDetailVO);
-
-                    }
-
-            	}
-                      
-        }
-    	
-    }
-
-    @GetMapping("/delete-product-proc")
-    public void deleteProduct(int pcode) {
-    	//productImgService.delete(String.valueOf(productImgService.findByPcode(pcode).getPcode()));
-    	log.info("***************************************************");
-    	productDetailService.deleteProductDetail(pcode);
-    	log.info("***************************************************");
-    	productService.delete(pcode);
-    }
     @PostMapping("/register-product-proc")
-    public void infoProductPagePost(HttpSession httpSession, int pcode,String color, String size, String pname, int pprice, String amount, String today, String best, String catecode, String fileName, String uuid, String path, String type) {
-        
-    	log.info(pname);
-
-        StoreMemVO storeMemVO = (StoreMemVO) httpSession.getAttribute("loginStoreMem");
-        String[] sizes = {};
+    public String registerProductProc(int pcode, String pname, String pprice, String pcolor, String psize, String amount, String today, String best, String cateCode, String cateCodeRef, String fileName, String uuid, String path, String type) {
         String[] colors = {};
-        
-        if (!color.equals("")) {
-            colors = color.split(",");
+        String[] sizes = {};
+
+
+        ProductDetailVO productDetailVO = new ProductDetailVO();
+
+        ProductImgVO productImgVO = new ProductImgVO();
+        productDetailVO.setPcode(pcode);
+
+        ProductVO productVO = new ProductVO();
+        productVO.setPname(pname);
+        productVO.setPprice(Integer.parseInt(pprice));
+        productVO.setScode(1);
+        productVO.setCateCode(cateCodeRef);
+        productVO.setBest(Integer.parseInt(best));
+        productVO.setToday(Integer.parseInt(today));
+
+
+        productImgVO.setUuid(uuid);
+        productImgVO.setUploadPath(path);
+        productImgVO.setPcode(pcode);
+        productImgVO.setFileName(fileName);
+
+
+        log.info(fileName + "/" + path + "/" + uuid + "/" + type);
+
+        productService.insert(productVO);
+        productImgService.insert(productImgVO);
+
+        String[] amounts = amount.split(",");
+        int count = 0;
+
+        if (!pcolor.equals("-9999")) {
+            colors = pcolor.split(",");
         }
 
-        if (!size.equals("")) {
-            sizes = size.split(",");
+        if (!psize.equals("-9999")) {
+            sizes = psize.split(",");
         }
 
-        if (!size.equals("") && !color.equals("")){
-            colors = color.split(",");
-            sizes = size.split(",");
+        if (!psize.equals("-9999") && !pcolor.equals("-9999")){
+            colors = pcolor.split(",");
+            sizes = psize.split(",");
         }
-        
-
-            ProductDetailVO productDetailVO = new ProductDetailVO();
-
-            ProductImgVO productImgVO = new ProductImgVO();
-            productDetailVO.setPcode(pcode);
-
-            ProductVO productVO = new ProductVO();
-            productVO.setPname(pname);
-            productVO.setPprice(pprice);
-            productVO.setScode(storeMemVO.getScode());
-            productVO.setCateCode(catecode);
-            productVO.setBest(Integer.parseInt(best));
-            productVO.setToday(Integer.parseInt(today));
 
 
-            productImgVO.setUuid(uuid);
-            productImgVO.setUploadPath(path);
-            productImgVO.setPcode(pcode);
-            productImgVO.setFileName(fileName);
+        for (int i = 0; i < colors.length; i++) {
 
+            for (int j = 0; j < sizes.length; j++, count++) {
+                if (count == amounts.length)
+                    break;
+                productDetailVO.setPcolor(colors[i]);
+                productDetailVO.setPsize(sizes[j]);
+                productDetailVO.setAmount(Integer.parseInt(amounts[count]));
 
-            productService.insert(productVO);
-            productImgService.insert(productImgVO);
+                productDetailService.insert(productDetailVO);
 
-            String[] amounts = amount.split(",");
-            int count = 0;
-            
-                for (int i = 0; i < sizes.length; i++) {
-                	if(colors.length == 0) {
-                		productDetailVO.setPsize(sizes[i]);
-                		productDetailVO.setAmount(Integer.parseInt(amounts[i]));
-                        productDetailVO.setPcolor("N");
-                        productDetailService.insert(productDetailVO);
-                	}
-                	else {
-                		for (int j = 0; j < colors.length; j++, count++) {                           
-                			if (count == amounts.length)
-                                break;
-                			productDetailVO.setPcolor(colors[j]);
-                            productDetailVO.setPsize(sizes[i]);
-                            productDetailVO.setAmount(Integer.parseInt(amounts[count]));
-                            productDetailService.insert(productDetailVO);
-                            log.info(productDetailVO);
-
-                        }
-	
-                	}
-                          
             }
+
+        }
+
+        return "/storeMem/info-product-page";
 
 
     }
@@ -500,7 +356,6 @@ public class StoreMemController {
         log.info("upload ajax");
     }
 
-    
     @PostMapping(value = "/uploadAjaxAction", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ResponseBody
     public ResponseEntity<List<AttachFileDTO>> uploadAjaxPost(MultipartFile[] uploadFile) {
@@ -508,7 +363,7 @@ public class StoreMemController {
         List<AttachFileDTO> list = new ArrayList<>();
         log.info("update ajax post..............");
 
-        String uploadFolder = "C:\\upload\\";
+        String uploadFolder = "C:\\upload"; 
 
         String uploadFolderPath = getFolder();
 
@@ -564,7 +419,7 @@ public class StoreMemController {
     @ResponseBody
     public ResponseEntity<byte[]> getFile(String fileName) {
         log.info("fileName:" + fileName);
-        File file = new File("C:\\upload\\"+ fileName);
+        File file = new File("C:\\upload\\" + fileName);
 
         log.info("file:" + file);
         ResponseEntity<byte[]> result = null;
@@ -587,7 +442,7 @@ public class StoreMemController {
         File file;
 
         try {
-            file = new File("C:\\upload\\"+ URLDecoder.decode(fileName, "UTF-8"));
+            file = new File("C:\\upload\\" + URLDecoder.decode(fileName, "UTF-8"));
             file.delete();
             if (type.equals("image")) {
                 String largeFileName = file.getAbsolutePath().replace("s_", "");
@@ -605,6 +460,10 @@ public class StoreMemController {
     }
 
 
+    @GetMapping("/modify-product-page")
+    public void modifyProductPage(Model model) {
+        model.addAttribute("pcode", 1);
+    }
 
 
     @GetMapping("/find-info-page")
@@ -613,3 +472,6 @@ public class StoreMemController {
 
 
 }
+
+
+

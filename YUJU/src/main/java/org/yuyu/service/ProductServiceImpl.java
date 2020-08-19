@@ -56,5 +56,12 @@ public class ProductServiceImpl implements ProductService  {
 		return productMapper.getListForStore(scode);
 	}
 
+	@Override
+	public List<ProductVO> getListForPcode(int pcode) {
+		// TODO Auto-generated method stub
+		return productMapper.getListForPcode(pcode);
+	}
+
+	
 
 }

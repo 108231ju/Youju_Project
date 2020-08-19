@@ -15,7 +15,8 @@ public interface ProductMapper {
 
 	// 상품 데이터 삽입
 	public void insert(ProductVO product);
-	
+	public List<ProductVO> getListForPcode(int pcode);
+
 	// 상품 데이터 삽입(상품번호 자동 업데이트)
 	public void insertSelectKey(ProductVO productVO);
 	

@@ -1,15 +1,18 @@
 package org.yuyu.service;
 
-import org.yuyu.domain.ProductVO;
-import org.yuyu.domain.StoreMemVO;
-
 import java.util.List;
+
+import org.yuyu.domain.ProductVO;
 
 public interface ProductService {
 	
 	public List<ProductVO> getList();
 	
 	public List<ProductVO> getListForStore(int scode);
+
+	public List<ProductVO> getListForPcode(int pcode);
+
+	
 	
 	public void insert(ProductVO productVO);
 	

@@ -9,11 +9,15 @@
 		SELECT * FROM product where scode=#{scode}
 	</select>
 
+	<select id="getListForPcode" resultType="org.yuyu.domain.ProductVO">
+		SELECT * FROM product where pcode=#{pcode}
+	</select>
+	
 	<insert id="insert">
 		INSERT INTO product(pcode,scode,pname,best,today,pprice,cateCode)
 		VALUES (#{pcode},#{scode},#{pname},#{best},#{today},#{pprice},#{cateCode})
 	</insert>
-
+	
 	<select id="getRegisterablePcode" resultType="int">
 		select LAST_NUMBER from USER_SEQUENCES where SEQUENCE_NAME = 'SEQ_PRODUCT'
 	</select>

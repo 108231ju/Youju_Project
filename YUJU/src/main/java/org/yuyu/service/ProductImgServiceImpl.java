@@ -1,14 +1,13 @@
 package org.yuyu.service;
 
-import lombok.Setter;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.yuyu.domain.ProductImgVO;
-import org.yuyu.domain.ProductVO;
 import org.yuyu.mapper.ProductImgMapper;
-import org.yuyu.mapper.ProductMapper;
 
-import java.util.List;
+import lombok.Setter;
 
 @Service
 public class ProductImgServiceImpl implements ProductImgService  {
@@ -22,7 +21,6 @@ public class ProductImgServiceImpl implements ProductImgService  {
 		productImgMapper.insert(productImgVO);
 		
 	}
-
 	@Override
 	public void delete(String uuid) {
 		productImgMapper.delete(uuid);

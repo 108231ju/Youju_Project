@@ -1,0 +1,553 @@
+/*header*/
+#Adver {
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    font-size: 13px;
+    word-break: keep-all;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#input {
+    width: 87%;
+    margin-top: 9px;
+    height: 47%;
+    background-color: #eeee;
+    border-style: none;
+
+}
+
+#btn {
+    margin-top: 12px;
+    margin-left: 17px;
+    border: none;
+}
+
+#logo {
+    display: inline-block;
+    width: 15%;
+    height: 80px;
+    line-height: 80px;
+    padding-left: 40px;
+    float: left;
+}
+.proprice{
+	color: black;
+    font-size: 20px;
+}
+#prototal{
+	color: black;
+    font-size: 18px;
+    font-weight: bold;
+
+}
+#top {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0px auto;
+    clear: both;
+    overflow: hidden;
+    padding: 20px 30px;
+    height: 58px;
+    position: relative;
+}
+
+#logo img {
+    width: 80%;
+    cursor: pointer;
+}
+
+#search {
+    width: 57%;
+    float: left;
+    background-color: #eeee;
+    margin-top: 12px;
+    height: 44px;
+    border-radius: 19px;
+}
+
+#search1 input {
+    width: 87%;
+    margin-top: 9px;
+    height: 47%;
+    background-color: #eeee;
+    border-style: none;
+
+}
+
+#search1 button {
+    margin-top: 12px;
+    margin-left: 17px;
+    border: none;
+}
+
+#login {
+    width: 21%;
+    float: left;
+    display: inline-block;
+    margin-top: 26px;
+    margin-left: 24px;
+    cursor: pointer;
+}
+
+#login a {
+    text-decoration: none;
+    color: black;
+}
+
+hr {
+    border: solid 0.1px #eeee;
+}
+#totalprice{
+	border: none;
+    width: 9%;
+    font-size: 25px;
+    font-weight: bold;
+}
+#menu {
+    width: 100%;
+    height: 44px;
+}
+
+#menu ul {
+    margin-left: 109px;
+    /* float: left; */
+    list-style: none;
+    height: 37px;
+}
+
+#menu li {
+    font-weight: bolder;
+    text-align: center;
+    font-size: larger;
+    /* margin: 0 67px; */
+    width: 160px;
+    height: 33px;
+    float: left;
+    padding-top: 12px;
+    margin: 0px 8px;
+
+}
+
+#menu li:hover {
+    color: tomato;
+    border-bottom: solid 5px tomato;
+    cursor: pointer;
+}
+
+/*phone*/
+
+#phone {
+    float: left;
+    text-align: center;
+    padding: 35px 198px 3px 151px;
+    height: auto;
+}
+
+#phone nav {
+    width: 100%;
+    height: 44px;
+}
+
+#phone li {
+    float: left;
+    text-align: center;
+    /* font-weight: bolder; */
+    width: 133px;
+    height: 33px;
+    font-size: 15px;
+    padding: 10px 226px;
+    cursor: pointer;
+}
+
+#phone ul {
+    list-style: none;
+    height: 37px;
+    padding-left: 0;
+}
+
+#basket2 {
+    color: red;
+    border-bottom: solid 3px red;
+    cursor: pointer;
+}
+
+#basketlist {
+    height: auto;
+    text-align: center;
+    /* padding: 90px; */
+    font-size: 12px;
+    /* color: black; */
+}
+
+
+
+#basketlist table {
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.933);
+    border-collapse: collapse;
+    margin-bottom: 66px;
+}
+
+#basketlist th,
+#basketlist td {
+    border-bottom: 1px solid #dcdcdcee;
+    padding: 18px 0px;
+}
+
+#b_select {
+    background-color: #eaeaea;
+    height: 43px;
+    padding: 14px 18px 14px 18px;
+    color: black;
+}
+
+#ck1 {
+    float: left;
+    width: 38px;
+    border: 0px;
+    width: 2%;
+    height: 2em;
+    margin-top: 11px;
+
+}
+
+#all {
+    float: left;
+    font-size: 19px;
+    margin-top: 10px;
+    margin-left: 3px;
+    color: black;
+}
+
+#alldelete {
+    float: right;
+    background: transparent;
+    border: 1px solid black;
+    padding: 13px 24px;
+}
+
+#title {
+    float: left;
+    font-size: 22px;
+    font-weight: bolder;
+    margin-top: 60px;
+    width: 100%;
+    text-align: left;
+    /* margin-bottom: 3px; */
+    padding-bottom: 17px;
+    border-bottom: 2px solid;
+    color: black;
+}
+
+#sname2 {
+    width: 17%;
+    font-size: 16px;
+    font-weight: bolder;
+    text-align: left;
+    color: black;
+}
+
+
+
+#amount2 {
+    font-size: 16px;
+    font-weight: 500;
+    color: black;
+}
+
+#price2 {
+    font-size: 16px;
+    font-weight: 500;
+    color: black;
+}
+
+#check {
+    float: left;
+}
+
+#check img {
+
+    width: 100px;
+}
+
+#ck2 {
+    float: left;
+    width: 38px;
+    border: 0px;
+    width: 18px;
+    height: 2em;
+    margin-top: 32px;
+    margin-right: 22px;
+}
+
+#proname {
+    text-align: left;
+    color: black;
+}
+
+#pname2 {
+    font-size: 15px;
+    color: black;
+}
+
+#nmbtn {
+    background-color: white;
+    border: 1px solid;
+    padding: 3px 5px 0 5px;
+}
+
+#nmdetail {
+    font-size: 13px;
+    /* margin-top: 6px; */
+    color: #858585ee;
+    font-weight: bolder;
+}
+
+#amtbtn2 {
+    margin-left: -5px;
+    padding: 2px 7px;
+    background-color: white;
+    border: 1px solid #9c9c9c;
+}
+
+#amtbtn1 {
+    margin-right: -5px;
+    padding: 2px 8px;
+    background-color: white;
+    border: 1px solid #9c9c9c;
+}
+
+#amount {
+    color: black;
+    width: 15px;
+    padding-left: 6px;
+    border: none;
+}
+
+
+
+#prototal {
+    color: black;
+}
+
+#proprice {
+    color: black;
+    font-size: 20px;
+    font-weight: bolder;
+    ;
+}
+
+#probtn {
+    background-color: black;
+    color: white;
+    border: 1px solid;
+    padding: 11px 25px;
+    margin-top: 6px;
+}
+
+/*footer*/
+footer {
+    float: left;
+    background-color: black;
+    width: 79%;
+    height: 332px;
+    color: white;
+    padding: 30px 174px 0 145px;
+}
+
+h2 {
+    font-size: 34px;
+    letter-spacing: -2px;
+    margin-top: 11px;
+    margin-bottom: 18px;
+}
+
+
+a {
+    color: #858585ee;
+}
+
+#agree a {
+    color: white;
+    font-weight: bold;
+}
+
+#tel {
+    margin-bottom: 34px;
+}
+
+#address {
+    margin-top: 31px;
+    margin-bottom: 18px;
+}
+
+footer hr {
+    border: solid 1px #7d7d7dee
+}
+
+#pricetitle {
+    font-size: 22px;
+    font-weight: 100;
+    text-align: left;
+    color: black;
+    float: left;
+}
+
+#allsum {
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    font-size: 22px;
+    /* text-align: left; */
+    color: black;
+    font-weight: bolder;
+    padding: 15px 0 15px 0;
+    /* margin-top: 30px; */
+    width: 100%;
+    float: left;
+    margin-top: 12px;
+}
+
+#sumtotal {
+    float: right;
+    font-size: 22px;
+    font-weight: bolder;
+    color: black;
+}
+
+#alldiv {
+    margin-top: 30px;
+    text-align: left;
+    width: 100%;
+}
+
+#buy {
+    float: left;
+    background-color: black;
+    color: white;
+    border: 1px solid;
+    padding: 15px 52px;
+    margin: 18px 492px;
+    font-size: 20px;
+}
+
+#s_list2 {
+    height: auto;
+    float: left;
+    padding-top: 59px;
+}
+
+#text {
+    float: left;
+    /* margin-left: 30px; */
+    /* margin-bottom: 10px; */
+    margin: 10px 0 10px 30px;
+}
+
+#s_list2 a {
+    color: black;
+    font-size: 16px;
+}
+
+/*form*/
+#member1 {
+    margin: 31px 428px;
+    text-align: left;
+}
+
+#member2 {
+    float: left;
+    text-align: left;
+    width: 100%;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    padding: 26px 0;
+}
+
+#member2 div {
+    margin-bottom: 20px;
+}
+
+#sample4_post {
+    width: 59px;
+    margin-bottom: 9px;
+    border: 1px solid #ddde;
+    border-radius: 4px;
+    margin-right: 446px;
+    padding: 14px;
+    margin-left: 64px;
+}
+
+#btnphone {
+    background: black;
+    border: 1px solid;
+    color: white;
+    font-size: 19px;
+    font-weight: lighter;
+    padding: 17px 80px;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+#sample4_roadAddress,
+#sample4_jibunAddress,
+#sample4_detailAddress,
+#sample4_extraAddress {
+    width: 41%;
+    height: 11px;
+    border: 1px solid #ddde;
+    border-radius: 4px;
+    margin-left: 125px;
+    padding: 14px;
+}
+
+#sample4_jibunAddress,
+#sample4_extraAddress {
+    margin-left:10px;
+}
+
+#sample4_btn {
+    width: 106px;
+    padding: 4px;
+    height: 39px;
+    font-size: 11px;
+    margin-left: 0px;
+}
+
+.sample4 hr {
+    width: 595px;
+    margin: 25px 0;
+}
+
+#id,
+#name,
+#password,
+#phonenum,
+#email,
+#repassword {
+    width: 41%;
+    height: 11px;
+    border: 1px solid #ddde;
+    border-radius: 4px;
+    margin-left: 64px;
+    margin-bottom: 15px;
+    padding: 14px;
+}
+h3{
+    text-align: left;
+    font-size: 25px;
+}
+#phonenum {
+    margin-left: 16px;
+    margin-top: 14px;
+}
+
+#email {
+    margin-left: 48px;
+    margin-top: 14px;
+}

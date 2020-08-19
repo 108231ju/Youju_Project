@@ -12,4 +12,5 @@ public interface ProductImgMapper {
     public void delete(String uuid);
 
     public ProductImgVO findByPcode(int pcode);
+
 }

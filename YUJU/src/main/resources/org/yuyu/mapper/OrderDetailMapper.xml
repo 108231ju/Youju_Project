@@ -5,6 +5,10 @@
 	<select id="getList" resultType="org.yuyu.domain.OrderDetailVO">
 		SELECT * FROM orderdetail
 	</select>
+
+	<select id="getListbyOcode" resultType="org.yuyu.domain.OrderDetailVO">
+		SELECT * FROM ORDER_DETAIL where ocode = #{ocode}
+	</select>
 	
 	<insert id="insert">
 		INSERT INTO orderdetail(ocode,onum,pcode,p_detail,amount,totalprice) 
@@ -12,11 +16,19 @@
 	</insert>
 	
 	<insert id="insertSelectKey">
-		<selectKey keyProperty="ocode" order="BEFORE" resultType="int">
-			select seq_orderdetail.nextval from dual
+		<selectKey keyProperty="onum" order="BEFORE" resultType="int">
+			select seq_order_detail.nextval from dual
 		</selectKey>
-		INSERT INTO orderdetail(ocode,onum,pcode,p_detail,amount,totalprice) 
-		VALUES (#{ocode},1,#{pcode},#{p_detail},#{amount},#{totalprice})
+		INSERT INTO order_detail(ocode,onum,pcode,p_detail,amount,total) 
+		VALUES (#{ocode},#{onum},#{pcode},#{p_detail},#{amount},#{total})
+	</insert>
+<!-- orderlist 의 마지막 ocode 를 select 해서 insert -->
+	<insert id="insertfrombasket">
+		<selectKey keyProperty="onum" order="BEFORE" resultType="int">
+			select seq_order_detail.nextval from dual
+		</selectKey>
+		INSERT INTO order_detail(ocode,onum,pcode,p_detail,amount,total) 
+		VALUES ((SELECT MAX(ocode) FROM ORDERLIST),#{onum},#{pcode},#{p_detail},#{amount},#{total})
 	</insert>
 	
 	<insert id="insertSelectKeyForOnum">

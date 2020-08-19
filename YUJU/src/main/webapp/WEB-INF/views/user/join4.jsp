@@ -13,19 +13,7 @@
 
 <body>
       <%@include file="../user/includes/header.jsp" %>
-    <hr>
-    <nav id="menu">
-        <ul>
-      <li onclick="location.href='/user/index'">HOME</li>
-            <li onclick="location.href='/user/best'">BEST</li>
-            <li onclick="location.href='/user/today'">하루배송</li>
-            <li onclick="location.href='/user/market'">쇼핑몰·마켓</li>
-            <li onclick="location.href='/user/brand'">브랜드</li>
-            <li onclick="location.href='/user/beauty'">뷰티</li>
-            <li onclick="location.href='/user/event'">EVENT</li>
-        </ul>
-    </nav>
-    <hr>
+  <%@include file="../user/includes/menu.jsp" %>
 
     
     <div id="phone4">

@@ -8,5 +8,4 @@ public class ProductDetailVO {
     private String pcolor; // 상품 색상
     private String psize; // 상품 사이즈
     private int amount; // 상품 재고 수량
-
 }

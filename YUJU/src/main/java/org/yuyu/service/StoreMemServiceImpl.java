@@ -4,12 +4,10 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.yuyu.domain.MemVO;
 import org.yuyu.domain.StoreMemVO;
-import org.yuyu.mapper.MemMapper;
-import org.yuyu.mapper.StoreMemMapper;
 
 import lombok.Setter;
+import org.yuyu.mapper.StoreMemMapper;
 
 @Service
 public class StoreMemServiceImpl implements StoreMemService  {

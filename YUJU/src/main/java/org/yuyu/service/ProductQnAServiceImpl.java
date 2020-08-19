@@ -45,6 +45,13 @@ public class ProductQnAServiceImpl implements ProductQnAService  {
 		return mapper.update(productQnAVO) == 1;
 	}
 
+	@Override
+	public void insertSelectKey(ProductQnAVO productQnAVO) {
+		mapper.insertSelectKey(productQnAVO);
+		
+		
+	}
+
 }
 
 

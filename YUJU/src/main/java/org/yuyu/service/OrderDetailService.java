@@ -10,7 +10,13 @@ public interface OrderDetailService {
 	
 	public List<OrderDetailVO> getList();
 	
+	public List<OrderDetailVO> getListbyOcode(int ocode);
+	
 	public void insert(OrderDetailVO orderDetailVO);
+
+	public void insertSelectKey(OrderDetailVO orderDetailVO);
+
+	public void insertfrombasket(OrderDetailVO orderDetailVO);
 
 	public void insertWithNewOnum(OrderDetailVO orderDetailVO);
 	

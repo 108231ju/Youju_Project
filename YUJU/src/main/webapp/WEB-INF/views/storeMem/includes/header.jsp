@@ -411,6 +411,7 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
     </div>
     
         <div class="modal fade" role="dialog" id="stateModModal" tabindex="-1" aria-labelledby="stateModyModalH"
@@ -443,3 +444,6 @@
             </div>
         </div>
     </div>
+=======
+    </div>
+>>>>>>> refs/heads/master
