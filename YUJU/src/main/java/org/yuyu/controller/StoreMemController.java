@@ -15,10 +15,6 @@ import java.util.UUID;
 
 import javax.servlet.http.HttpSession;
 
-import lombok.Setter;
-import net.coobird.thumbnailator.Thumbnailator;
-import net.sf.json.JSONArray;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -27,20 +23,30 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
-import lombok.AllArgsConstructor;
-import lombok.extern.log4j.Log4j;
-import org.yuyu.domain.*;
-import org.yuyu.mapper.ProductDetailMapper;
+import org.yuyu.domain.AttachFileDTO;
+import org.yuyu.domain.ProductDetailVO;
+import org.yuyu.domain.ProductImgVO;
+import org.yuyu.domain.ProductVO;
+import org.yuyu.domain.StateVO;
+import org.yuyu.domain.StoreMemVO;
 import org.yuyu.service.CategoryService;
 import org.yuyu.service.OrderDetailService;
 import org.yuyu.service.ProductDetailService;
 import org.yuyu.service.ProductImgService;
 import org.yuyu.service.ProductService;
 import org.yuyu.service.StoreMemService;
+
+import lombok.AllArgsConstructor;
+import lombok.Setter;
+import lombok.extern.log4j.Log4j;
+import net.coobird.thumbnailator.Thumbnailator;
 
 @Controller
 @RequestMapping("/storeMem/*")
