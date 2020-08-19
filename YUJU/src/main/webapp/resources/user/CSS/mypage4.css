@@ -16,7 +16,9 @@
 #FandQ4 a, #FandQ4 img{
     opacity: 0.4;
 }
-
+#question{
+	text-align: left;
+}
 
 #info4{
     border-right: 1px solid black;

@@ -4,14 +4,25 @@
 <mapper namespace="org.yuyu.mapper.MemOrderListMapper">
 
 	<select id="getList" resultType="org.yuyu.domain.MemOrderListVO">
-		SELECT o.OCODE ,o.ONUM ,p.PIMG ,sm.SNAME ,p.PNAME ,o.P_DETAIL ,o.AMOUNT ,o.TOTAL ,o.UPDATEDATE,o2.STATE 
+			SELECT o.OCODE ,p.PCODE ,m.MCODE,sm.SNAME ,p.PNAME ,o.P_DETAIL ,o.AMOUNT ,o.TOTAL,o2.TOTALPRICE 
 		FROM ORDER_DETAIL o,PRODUCT p,MEM m,STORE_MEM sm,ORDERLIST o2 
 		WHERE 
-		o.OCODE = o2.OCODE 
-		AND p.PCODE = o.PCODE 
+		o.OCODE =o2.OCODE 
+		AND m.MCODE = o2.MCODE 
 		AND p.SCODE = sm.SCODE 
+		AND o.PCODE = p.PCODE 
+	AND o.OCODE = #{ocode}
+			
+	</select>
+	<select id="read" resultType="org.yuyu.domain.MemOrderListVO">
+		SELECT sm.SCODE ,o.OCODE ,p.PCODE ,m.MCODE ,sm.SNAME ,p.PNAME ,o.P_DETAIL 
+		FROM STORE_MEM sm ,ORDER_DETAIL o,PRODUCT p ,MEM m 
+		WHERE
+		p.SCODE = sm.SCODE 
+		AND o.PCODE = p.PCODE 
+		AND o.OCODE = #{ocode} 		
+		AND p.PCODE = #{pcode}
 		AND m.MCODE = #{mcode}
-		ORDER BY o.OCODE, o.ONUM ASC	
 	</select>
 	
 	

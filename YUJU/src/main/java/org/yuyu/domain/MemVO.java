@@ -10,6 +10,7 @@ public class MemVO {
 	private String mname;
 	private String mid;
 	private String mpw;
+	private String maddress;
 	private String maddress1;
 	private String maddress2;
 	private String maddress3;
@@ -19,7 +20,6 @@ public class MemVO {
 	private String memail;
 	private Date regdate;
 	private Date updatedate;
-
 }
 
 

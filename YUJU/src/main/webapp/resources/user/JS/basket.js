@@ -32,3 +32,11 @@ function acyncMovePage2(url) {
         $('body').html(data);
     });
 }
+
+function checkAll() {
+    if ($("#ck1").is(':checked')) {
+        $("input[id=ck2]").prop("checked", true);
+    } else {
+        $("input[id=ck2]").prop("checked", false);
+    }
+}

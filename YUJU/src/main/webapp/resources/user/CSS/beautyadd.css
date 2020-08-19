@@ -168,9 +168,33 @@ hr {
 /*height auto 로 바꾸기*/
 #item {
     width: 82%;
-    height: 942px;
+    height: auto;
     margin-top: 74px;
     float: left;
+}
+#product{
+    float: left;
+    margin: 25px 6px 25px 7px;
+    text-align: left;
+}
+#product img{
+    width: 235px;
+    height: 250px;
+    margin-bottom: 10px;
+}
+#sname, #pname{
+    text-align: left;
+    font-size: 15px;
+    font-weight: 100;
+}
+#price{
+    text-align: left;
+    font-size: 18px;
+    font-weight: bolder;
+}
+#item a {
+    color: black;
+    font-size: 16px;
 }
 
 

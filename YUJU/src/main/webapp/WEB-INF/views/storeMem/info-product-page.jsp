@@ -1,42 +1,22 @@
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
-<%@include file="../storeMem/includes/header.jsp"%>
+         pageEncoding="UTF-8" %>
+<%@include file="../storeMem/includes/header.jsp" %>
 <!-- ============================================================== -->
-<!-- Page wrapper  -->
+<!-- Page wrapper -->
 <!-- ============================================================== -->
 <div class="page-wrapper">
     <!-- ============================================================== -->
     <!-- Bread crumb and right sidebar toggle -->
     <!-- ============================================================== -->
     <div class="page-breadcrumb">
-        <div class="row">
-            <div class="col-7 align-self-center">
-                <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">상품 정보 처리</h4>
-                <div class="d-flex align-items-center">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb m-0 p-0">
-                            <li class="breadcrumb-item"><a href="index.html" class="text-muted">상품 정보 수정</a></li>
-                            <li class="breadcrumb-item text-muted active" aria-current="page">상품 정보 삭제</li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
-            <%--                    <div class="col-5 align-self-center">--%>
-            <%--                        <div class="customize-input float-right">--%>
-            <%--                            <select class="custom-select custom-select-set form-control bg-white border-0 custom-shadow custom-radius">--%>
-            <%--                                <option selected>Aug 19</option>--%>
-            <%--                                <option value="1">July 19</option>--%>
-            <%--                                <option value="2">Jun 19</option>--%>
-            <%--                            </select>--%>
-            <%--                        </div>--%>
-            <%--                    </div>--%>
-        </div>
+
     </div>
     <!-- ============================================================== -->
     <!-- End Bread crumb and right sidebar toggle -->
     <!-- ============================================================== -->
     <!-- ============================================================== -->
-    <!-- Container fluid  -->
+    <!-- Container fluid -->
     <!-- ============================================================== -->
     <div class="container-fluid">
         <!-- ============================================================== -->
@@ -47,45 +27,74 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Table Header</h4>
-                        <h6 class="card-subtitle">Similar to tables, use the modifier classes .thead-light to
-                            make <code>&lt;thead&gt;</code>s appear light.</h6>
+                        <h3 class="card-title">상품 정보 조회/수정</h3>
                     </div>
-                    <div class="table-responsive">
+                    <div class="col-md-11" style="align-self: center">
+                        <div class="card border-danger">
+                            <div class="card-header bg-danger">
+                                <h3 class="mb-0 text-white text-center ">검색 조건</h3>
+                            </div>
+                            <div class="card-body text-center">
+                                <span>
+                                <label><strong class="card-title">상품번호 : </strong></label> <input type="text"/>
+                                </span>
+                                <span class="ml-lg-5 mr-lg-5">
+                                    <label><strong class="card-title">카테고리 : </strong></label>
+                                    <select style="width:90px">
+                                        <option>-</option>
+                                        <option>대분류</option>
+                                        <option></option>
+                                    </select>
+                                    <select style="width:90px">
+                                        <option>-</option>
+                                        <option>베스트</option>
+                                        <option>브랜드</option>
+                                    </select>
+                                    <select style="width:90px">
+                                        <option>-</option>
+                                        <option>상의</option>
+                                        <option>하의</option>
+                                    </select>
+                                </span>
+                                <span class="ml-lg-5 mr-lg-5">
+                                    <label><strong class="card-title">상품 이름 : </strong></label> <input type="text"/>
+                                </span>
+                                <span class="ml-lg-5 mr-lg-5">
+                                    <button type="button" class="btn btn-primary">검색</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="col-12 card-title">상품 정보 조회 결과</h3>
+                    <div class="table-responsive p-2 text-center">
                         <table class="table">
-                            <thead class="thead-light">
+                            <thead class="thead-dark">
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">First</th>
-                                <th scope="col">Last</th>
-                                <th scope="col">Handle</th>
+                                <th scope="col">상품번호</th>
+                                <th scope="col">대표 이미지</th>
+                                <th scope="col">이름</th>
+                                <th scope="col">카테고리</th>
+                                <th scope="col">업데이트 시간</th>
+                                <th scope="col">
+                                </th>
                             </tr>
                             </thead>
                             <tbody>
+                            <c:forEach items="${products}" var="product">
                             <tr>
                                 <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
+                                <td><c:out value="${products.pname}"/></td>
+                                <td><c:out value="${products.pprice}"/></td>
+                                <td><c:out value="${products.cate1}"/></td>
+                                <td>
+                                    <button onclick="location.href='/storeMem/modify-product-page'">수정</button>
+                                </td>
                             </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                            </tr>
-                            </tbody>
+                            </c:forEach>
                         </table>
                     </div>
                 </div>
             </div>
-
 
 
         </div>
@@ -101,7 +110,7 @@
         <!-- ============================================================== -->
     </div>
     <!-- ============================================================== -->
-    <!-- End Container fluid  -->
+    <!-- End Container fluid -->
     <!-- ============================================================== -->
     <!-- ============================================================== -->
     <!-- footer -->
@@ -115,7 +124,7 @@
     <!-- ============================================================== -->
 </div>
 <!-- ============================================================== -->
-<!-- End Page wrapper  -->
+<!-- End Page wrapper -->
 <!-- ============================================================== -->
 </div>
 <!-- ============================================================== -->

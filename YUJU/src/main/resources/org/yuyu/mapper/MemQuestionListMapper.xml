@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.yuyu.mapper.MemQuestionListMapper">
+
+	<select id="getList" resultType="org.yuyu.domain.MemQuestionListVO">
+		SELECT m.mcode,pq.qnacode,sm.SNAME ,p.PNAME ,pq.STATE ,pq.QUESTION ,pq.UPDATEDATE ,pq.ANSWER 
+		FROM PRODUCT p ,PRODUCT_QNA pq ,STORE_MEM sm,MEM m 
+		WHERE 
+		sm.SCODE = pq.SCODE 
+		AND p.PCODE = pq.PCODE
+		AND m.MCODE = pq.MCODE 
+		AND m.MCODE = #{mcode}
+			</select>
+	
+	
+</mapper>

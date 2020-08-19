@@ -3,16 +3,26 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.yuyu.mapper.OrderListMapper">
 	<select id="getList" resultType="org.yuyu.domain.OrderListVO">
-		SELECT * FROM orderlist
+		SELECT * FROM orderlist 
+	</select>
+	<select id="ListbyMcode" resultType="org.yuyu.domain.OrderListVO">
+		SELECT * FROM orderlist where mcode= #{mcode}  
 	</select>
 	
 	<insert id="insert">
 		INSERT INTO orderlist(ocode,mcode,totalprice,state) 
 		VALUES (#{ocode},#{mcode},#{totalprice},#{state}})
 	</insert>
+<insert id="insertSelectKey">
+		<selectKey keyProperty="ocode" order="BEFORE" resultType="int">
+			select seq_orderlist.nextval from dual
+		</selectKey>
+		INSERT INTO orderlist(ocode,mcode,totalprice) 
+		VALUES (#{ocode},#{mcode},#{totalprice})
+	</insert>
 	
 	<select id="read" resultType="org.yuyu.domain.OrderListVO">
-		select * from orderlist where ocode = #{ocode}
+		select * from orderlist where ocode = #{ocode} 
 	</select>
 	
 	<delete id="delete">

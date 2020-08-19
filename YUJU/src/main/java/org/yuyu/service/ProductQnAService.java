@@ -11,11 +11,13 @@ public interface ProductQnAService {
 	
 	public void insert(ProductQnAVO pqaVO);
 	
-	public ProductQnAVO read(int pqcode);
+	public ProductQnAVO read(int qnacode);
 	
-	public boolean delete(int pqcode);
+	public boolean delete(int qnacode);
 	
 	public boolean modify(ProductQnAVO pqaVO);
+
+	public void insertSelectKey(ProductQnAVO productQnAVO);
 
 }
 

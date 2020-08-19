@@ -19,13 +19,17 @@ body {
     border-style: none;
 
 }
-
+#null{
+	width: 25%;
+}
 #btn {
     margin-top: 12px;
     margin-left: 17px;
     border: none;
 }
-
+#price{
+	width: 20%;
+}
 #logo {
     display: inline-block;
     width: 15%;
@@ -148,7 +152,15 @@ h1 {
     color: black;
     font-weight: 700;
 }
-
+#reviewbtn{
+	padding: 10px 31px;
+    font-size: 11px;
+    margin: 0;
+    background: black;
+    border: 1px solid;
+    color: white;
+    border-radius: 5px;
+}
 #pagemenu li {
     float: left;
     padding: 0 74px;
@@ -205,7 +217,16 @@ h1 {
     opacity: 0.4;
 }
 
+#s_list1 {
+    height: auto;
+    margin: 1px 180px 0 152px;
+    padding-top: 59px;
+}
 
+#s_list1 a {
+    color: black;
+    font-size: 16px;
+}
 #order a:hover{
     color: tomato;
     opacity: unset;
@@ -232,61 +253,37 @@ h1 {
     cursor: pointer;
 }
 /*order*/
-#s_list1 {
-	height: auto;
-	margin: 1px 180px 0 152px;
-	padding-top: 59px;
-}
-#s_list1 a {
-	color: black;
-	font-size: 16px;
-}
+
 #s_list1 table {
     width: 100%;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.933);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.933);
     border-collapse: collapse;
-    margin-bottom: 60px;
-}
+  }
   #s_list1 th, #s_list1 td {
-    /*border-bottom: 1px solid #dcdcdcee;*/
-    padding: 14px 0px;
+    border-bottom: 1px solid #dcdcdcee;
+    padding: 20px 0px;
 }
 #date{
     font-size: 24px;
     text-align: left;
-    border-bottom: 2px solid black;
 }
 #add{
     text-align: right;
-    font-size: 20px;
-    border-bottom: 2px solid black;
-    
-}
-#null1{
-	border-bottom: 2px solid black;
+    font-size: 24px;
 }
 #order_p{
     font-size: 24px;
     text-align: left;
     font-weight: bolder;
-    border-bottom: 1px solid #949292ee;
-}
-#null{
-	border-bottom: 1px solid #dcdcdcee;
-}
-#null2{
-	border-bottom: 1px solid #949292ee;
 }
 #item {
     text-align: left;
     font-size: 15px;
     font-weight: bolder;
-    border-bottom: 1px solid #dcdcdcee;
 }
 #p_img{
     text-align: left;
     width: 18%;
-    border-bottom: 1px solid #dcdcdcee;
 }
 span{
     color: #b7b7b7;
@@ -295,31 +292,27 @@ span{
 #p_name{
     text-align: left;
     font-size: 15px;
-    border-bottom: 1px solid #dcdcdcee;
 }
 
 #i_price, #i_state{
     font-size: 15px;
-    border-bottom: 1px solid #dcdcdcee;
 }
 
 #price, #state{
     font-size: 18px;
     font-weight: bolder;
-    border-bottom: 1px solid #dcdcdcee;
 }
 #p_img {
     text-align: left;
     padding: 8px;
     width: 14%;
     /* width: 14px; */
-    border-bottom: 1px solid #dcdcdcee;
 }
 
 #p_img img{
     width: 87px;
 }
-#s_list1 button {
+/*#s_list1 button {
     background: black;
     border: 1px solid;
     color: white;
@@ -329,7 +322,7 @@ span{
     border-radius: 5px;
     margin: 20px 20px 50px 20px;
     cursor: pointer;
-}
+}*/
 /*footer*/
 footer {
     background-color: black;
@@ -337,6 +330,8 @@ footer {
     height: 332px;
     color: white;
     padding: 30px 174px 0 145px;
+    
+    float: left;
 }
 
 h2 {

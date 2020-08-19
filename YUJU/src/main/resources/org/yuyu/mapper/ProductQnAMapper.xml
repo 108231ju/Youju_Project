@@ -13,10 +13,10 @@
 	
 	<insert id="insertSelectKey">
 		<selectKey keyProperty="qnacode" order="BEFORE" resultType="int">
-			select seq_productpqa.nextval from dual
+			select seq_productqna.nextval from dual
 		</selectKey>
-		INSERT INTO pqa(qnacode,scode,mcode,pcode,question,answer) 
-		VALUES (#{qnacode},#{scode},#{mcode},#{pcode},#{question},#{answer})
+		INSERT INTO product_qna(qnacode,scode,mcode,pcode,question) 
+		VALUES (#{qnacode},#{scode},#{mcode},#{pcode},#{question})
 	</insert>
 	
 	<select id="read" resultType="org.yuyu.domain.ProductQnAVO">

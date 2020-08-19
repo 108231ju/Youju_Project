@@ -53,6 +53,10 @@
 
    <context:component-scan base-package="org.yuyu.controller" />
    <!-- 멀티파트 리졸버 -->
+	   <beans:bean id="multipartResolver"  class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- 최대업로드 가능한 바이트크기 -->
+        <beans:property name="maxUploadSize" value="99999999999"/>
+    </beans:bean>
 
  
 

@@ -1,7 +1,19 @@
 /*phone*/
 
 
-
+#delete{
+	text-align: right;
+	background-color: white;
+	color: black;
+	
+}
+#delete1{
+	text-align: right;
+	background-color: white;
+	color: black;
+	border:none;
+	padding: 6px 9px 5px 9px;
+}
 #order3 {
     border-right: 1px solid black;
 }
@@ -68,7 +80,6 @@
     opacity: unset;
     cursor: pointer;
 }
-
 /*Review*/
 #s_list3 {
     height: auto;
@@ -105,5 +116,3 @@
 #r_con{text-align: left;
     color: #b7b7b7;
 font-size: 15px;}
-
-

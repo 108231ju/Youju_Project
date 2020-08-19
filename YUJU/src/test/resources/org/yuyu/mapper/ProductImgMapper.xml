@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.yuyu.mapper.ProductImgMapper">
+
+	<insert id="insert">
+		INSERT INTO product_img(uuid,uploadPath,fileName,pcode)
+		VALUES (#{uuid},#{uploadPath},#{fileName},#{pcode})
+	</insert>
+
+
+
+	<select id="findByPcode" resultType="org.yuyu.domain.ProductImgVO">
+		SELECT * FROM product_img where pcode=#{pcode}
+	</select>
+	
+	<delete id="delete">
+	delete from product_img where uuid = #{uuid}
+	</delete>
+
+	
+</mapper>

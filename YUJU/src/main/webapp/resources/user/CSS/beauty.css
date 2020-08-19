@@ -109,100 +109,6 @@ hr {
     cursor: pointer;
 }
 
-/*banner*/
-/* .frame {
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-}
-
-.frame ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    float: left;
-}
-
-.frame ul li {
-    float: left;
-    margin: 0 1px 0 0;
-    padding: 0;
-    cursor: pointer;
-
-}
-
-.frame ul li img {
-    width: 30%;
-    float: left;
-}
-
-.frame ul li.active {
-    color: #fff;
-    background: #a03232;
-}
-
-.sp01 {
-    font: 18px 'tahoma';
-    text-align: left;
-    float: left;
-    line-height: 290px;
-    background-color: rgb(231, 231, 231);
-    width: 100%;
-    height: 490px;
-} */
-/* #rolling {
-    position: relative;
-    height: 540px;
-    margin: 0 auto;
-    padding: 0;
-    overflow: hidden;
-    cursor: pointer;
-}
-
-#rolling ul {
-    position: absolute;
-    margin: 0px;
-    padding: 0;
-    list-style: none;
-}
-
-#rolling ul li {
-    float: left;
-}
-
-#banner{  
-    height: 553px;
-} */
-/* .sp01 {
-    
-    text-align: left;
-    float: left;
-    line-height: 290px;
-    background-color: rgb(231, 231, 231);
-    width: 100%;
-    height: 490px;
-} */
-/* #banner{
-    float: left;
-    width: 30%;
-}
-#rolling ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    float: left;
-}
-.frame {
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-} */
-/* 
-.slidebanner div {position:relative;}
-*/
-
 
 /* 한개만 보여주고 싶을 경우 ul 넓이와 동일하게 100px로 주면 됩니다. */
 #rolling {
@@ -271,9 +177,10 @@ hr {
 
 /*item*/
 #content {
-    width: 77%;
-    height: 2000px;
-    padding: 61px 202px 0 147px;
+    width: 82%;
+    height: auto;
+    padding: 61px 140px 0 140px;
+    float: left;
 }
 
 #title {
@@ -309,10 +216,34 @@ hr {
     text-decoration: none;
 }
 /*height auto로 바꾸기*/
-    #item {
-        width: 100%;
-        height: 353px;
-    }
+#item {
+    width: 100%;
+    height: auto;
+}
+#product{
+    float: left;
+    margin: 25px 6px 25px 7px;
+    text-align: left;
+}
+#product img{
+    width: 235px;
+    height: 250px;
+    margin-bottom: 10px;
+}
+#sname, #pname{
+    text-align: left;
+    font-size: 15px;
+    font-weight: 100;
+}
+#price{
+    text-align: left;
+    font-size: 18px;
+    font-weight: bolder;
+}
+#item a {
+    color: black;
+    font-size: 16px;
+}
 
 /*footer*/
 footer {
@@ -321,6 +252,7 @@ footer {
     height: 332px;
     color: white;
     padding: 30px 174px 0 145px;
+    float: left;
 }
 
 h2 {

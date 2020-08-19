@@ -13,6 +13,7 @@ public class ProductQnAVO {
 	private int pcode;  //문의한 상품 번호
 	private String question;  //문의 내용
 	private String answer;  //문의 답변
+	private String state;  //문의 답변
 	private Date regdate;  //등록날짜
 	private Date updateupdate;  // 수정날짜 
 

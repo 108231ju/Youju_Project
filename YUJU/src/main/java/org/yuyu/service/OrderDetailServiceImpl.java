@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.yuyu.domain.MemVO;
 import org.yuyu.domain.OrderDetailVO;
 import org.yuyu.mapper.OrderDetailMapper;
 
@@ -54,6 +53,26 @@ public class OrderDetailServiceImpl implements OrderDetailService  {
 		// TODO Auto-generated method stub
 		return mapper.update(orderDetailVO) == 1;
 	}
+
+	@Override
+	public void insertSelectKey(OrderDetailVO orderDetailVO) {
+		// TODO Auto-generated method stub
+		mapper.insertSelectKey(orderDetailVO);
+	}
+
+	@Override
+	public List<OrderDetailVO> getListbyOcode(int ocode) {
+		// TODO Auto-generated method stub
+		return mapper.getListbyOcode(ocode);
+	}
+
+	@Override
+	public void insertfrombasket(OrderDetailVO orderDetailVO) {
+		// TODO Auto-generated method stub
+		mapper.insertfrombasket(orderDetailVO);
+	}
+
+	
 
 }
 

@@ -7,7 +7,7 @@
 	</select>
 	
 	<insert id="insert">
-		INSERT INTO likeitem(mcode,pcode) VALUES (#{mcode},#{pcode}})
+		INSERT INTO likeitem(mcode,pcode) VALUES (#{mcode},#{pcode})
 	</insert>
 	
 	<select id="read" resultType="org.yuyu.domain.LikeItemVO">
