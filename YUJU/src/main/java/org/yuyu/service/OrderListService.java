@@ -7,8 +7,12 @@ import org.yuyu.domain.OrderListVO;
 public interface OrderListService {
 	
 	public List<OrderListVO> getList();
+
+	public List<OrderListVO> ListbyMcode(int mcode);
 	
 	public void insert(OrderListVO orderListVO);
+
+	public void insertSelectKey(OrderListVO orderListVO);
 	
 	public OrderListVO read(int ocode);
 	

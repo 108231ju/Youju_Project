@@ -45,6 +45,18 @@ public class OrderListServiceImpl implements OrderListService  {
 		return mapper.update(orderListVO) == 1;
 	}
 
+	@Override
+	public void insertSelectKey(OrderListVO orderListVO) {
+		// TODO Auto-generated method stub
+		mapper.insertSelectKey(orderListVO);
+	}
+
+	@Override
+	public List<OrderListVO> ListbyMcode(int mcode) {
+		// TODO Auto-generated method stub
+		return mapper.ListbyMcode(mcode);
+	}
+
 }
 
 

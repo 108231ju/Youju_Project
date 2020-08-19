@@ -59,7 +59,13 @@ body {
     margin-left: 17px;
     border: none;
 }
-
+#input{
+	width: 87%;
+    margin-top: 9px;
+    height: 47%;
+    background-color: #eeee;
+    border-style: none;
+}
 #login {
     width: 21%;
     float: left;
@@ -68,7 +74,11 @@ body {
     margin-left: 24px;
     cursor: pointer;
 }
-
+#btn{
+	margin-top: 12px;
+    margin-left: 17px;
+    border: none;
+}
 #login a {
     text-decoration: none;
     color: black;

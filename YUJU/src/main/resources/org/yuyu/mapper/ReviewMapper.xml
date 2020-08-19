@@ -16,8 +16,8 @@
 		<selectKey keyProperty="rcode" order="BEFORE" resultType="int">
 			select seq_review.nextval from dual
 		</selectKey>
-		INSERT INTO preview(prcode,scode,pcode,mcode,review) 
-		VALUES (#{rcode},#{scode},#{pcode},#{mcode},#{review})
+		INSERT INTO review(rcode,scode,ocode,pcode,mcode,review) 
+		VALUES (#{rcode},#{scode},#{ocode},#{pcode},#{mcode},#{review})
 	</insert>
 	
 	<select id="read" resultType="org.yuyu.domain.ReviewVO">

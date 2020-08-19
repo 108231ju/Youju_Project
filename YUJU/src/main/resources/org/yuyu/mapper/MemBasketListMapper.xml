@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.yuyu.mapper.MemBasketListMapper">
+
+	<select id="getList" resultType="org.yuyu.domain.MemBasketListVO">
+		SELECT p.pcode,sm.SNAME ,p.PNAME ,b.bamount,p.PPRICE,b.bcolor,b.bsize
+		FROM STORE_MEM sm ,MEM m ,p_BASKET b,PRODUCT p
+		WHERE
+		b.mcode = m.MCODE 
+		AND b.PCODE = p.PCODE
+		AND p.SCODE = sm.SCODE 
+		AND m.MCODE = #{mcode}	
+	</select>
+	
+	<insert id="insert">
+	INSERT INTO p_basket(mcode,pcode,bamount,bsize,bcolor) 
+	VALUES (#{mcode},#{pcode},#{bamount},#{bsize},#{bcolor})  
+   </insert>
+	
+</mapper>

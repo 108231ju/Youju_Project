@@ -4,15 +4,17 @@
 <mapper namespace="org.yuyu.mapper.MemReviewMapper">
 
 	<select id="getList" resultType="org.yuyu.domain.MemReviewVO">
-		SELECT r.RCODE,o2.OCODE ,sm.SNAME ,p.PNAME ,o.P_DETAIL ,r.REVIEW ,r.UPDATEDATE 
-		FROM ORDER_DETAIL o,PRODUCT p,REVIEW r,MEM m,STORE_MEM sm,ORDERLIST o2 
-		WHERE o.OCODE = r.ocode
-		AND o.OCODE =o2.OCODE 
-		AND p.PCODE = r.PCODE 
-		AND SM .scode = r.SCODE 
-		AND p.PCODE = o.PCODE 
-		AND m.MCODE = #{mcode}
-		ORDER BY r.RCODE ASC
+		SELECT m.MCODE,r.RCODE,r.OCODE ,sm.SNAME ,p.PNAME ,o.P_DETAIL ,r.REVIEW ,r.UPDATEDATE
+FROM ORDER_DETAIL o,PRODUCT p,REVIEW r,MEM m,STORE_MEM sm,ORDERLIST o2
+WHERE o.OCODE = r.ocode
+  AND o.OCODE =o2.OCODE
+  AND p.PCODE = r.PCODE
+  AND SM .scode = r.SCODE
+  AND p.PCODE = o.PCODE
+  AND r.MCODE = m.MCODE 
+  AND r.MCODE = #{mcode}
+ORDER BY o2.OCODE ASC
+		
 	</select>
 	
 	

@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.yuyu.domain.ProductVO;
-import org.yuyu.mapper.ProductMapper;
 
 import lombok.Setter;
+import org.yuyu.mapper.ProductMapper;
 
 @Service
 public class ProductServiceImpl implements ProductService  {
@@ -46,11 +46,23 @@ public class ProductServiceImpl implements ProductService  {
 	}
 
 	@Override
+	public int showPcode() {
+		return productMapper.getRegisterablePcode();
+	}
+
+	@Override
 	public List<ProductVO> getListForStore(int scode) {
 		// TODO Auto-generated method stub
 		return productMapper.getListForStore(scode);
 	}
 
+	@Override
+	public List<ProductVO> getListForPcode(int pcode) {
+		// TODO Auto-generated method stub
+		return productMapper.getListForPcode(pcode);
+	}
+
+	
 
 }
 
