@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@include file="../storeMem/includes/header.jsp"%>
 <!-- ============================================================== -->
 <!-- Page wrapper  -->
@@ -20,10 +21,10 @@
 					<div class="card-body">
 						<h3 class="card-title">상품 등록</h3>
 						<h6 class="card-subtitle mt-3">판매할 상품의 존재 유무 확인을 위하여 먼저
-							검색해주시기 바랍니다.</h6>
+							검색 해주시기 바랍니다.</h6>
 
 						<div class="col-12">
-							<form method="get" action="/storeMem/searchforitem"
+								<form method="get" action="/storeMem/searchForItem"
 								class="form-group mt-3 row">
 								<input type="text" class="form-control col-5 mr-3" name="search" value="<c:out value='${search}'/>">
 								<button type="submit" class="btn btn-primary">검색</button>
@@ -32,17 +33,17 @@
 
 						</div>
 						<div id="searchresult"></div>
-						<input id="addbtn" type="button" class="form-control btn-danger" value="추가" onclick="location.href='/storeMem/register-product-page'"/>
-						<div class="table-responsive" id="resulttable">
+						<input id="addbtn" type="button" class="form-control btn-danger" value="상품 추가" onclick="location.href='/storeMem/register-product-page'"/>
+						<div class="table-responsive mt-3" id="resulttable">
 							<table class="table">
 								<thead class="thead-light">
 									<tr>
 										<th scope="col">#</th>
-										<th scope="col">상품이미지</th>
-										<th scope="col">상품코드</th>
+										<th scope="col">상품 이미지</th>
+										<th scope="col">상품 코드</th>
 										<th scope="col">상품명</th>
-										<th scope="col">상품가격</th>
-										<th scope="col">상품업데이트날짜</th>
+										<th scope="col">상품 가격</th>
+										<th scope="col">상품 업데이트 날짜</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -53,7 +54,7 @@
 											<td><c:out value="${pro.pcode}" /></td>
 											<td><c:out value="${pro.pname}" /></td>
 											<td><c:out value="${pro.pprice}" /></td>
-											<td><c:out value="${pro.updatedate}" /></td>
+											<td><fmt:formatDate pattern="yyyy/MM/dd" value="${pro.updatedate}"/></td>
 										</tr>
 									</c:forEach>
 								</tbody>
@@ -132,7 +133,7 @@ $(document).ready(function(){
 	var result = '<c:out value="${result}"/>';
 	
 	if(result === "1"){
-		$("#searchresult").append("<p class='card-title'>검색 결과 <c:out value="${result}"/>  건이 발생하였습니다.</p>");
+		$("#searchresult").append("<p class='card-title'>검색 결과 <c:out value="${result}"/>  건이 발생 하였습니다.</p>");
 		$("#resulttable").show();	
 		$("#addbtn").show();
 	}
@@ -141,7 +142,6 @@ $(document).ready(function(){
 		$("#addbtn").show();
 	}
 });
-
 </script>
 </body>
 

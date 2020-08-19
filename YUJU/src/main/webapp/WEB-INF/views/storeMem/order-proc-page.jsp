@@ -1,23 +1,44 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@include file="../storeMem/includes/header.jsp"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" %>
-<%@include file="../storeMem/includes/header.jsp" %>
 <!-- ============================================================== -->
-<!-- Page wrapper -->
+<!-- Page wrapper  -->
 <!-- ============================================================== -->
 <div class="page-wrapper">
     <!-- ============================================================== -->
     <!-- Bread crumb and right sidebar toggle -->
     <!-- ============================================================== -->
     <div class="page-breadcrumb">
-
+        <div class="row">
+            <div class="col-7 align-self-center">
+                <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">주문 정보 처리</h4>
+                <div class="d-flex align-items-center">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb m-0 p-0">
+                            <li class="breadcrumb-item"><a href="index.html" class="text-muted">상품 정보 수정</a></li>
+                            <li class="breadcrumb-item text-muted active" aria-current="page">상품 정보 삭제</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+            <%--                    <div class="col-5 align-self-center">--%>
+            <%--                        <div class="customize-input float-right">--%>
+            <%--                            <select class="custom-select custom-select-set form-control bg-white border-0 custom-shadow custom-radius">--%>
+            <%--                                <option selected>Aug 19</option>--%>
+            <%--                                <option value="1">July 19</option>--%>
+            <%--                                <option value="2">Jun 19</option>--%>
+            <%--                            </select>--%>
+            <%--                        </div>--%>
+            <%--                    </div>--%>
+        </div>
     </div>
     <!-- ============================================================== -->
     <!-- End Bread crumb and right sidebar toggle -->
     <!-- ============================================================== -->
     <!-- ============================================================== -->
-    <!-- Container fluid -->
+    <!-- Container fluid  -->
     <!-- ============================================================== -->
     <div class="container-fluid">
         <!-- ============================================================== -->
@@ -27,8 +48,8 @@
 
             <div class="col-12">
                 <div class="card">
-                    <div class="card-body">
-                        <h3 class="card-title">상품 정보 조회/수정</h3>
+                   <div class="card-body">
+                        <h3 class="card-title">주문 정보 조회/수정</h3>
                     </div>
                     <div class="col-md-11" style="align-self: center">
                         <div class="card border-danger">
@@ -37,7 +58,7 @@
                             </div>
                             <div class="card-body text-center">
                                 <span>
-                                <label><strong class="card-title">상품번호 : </strong></label> <input type="text"/>
+                                <label><strong class="card-title">주문 번호 : </strong></label> <input type="text"/>
                                 </span>
                                 <span class="ml-lg-5 mr-lg-5" >
                                     <label><strong class="card-title">카테고리 : </strong></label>
@@ -63,7 +84,7 @@
                                         </select>
                                 </span>
                                 <span class="ml-lg-5 mr-lg-5">
-                                    <label><strong class="card-title">상품 이름 : </strong></label> <input type="text"/>
+                                    <label><strong class="card-title">주문자 이름 : </strong></label> <input type="text"/>
                                 </span>
                                 <span class="ml-lg-5 mr-lg-5">
                                     <button type="button" class="btn btn-primary">검색</button>
@@ -71,37 +92,41 @@
                             </div>
                         </div>
                     </div>
-                    <h3 class="col-12 card-title">상품 정보 조회 결과</h3>
+                    <h3 class="col-12 card-title">주문 정보 조회 결과</h3>
                     <div class="table-responsive p-2 text-center">
                         <table class="table">
                             <thead class="thead-dark">
                             <tr>
-                                <th scope="col">상품번호</th>
-                                <th scope="col">대표 이미지</th>
-                                <th scope="col">이름</th>
-                                <th scope="col">카테고리</th>
+                                <th scope="col">주문 번호 </th>
+                                <th scope="col">주문 상세번호 </th>
+                                <th scope="col">주문자 이름(id)</th>
+                                <th scope="col">상품 주문 수량</th>
+                                <th scope="col">주문 총 가격</th>
+                                <th scope="col">주문 처리 상태</th>
                                 <th scope="col">업데이트 시간</th>
                                 <th scope="col">
                                 </th>
                             </tr>
                             </thead>
                             <tbody class="list">
-                            <c:forEach items="${products}" var="product">
+                            <c:forEach items="${orderlist}" var="list">
                             <tr>
-                                <th scope="row">${product.pcode}</th>
-                                <th scope="row">이미지</th>
-                                <td><c:out value="${product.pname}"/></td>
-                                <td><c:out value="${product.pprice}"/></td>
-                                <td><fmt:formatDate pattern="yyyy/MM/dd" value="${product.updatedate}"/></td>
+                                <th scope="row">${list.ocode}</th>
+                                <th scope="row">${list.onum}</th>
+                                <th scope="row">${list.mname}</th>
+                                <td><c:out value="${list.amount}"/></td>
+                                <td><c:out value="${list.total}"/>원</td>
+                                <td><c:out value="${list.state}"/></td>
+                                <td><fmt:formatDate pattern="yyyy/MM/dd" value="${list.updatedate}"/></td>
                                 <td>
-                                    <button  class="btn btn-primary btnMody" value="${product.pcode }">수정</button>
+                                    <button  class="btn btn-primary btnMody" value="${list.ocode}" data-onum="${list.onum}">상세보기</button>
                                 </td>
                             </tr>
                             </c:forEach>
                         </table>
                     </div>
                 </div>
-            </div>
+ 
 
 
         </div>
@@ -117,7 +142,7 @@
         <!-- ============================================================== -->
     </div>
     <!-- ============================================================== -->
-    <!-- End Container fluid -->
+    <!-- End Container fluid  -->
     <!-- ============================================================== -->
     <!-- ============================================================== -->
     <!-- footer -->
@@ -131,7 +156,7 @@
     <!-- ============================================================== -->
 </div>
 <!-- ============================================================== -->
-<!-- End Page wrapper -->
+<!-- End Page wrapper  -->
 <!-- ============================================================== -->
 </div>
 <!-- ============================================================== -->
@@ -157,21 +182,15 @@
 <!--Menu sidebar -->
 <script src="/resources/admin/src/dist/js/sidebarmenu.js"></script>
 <!--Custom JavaScript -->
+
 <script src="/resources/admin/src/dist/js/custom.min.js"></script>
-</body>
 <script>
 $(document).ready(function(){
 	$(".list").on("click",".btnMody",function(){
-		location.href="/storeMem/modify-product-page?pcode="+$(this).attr("value");
+		location.href="/storeMem/order-proc-page?ocode="+$(this).attr("value")+"&onum="+$(this).attr("data-onum");
 	});
-	
-    $("[name='cateCodeRefGroup']").children().hide();
-    $("[name='cateCodeGroup']").change(function(){ 
-    	$("[name='cateCodeRefGroup']").children().hide();
-    		$("[name='cateCodeRefGroup']").find("[date-coderef='"+$(this).val()+"']").show();
-    	
-    });
 });
 </script>
+</body>
 
 </html>

@@ -40,4 +40,8 @@
 		update orderdetail set amount =#{amount}, totalprice=#{totalprice},updatedate = sysdate where ocode=#{ocode} and onum=#{onum}
 	</update>
 	
+	<select id="readPerStore" resultType="org.yuyu.domain.StoreOrderDetailVO">
+		SELECT order_detail.*, orderlist.mcode, mem.mname, mem.mid FROM order_detail, orderlist,product,mem WHERE orderlist.ocode = order_detail.ocode AND product.pcode = order_detail.pcode and mem.mcode = orderlist.mcode and product.scode=#{scode}
+	</select>
+	
 </mapper>

@@ -19,6 +19,7 @@ public interface ProductService {
 	
 	public boolean modify(ProductVO productVO);
 
+	public int showPcode();
 
 }
 

@@ -44,19 +44,20 @@
                         <h4 class="card-title"> 상품 정보 등록</h4>
                         <h6 class="card-subtitle"></h6>
                     </div>
-                    <form role="form" action="/storeMem/register-product-proc" method="post">
-                        <div class="table-responsive p-4">
+                    <div class="table-responsive p-4">
+                        <form role="form" action="/storeMem/modify-product-proc" method="post"
+                              enctype="multipart/form-data">
                             <table class="table text-center">
                                 <tbody>
                                 <tr>
                                     <td style="background-color: #27282b; color: #fff; width: 15%">상품 등록 번호</td>
                                     <td COLSPAN="2"><input class="form-control col-3" name="pcode"
-                                                           value="<c:out value='${pcode}'/>" readonly/>
+                                                           value="<c:out value='${product.pcode}'/>" readonly/>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td style="background-color: #27282b; color: #fff; width: 15%">상품 이름</td>
-                                    <td COLSPAN="2"><input class="form-control col-3" type="text" name="pname"/>
+                                    <td COLSPAN="2"><input class="form-control col-3" type="text" name="pname"  value="<c:out value='${product.pname}'/>" />
                                     </td>
                                 </tr>
                                 <tr>
@@ -68,15 +69,15 @@
                                                 <label class="custom-control-label" for="checkSize">사이즈</label>
                                             </div>
                                             <div class="custom-control custom-checkbox m-2">
-                                                <input type="checkbox" class="custom-control-input" id="checkColor">
+                                                <input type="checkbox" class="custom-control-input" id="checkColor" >
                                                 <label class="custom-control-label" for="checkColor">색상</label>
                                             </div>
                                             
                                         </div>
                                         <div id="inputOptions">
-                                           <input type="text" class="form-control col-3" id="size" name="size"
+                                           <input type="text" class="form-control col-3" id="size" name ="size"
                                                    value="" placeholder="ex) S,M,L,XL or 250/255/260"/>
-                                            <input type="hidden" class="form-control col-3 mt-2" id="color" name="color"
+                                            <input type="hidden" class="form-control col-3 mt-2" id="color" name ="color"
                                                    value="" placeholder="ex) 빨강,파랑,녹색..."/>
 
                                             <button type="button" id="goMakeCheckTable" class="btn btn-primary mt-2"
@@ -88,35 +89,27 @@
                                             <table id="optionCheckResult" class="table">
                                                 <thead id="optionCheckResultTr" class="thead-light">
                                                 <tr>
+	                                                <th scope="col" id="sizeTh">사이즈</th>
+	                                                <th scope="col" id="colorTh">색상</th>
+	                                                <th scope="col" id="amountTh">재고 수량</th>
                                                 </tr>
                                                 </thead>
-                                                <tbody id="tbody">
+                                                <tbody id="detailsTbody">
+                                                <c:forEach items="${details}" var="list">
+	                                                <tr>
+		                                                <td><input type="text" name="size" value="<c:out value='${list.psize}'/>"/></td>
+		                                                <td><input type="text" name="color" value="<c:out value='${list.pcolor}'/>"/></td>
+		                                                <td><input type="text" name="amount" value="<c:out value='${list.amount}'/>"/></td>
+	                                                </tr>
+                                            	</c:forEach>
                                                 </tbody>
                                             </table>
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="background-color: #27282b; color: #fff; width: 15%">상품 옵션 2</td>
-                                    <td COLSPAN="2" class="text-left">
-                                        <div class="form-check form-check-inline m-2">
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="today">
-                                                <input type="hidden" name="today" value="0">
-                                                <label class="custom-control-label" for="today">하루배송</label>
-                                            </div>
-                                            <div class="custom-control custom-checkbox m-2">
-                                                <input type="checkbox" class="custom-control-input" id="best">
-                                                <input type="hidden" name="best" value="0">
-                                                <label class="custom-control-label" for="best">베스트</label>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="background-color: #27282b; color: #fff; width: 15%">카테고리</td>
-                                    <td COLSPAN="2" class="text-left category">
-                                        <select name="cateCodeGroup" class="p-1">
+                                    <td style="background-color: #27282b; color: #fff; width: 15%">상품 옵션2</td>
+                                    <td COLSPAN="2" class="category"><select name="cateCodeGroup" class="p-1">
                                             <option value="">대분류 선택</option>
                                             <option value="100">아우터</option>
                                             <option value="200">상의</option>
@@ -135,18 +128,51 @@
                                             <c:forEach items="${catelist}" var="list">
                                             	<option name="catecode" value="${list.cateCode}" date-coderef="${list.cateCodeRef}">${list.cateName}</option>
 											</c:forEach>
-                                        </select>
-
+                                        </select></td>
+                                </tr>
+                                 <tr>
+                                    <td style="background-color: #27282b; color: #fff; width: 15%">상품 옵션 2</td>
+                                    <td COLSPAN="2" class="text-left">
+                                        <div class="form-check form-check-inline m-2">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="today">
+                                                <input type="hidden" name="today" value="0">
+                                                <label class="custom-control-label" for="today">하루배송</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox m-2">
+                                                <input type="checkbox" class="custom-control-input" id="best">
+                                                <input type="hidden" name="best" value="0">
+                                                <label class="custom-control-label" for="best">베스트</label>
+                                            </div>
+                                        </div>
                                     </td>
                                 </tr>
-
                                 <tr>
                                     <td style="background-color: #27282b; color: #fff; width: 15%">상품 가격</td>
-                                    <td COLSPAN="2"><input class="form-control col-3" type="text" name="pprice"/></td>
+                                    <td COLSPAN="2"><input class="form-control col-3" type="text" name="pprice"  value="<c:out value='${product.pprice}'/>" /></td>
                                 </tr>
+                                 
                                 <tr>
                                     <td style="background-color: #27282b; color: #fff; width: 15%">상품 이미지</td>
-                                   
+                                    <style type="text/css">
+                                        .uploadResult {
+                                            width: 100%;
+                                            background-color: slategray;
+                                        }
+                                        .uploadResult ul {
+                                            display: flex;
+                                            flex-flow: row;
+                                            justify-content: center;
+                                            align-items: center;
+                                        }
+                                        .uploadResult ul li {
+                                            list-style: none;
+                                            padding: 10px;
+                                        }
+                                        .uploadResult ul li img {
+                                            width: 200px;
+                                        }
+                                    </style>
                                     <td width="200">
                                         <div class="uploadResult">
                                             <ul></ul>
@@ -155,6 +181,7 @@
                                     <td class="col-5">
                                         <div class="form-group uploadDiv row">
                                             <input type='file' name='uploadFile' multiple/>
+                                            <input type='button' name='deleteFile' value="파일 삭제"/>
                                         </div>
                                     </td>
 
@@ -163,11 +190,12 @@
                             </table>
 
                             <div>
-                                <button class="btn-primary btn" type="submit"> 상품 등록</button>
+                                <button class="btn-primary btn" type="submit"> 상품 수정</button>
+                                <button class="btn-danger btn" type="button" onclick="location.href='/storeMem/delete-product-proc?pcode=<c:out value="${product.pcode}"/>'"> 상품 삭제</button>
                             </div>
+                        </form>
 
-                        </div>
-                    </form>
+                    </div>
 
                 </div>
             </div>
@@ -214,7 +242,7 @@
 <script src="/resources/admin/src/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- apps -->
 <!-- apps -->
-<script src="/resources/admin/src/dist/js/app-style-switcher.js"></script>
+<script src="/resources/admin/src/dist/js/app-style-switcher.js"></script>		
 <script src="/resources/admin/src/dist/js/feather.min.js"></script>
 <!-- slimscrollbar scrollbar JavaScript -->
 <script src="/resources/admin/src/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
@@ -228,26 +256,83 @@
 <script>
     $(document).ready(function () {
         var formObj = $("form[role='form']");
-        $("#optionCheckResult").hide();
-        $("#checkColor").on("click", function () {
-            if ($("#checkColor").is(":checked") == true) {
-                $("#color").attr("type", "text");
-            } else if ($("#checkColor").is(":checked") == false) {
-                $("#color").attr("type", "hidden");
-            }
+        $("button[type='submit']").on("click", function () {
+            e.preventDefault();
+            console.log("submit clicked");
         });
-        
+        var regex = new RegExp("(.*?)\.(exe|sh|zip|alz)$");
+        var maxSize = 5242880; // 5MB
+        //
+        function checkExtension(fileName, fileSize) {
+            if (fileSize >= maxSize) {
+                alert("파일 사이즈 초과");
+                return false;
+            }
+            if (regex.test(fileName)) {
+                alert("해당 종류의 파일은 업로드 할 수 없습니다.");
+                return false;
+            }
+            return true;
+        }
 
-        $("[name='cateCodeRefGroup']").children().hide();
+
+    	
+		var code = <c:out value="${product.cateCode}"/>;
+
+        $("[name='cateCodeRefGroup']").val(code).attr("selected",true);
+		code = Math.floor(Number(code) / 100) * 100;
+        $("[name='cateCodeGroup']").val(code).attr("selected",true);
+        
         $("[name='cateCodeGroup']").change(function(){ 
-        		$("[name='cateCodeRefGroup']").children().hide();
-        		$("[name='cateCodeRefGroup']").find("[date-coderef='"+$(this).val()+"']").show();
+        	$("[name='cateCodeRefGroup']").children().hide();
+        	$("[name='cateCodeRefGroup']").find("[date-coderef='"+$(this).val()+"']").show();
         	
         });
+        
+        $(".category").append(" <input type='hidden' name='catecode' value='"+$("[name='cateCodeRefGroup']").val()+"'>");
+       	if($("#detailsTbody").find("[name='color']:eq(0)").val() == "N"){
+       		$("#detailsTbody").find("[name='color']").parent().remove();
+       	}
         $("[name='cateCodeRefGroup']").change(function(){
-        	$(".category").append(" <input type='hidden' name='catecode' value='"+$("[name='cateCodeRefGroup']").val()+"'>");
+        	(" input[name='catecode']").attr("value",$([name='cateCodeRefGroup']).val());
         });
+        
+    	$("[name='cateCodeRefGroup']").children().hide();
+    	$("[name='cateCodeRefGroup']").find("[date-coderef='"+ $("[name='cateCodeGroup']").val()+"']").show();
+    	
+    	
+        var color = "<c:out value='${colors}'/>";
+        var size = "<c:out value='${sizes}'/>";
+        var today = "<c:out value='${product.today}'/>";
+        var best = "<c:out value='${product.best}'/>";
+        
        
+        if(today == "1"){
+        	$("#today").prop("checked","checked");
+        }
+        if(best == "1"){
+        	$("#best").prop("checked","checked");
+        }
+        
+        console.log(color);
+        console.log(size);
+        
+        $("#color").val(color);
+        $("#size").val(size);
+        
+        if($("#color").val() == "" || $("#color").val() == "N"  ){
+        	console.log("no");
+        	$("#checkColor").prop("checked",false);
+        	$("#color").attr("type","hidden");
+        	$("#colorTh").remove();
+        	$("#detailsTbody .color").remove();
+        }
+        
+        if($("#color").val() != "N" && $("#color").val() != "" ){
+        	console.log("y");
+        	$("#checkColor").prop("checked","checked");
+        	$("#color").attr("type","text");
+        }
         
         $("#checkColor").on("click", function () {
             if ($("#checkColor").is(":checked") == true) {
@@ -258,28 +343,13 @@
         });
         
         
-        $("#best").on("click", function () {
-            if ($("#best").is(":checked") == true) {
-                $("input[name='best']").attr("value", "1");
-            } else if ($("#best").is(":checked") == false) {
-                $("input[name='best']").attr("value", "0");
-            }
-        });
-        $("#today").on("click", function () {
-            if ($("#today").is(":checked") == true) {
-                $("input[name='today']").attr("value", "1");
-            } else if ($("#today").is(":checked") == false) {
-                $("input[name='today']").attr("value", "0");
-            }
-        });
         $("#okbtn").on("click", function (e) {
-            $("#optionCheckResult").show();
+            $("#optionCheckResult").children(0).children(0).text("");
             var tr = $("#optionCheckResult").children(0).children(0);
             var colnum = 0;
             var colorArr = $("#color").val().split(',');
             var sizeArr = $("#size").val().split(',');
             tr.html("");
-            tr.append("<th scope=\"col\">#</th>");
             if ($("#checkColor").is(":checked") == true) {
                 tr.append("<th scope=\"col\">상품 색상</th>");
                 colnum = 1;
@@ -292,7 +362,7 @@
                 colnum = 3;
             }
             tr.append("<th scope=\"col\">판매 가능 재고</th>");
-            var tbody = $("#tbody");
+            var tbody = $("#detailsTbody");
             tbody.html("");
             if (colnum == 1) {
                 var tags = "";
@@ -314,44 +384,38 @@
                 tbody.html(tags);
             } else if (colnum == 3) {
                 var tags = "";
-                var totalCount = 1;
                 for (var j = 0; j < sizeArr.length; j++) {
                     for (var k = 0; k < colorArr.length; k++) {
                         tags += "<tr>";
-                        tags += "<td>" + totalCount + "</td>";
                         tags += "<td><input type='text' class='form-control' name='pcolor' value='" + colorArr[k] + "'/></td>";
                         tags += "<td><input type='text' class='form-control' name='psize' value='" + sizeArr[j] + "'/></td>";
                         tags += "<td><input type='text' class='form-control' name='amount' /></td>";
                         tags += "</tr>";
-                        totalCount++;
                     }
                 }
                 tbody.html(tags);
             }
         });
         
-        $("#sizebtn").on("click", function (e) {
-            e.preventDefault();
-            $("#sizelist").append("<div class=\"row mt-2 ml-2\"><input class=\"form-control  col-3\" type=\"text\" /><button id=\"colorbtn\" class=\"form-control btn btn-outline-primary ml-3 col-sm-1\" type=\"button\">-</button></div>");
-        });
-        $("#colorbtn").on("click", function (e) {
-            e.preventDefault();
-            $("#colorlist").append("<div class=\"row mt-2 ml-2\"><input class=\"form-control  col-3\" type=\"text\" /><button id=\"colorbtn\" class=\"form-control btn btn-outline-primary ml-3 col-sm-1\" type=\"button\">-</button></div>");
-        });
-        var regex = new RegExp("(.*?)\.(exe|sh|zip|alz)$");
-        var maxSize = 5242880; // 5MB
-        //
-        function checkExtension(fileName, fileSize) {
-            if (fileSize >= maxSize) {
-                alert("파일 사이즈 초과");
-                return false;
+
+        
+              
+        $("#best").on("click", function () {
+            if ($("#best").is(":checked") == true) {
+                $("input[name='best']").attr("value", "1");
+            } else if ($("#best").is(":checked") == false) {
+                $("input[name='best']").attr("value", "0");
             }
-            if (regex.test(fileName)) {
-                alert("해당 종류의 파일은 업로드 할 수 없습니다.");
-                return false;
+        });
+        $("#today").on("click", function () {
+            if ($("#today").is(":checked") == true) {
+                $("input[name='today']").attr("value", "1");
+            } else if ($("#today").is(":checked") == false) {
+                $("input[name='today']").attr("value", "0");
             }
-            return true;
-        }
+        });
+        $("input[name='deleteFile']").on("click", function () {
+        });
         function showUploadedFile(uploadResultArr) {
             if (!uploadResultArr || uploadResultArr.length == 0) {
                 return;
@@ -361,51 +425,15 @@
             $(uploadResultArr).each(function (i, obj) {
                 if (obj.image) {
                     var fileCallPath = encodeURIComponent(obj.uploadPath + "/s_" + obj.uuid + "_" + obj.fileName);
-                    console.log("fileCoallPath : "+fileCallPath);
-                    str += "<li data-path='"+obj.uploadPath+"'";
-                    str += "data-uuid='"+obj.uuid+"' data-fileName='"+obj.fileName+"' data-type='"+obj.image+"'";
-                    str += " ><div>"
-                    str += "<img src='/storeMem/display?fileName=" + fileCallPath + "'>";
-                    str += "<button type='button' class='btn btn-danger' name='deleteFile' data-file=\'"+fileCallPath+"\' data-type='image'>상품삭제</button>"
+                    str += "<li><div>";
+                    str += "<img src='/display?fileName=" + fileCallPath + "'>";
                     str += "</div>";
                     str += "</li>"
                 } else {
                     alert("이미지 파일 업로드 오류");
                 }
             });
-            $("[type='submit']").click(function(){
-                console.log("submit clicked");
-                var str ="";
-                $(".uploadResult ul li").each(function(i,obj){
-                    var jobj =$(obj);
-                    console.dir(jobj);
-                    str += "<input type='hidden' name='fileName' value='"+jobj.data("filename")+"'/>";
-                    str += "<input type='hidden' name='uuid' value='"+jobj.data("uuid")+"'/>";
-                    str += "<input type='hidden' name='path' value='"+jobj.data("path")+"'/>";
-                    str += "<input type='hidden' name='type' value='"+jobj.data("type")+"'/>";
-                });
-                formObj.append(str).submit();
-            });
-            
             uploadUL.append(str);
-            $(".uploadResult").on("click","button" ,function (e) {
-                var targetFile = $(this).data("file");
-                console.log(targetFile);
-                var type = $(this).data("type");
-                console.log(type);
-                var targetLi = $(this).closest("li");
-                console.log(targetLi);
-                $.ajax({
-                    url: '/storeMem/deleteFile',
-                    data: {fileName: targetFile, type: type},
-                    dataType: 'text',
-                    type: 'POST',
-                    success: function (result) {
-                        alert(result);
-                        targetLi.remove();
-                    }
-                });
-            });
         }
         $("input[type='file']").change(function (e) {
             var formData = new FormData();
@@ -418,7 +446,7 @@
                 formData.append("uploadFile", files[i]);
             }
             $.ajax({
-                url: '/storeMem/uploadAjaxAction',
+                url: '/uploadAjaxAction',
                 processData: false,
                 contentType: false,
                 data: formData,

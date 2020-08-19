@@ -5,6 +5,8 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.yuyu.domain.MemVO;
 import org.yuyu.domain.OrderDetailVO;
+import org.yuyu.domain.StateVO;
+import org.yuyu.domain.StoreOrderDetailVO;
 
 public interface OrderDetailMapper {
 	
@@ -28,6 +30,13 @@ public interface OrderDetailMapper {
 	
 	//주문 상세목록 데이터 수정
 	public int update(OrderDetailVO orderDetailVO);
+	
+	public List<StoreOrderDetailVO> readPerStore(int scode);
+	
+	
+	public int modifyOfState(@Param("ocode") int ocode, @Param("onum") int onum, @Param("state") String state);
+	
+	public List<StateVO> selectState(int scode);
 	
 }
 

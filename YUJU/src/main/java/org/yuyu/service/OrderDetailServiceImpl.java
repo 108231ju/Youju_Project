@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.yuyu.domain.MemVO;
 import org.yuyu.domain.OrderDetailVO;
+import org.yuyu.domain.StateVO;
+import org.yuyu.domain.StoreOrderDetailVO;
 import org.yuyu.mapper.OrderDetailMapper;
 
 import lombok.Setter;
@@ -54,8 +56,24 @@ public class OrderDetailServiceImpl implements OrderDetailService  {
 		// TODO Auto-generated method stub
 		return mapper.update(orderDetailVO) == 1;
 	}
+	
+	@Override
+	public List<StoreOrderDetailVO> readPerStore(int scode) {
+		// TODO Auto-generated method stub
+		return mapper.readPerStore(scode);
+	}
+
+	@Override
+	public int updateState(int ocode, int onum, String state) {
+		// TODO Auto-generated method stub
+		return mapper.modifyOfState(ocode, onum, state);
+	}
+
+	@Override
+	public List<StateVO> selectState(int scode) {
+		// TODO Auto-generated method stub
+		return mapper.selectState(scode);
+	}
 
 }
-
-
 
