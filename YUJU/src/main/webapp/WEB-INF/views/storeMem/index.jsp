@@ -50,28 +50,32 @@
                     </div>
                     <div class="card-body row">
                         <div class="text-center">
+                        <c:forEach items="${statelist}" var="list">
+							<input type="hidden" class="stateName" value="<c:out value='${list.state}'/>"/>
+							<input type="hidden" class="statecount" value="<c:out value='${list.count}'/>">
+						</c:forEach>
                             <img style="width: 50%; margin-left: 30px" src="/resources/admin/pay_ready_icon.png"/>
-                            <h3 class="card-title">0건</h3>
+                            <h3 class="card-title" name="결제준비중">0건</h3>
                         </div>
                         <img style="width: 8%" src="/resources/admin/next_icon.png"/>
                         <div class="text-center">
                             <img style="width: 60%" src="/resources/admin/ready_product_icon.png"/>
-                            <h3 class="card-title">0건</h3>
+                            <h3 class="card-title" name="상품준비중">0건</h3>
                         </div>
                         <img style="width: 8%" src="/resources/admin/next_icon.png">
                         <div class="text-center">
                             <img style="width: 60%" src="/resources/admin/ready_delivery_icon.png"/>
-                            <h3 class="card-title">0건</h3>
+                            <h3 class="card-title" name="배송준비중">0건</h3>
                         </div>
                         <img style="width: 8%" class="col-sm-1" src="/resources/admin/next_icon.png">
                         <div class="text-center">
                             <img style="width: 60%" src="/resources/admin/deliverying_icon.png"/>
-                            <h3 class="card-title">0건</h3>
+                            <h3 class="card-title" name="배송중">0건</h3>
                         </div>
                         <img style="width: 8%"src="/resources/admin/next_icon.png">
                         <div class="text-center">
                             <img style="width: 60%" src="/resources/admin/complete_icon.png"/>
-                            <h3 class="card-title">0건</h3>
+                            <h3 class="card-title" name="배송완료">0건</h3>
                         </div>
                     </div>
                 </div>
@@ -516,6 +520,12 @@
 <script src="/resources/admin/src/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"></script>
 <script src="/resources/admin/src/assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>
 <script src="/resources/admin/src/dist/js/pages/dashboards/dashboard1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		
+		$("[name='결제준비중']").text()
+	});
+</script>
 </body>
 
 </html>

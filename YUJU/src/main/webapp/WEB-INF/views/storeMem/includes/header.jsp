@@ -33,6 +33,25 @@
     <link href="../resources/admin/src/dist/css/style.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="highlights/highlight.min.css">
     <![endif]-->
+     <style type="text/css">
+	     .uploadResult {
+	         width: 100%;
+	         background-color: slategray;
+	     }
+	     .uploadResult ul {
+	         display: flex;
+	         flex-flow: row;
+	         justify-content: center;
+	         align-items: center;
+	     }
+	     .uploadResult ul li {
+	         list-style: none;
+	         padding: 10px;
+	     }
+	     .uploadResult ul li img {
+	         width: 200px;
+	     }
+ 	</style>
 </head>
 
 <body style="background-color: #FFFFFF">
@@ -392,4 +411,39 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
     </div>
+    
+        <div class="modal fade" role="dialog" id="stateModModal" tabindex="-1" aria-labelledby="stateModyModalH"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="stateModyModalH"> 주문 상태 변경</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                	<input type="hidden" id="ocode" value=""/>
+                	<input type="hidden" id ="onum" value=""/>
+                	<input type="hidden" id ="state" value=""/>
+                    <select name="thisState" class="p-1">
+					                  	<option value="결제준비중">결제준비중</option>
+					                   	<option value="상품준비중">상품준비중</option>
+					                    <option value="배송준비중">배송준비중</option>
+					              		<option value="배송중">배송중</option>
+                                		<option value="배송완료">배송완료</option>
+                    </select> 
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" type="button" data-dismiss="modal"> 취소</button>
+                    <button class="btn btn-default ok" type="button" id="modyOk" data-dismiss="modal"> 확인
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+=======
+    </div>
+>>>>>>> refs/heads/master

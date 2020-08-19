@@ -8,5 +8,4 @@ public class AttachFileDTO {
     private String uploadPath; // 실제 파일이 업로드된 경로
     private String fileName; //파일 이름을 의미
     private boolean image; // 이미지 파일 여부 판단
-
 }

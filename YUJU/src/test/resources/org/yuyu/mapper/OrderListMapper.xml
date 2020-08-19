@@ -23,4 +23,6 @@
 		update orderlist set totalprice =#{totalprice}, state=#{state}, updatedate = sysdate where ocode=#{ocode}
 	</update>
 	
+
+	
 </mapper>

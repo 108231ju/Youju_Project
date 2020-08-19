@@ -142,7 +142,6 @@ $(document).ready(function(){
 		$("#addbtn").show();
 	}
 });
-
 </script>
 </body>
 

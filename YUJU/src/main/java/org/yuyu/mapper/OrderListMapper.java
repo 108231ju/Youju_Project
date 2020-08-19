@@ -24,6 +24,7 @@ public interface OrderListMapper {
 	//주문 목록 데이터 수정
 	public int update(OrderListVO orderListVO);
 	
+	
 }
 
 

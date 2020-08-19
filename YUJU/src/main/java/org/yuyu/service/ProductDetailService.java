@@ -2,26 +2,19 @@ package org.yuyu.service;
 
 import org.yuyu.domain.ProductDetailVO;
 import org.yuyu.domain.ProductVO;
+import org.yuyu.domain.StoreOrderDetailVO;
 
 import java.util.List;
 
 public interface ProductDetailService {
-	
-//	public List<ProductVO> getList();
-//
-//	public List<ProductVO> getListForStore(int scode);
-//
 	public void insert(ProductDetailVO productDetailVO);
-//
-//	public ProductVO read(int pcode);
-//
-//	public boolean delete(int pcode);
-//
-//	public boolean modify(ProductVO productVO);
-//
-//	public int showPcode();
+
+	public List<ProductDetailVO> readWithPcode(int pcode);
+	
+	public List<String> getProductColor(int pcode);
+	public List<String> getProductSize(int pcode);
+	public void deleteProductDetail(int pcode);
+	
 
 
 }
-
-

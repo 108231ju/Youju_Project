@@ -1,4 +1,8 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<<<<<<< HEAD
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+=======
+>>>>>>> refs/heads/master
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@include file="../storeMem/includes/header.jsp" %>
@@ -38,6 +42,30 @@
                                 <span>
                                 <label><strong class="card-title">상품번호 : </strong></label> <input type="text"/>
                                 </span>
+<<<<<<< HEAD
+                                <span class="ml-lg-5 mr-lg-5" >
+                                    <label><strong class="card-title">카테고리 : </strong></label>
+                                    <select name="cateCodeGroup" class="p-1">
+                                            <option value="">대분류 선택</option>
+                                            <option value="100">아우터</option>
+                                            <option value="200">상의</option>
+                                            <option value="300">바지</option>
+                                            <option value="400">스커트</option>
+                                            <option value="500">신발</option>
+                                            <option value="600">가방</option>
+                                            <option value="700">주얼리</option>
+                                            <option value="800">잡화</option>
+                                            <option value="900">라이프웨어</option>
+                                            <option value="1000">빅사이즈</option>
+                                        </select>
+
+                                        <select name="cateCodeRefGroup" class="p-1">
+                                            <option value="">소분류 선택</option>
+                                            <c:forEach items="${catelist}" var="list">
+                                            	<option name="catecode" value="${list.cateCode}" date-coderef="${list.cateCodeRef}">${list.cateName}</option>
+											</c:forEach>
+                                        </select>
+=======
                                 <span class="ml-lg-5 mr-lg-5">
                                     <label><strong class="card-title">카테고리 : </strong></label>
                                     <select style="width:90px">
@@ -55,6 +83,7 @@
                                         <option>상의</option>
                                         <option>하의</option>
                                     </select>
+>>>>>>> refs/heads/master
                                 </span>
                                 <span class="ml-lg-5 mr-lg-5">
                                     <label><strong class="card-title">상품 이름 : </strong></label> <input type="text"/>
@@ -79,15 +108,29 @@
                                 </th>
                             </tr>
                             </thead>
+<<<<<<< HEAD
+                            <tbody class="list">
+=======
                             <tbody>
+>>>>>>> refs/heads/master
                             <c:forEach items="${products}" var="product">
                             <tr>
+<<<<<<< HEAD
+                                <th scope="row">${product.pcode}</th>
+                                <th scope="row">이미지</th>
+                                <td><c:out value="${product.pname}"/></td>
+                                <td><c:out value="${product.pprice}"/></td>
+                                <td><fmt:formatDate pattern="yyyy/MM/dd" value="${product.updatedate}"/></td>
+                                <td>
+                                    <button  class="btn btn-primary btnMody" value="${product.pcode }">수정</button>
+=======
                                 <th scope="row">1</th>
                                 <td><c:out value="${products.pname}"/></td>
                                 <td><c:out value="${products.pprice}"/></td>
                                 <td><c:out value="${products.cate1}"/></td>
                                 <td>
                                     <button onclick="location.href='/storeMem/modify-product-page'">수정</button>
+>>>>>>> refs/heads/master
                                 </td>
                             </tr>
                             </c:forEach>
@@ -152,5 +195,19 @@
 <!--Custom JavaScript -->
 <script src="/resources/admin/src/dist/js/custom.min.js"></script>
 </body>
+<script>
+$(document).ready(function(){
+	$(".list").on("click",".btnMody",function(){
+		location.href="/storeMem/modify-product-page?pcode="+$(this).attr("value");
+	});
+	
+    $("[name='cateCodeRefGroup']").children().hide();
+    $("[name='cateCodeGroup']").change(function(){ 
+    	$("[name='cateCodeRefGroup']").children().hide();
+    		$("[name='cateCodeRefGroup']").find("[date-coderef='"+$(this).val()+"']").show();
+    	
+    });
+});
+</script>
 
 </html>

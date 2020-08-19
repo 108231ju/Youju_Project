@@ -2,7 +2,6 @@ package org.yuyu.mapper;
 
 
 import org.yuyu.domain.ProductImgVO;
-import org.yuyu.domain.ProductVO;
 
 import java.util.List;
 
@@ -12,5 +11,6 @@ public interface ProductImgMapper {
 
     public void delete(String uuid);
 
-    public List<ProductImgVO> findByPcode(int pcode);
+    public ProductImgVO findByPcode(int pcode);
+
 }

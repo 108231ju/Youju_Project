@@ -8,7 +8,22 @@
 		INSERT INTO product_detail(pcode,pcolor,psize,amount)
 		VALUES (#{pcode},#{pcolor},#{psize},#{amount})
 	</insert>
+	
+	<select id="readWithPcode" resultType="org.yuyu.domain.ProductDetailVO">
+		select * from product_detail where pcode= #{pcode}
+	</select>
 
-
+	<select id="getProductColor" resultType="String">	
+		SELECT DISTINCT pcolor FROM product_detail WHERE pcode = #{pcode}
+	</select>
+	
+	
+	<select id="getProductSize" resultType="String">	
+		SELECT DISTINCT psize FROM product_detail WHERE pcode = #{pcode}
+	</select>
+	
+	<delete id="deleteProductDetail">
+		delete from product_detail where pcode = #{pcode}
+	</delete>
 
 </mapper>

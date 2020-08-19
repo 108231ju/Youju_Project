@@ -109,16 +109,14 @@
                             </tr>
                             </thead>
                             <tbody class="list">
-                           
                             <c:forEach items="${orderlist}" var="list">
                             <tr>
-                                <td scope="row" name="ocode">${list.ocode}</td>
-                                <td scope="row" name="onum">${list.onum}</td>
-                                <td scope="row">${list.mname}</td>
+                                <th scope="row">${list.ocode}</th>
+                                <th scope="row">${list.onum}</th>
+                                <th scope="row">${list.mname}</th>
                                 <td><c:out value="${list.amount}"/></td>
                                 <td><c:out value="${list.total}"/>원</td>
-                                <td><span><c:out value="${list.state}"/></span><button data-toggle="modal"
-                               data-target="#stateModModal" class="stateMody btn btn-danger ml-2">변경</button></td>
+                                <td><c:out value="${list.state}"/></td>
                                 <td><fmt:formatDate pattern="yyyy/MM/dd" value="${list.updatedate}"/></td>
                                 <td>
                                     <button  class="btn btn-primary btnMody" value="${list.ocode}" data-onum="${list.onum}">상세보기</button>
@@ -132,13 +130,6 @@
 
 
         </div>
-        <!-- <select name="stateGroup" class="p-1">
-					                  	<option value="결제준비중" selected>결제준비중</option>
-					                   	<option value="상품준비중">상품준비중</option>
-					                    <option value="배송준비중">배송준비중</option>
-					              		<option value="배송중">배송중</option>
-                                		<option value="배송완료">배송완료</option>
-                                	</select> -->
         <!-- ============================================================== -->
         <!-- End PAge Content -->
         <!-- ============================================================== -->
@@ -198,30 +189,6 @@ $(document).ready(function(){
 	$(".list").on("click",".btnMody",function(){
 		location.href="/storeMem/order-proc-page?ocode="+$(this).attr("value")+"&onum="+$(this).attr("data-onum");
 	});
-	
-	var modal = $("#stateModModal");
-	
-	$(".stateMody").click(function(e){
-		e.preventDefault();
-		var ocode  = $($(this).parents()[1]).children("[name='ocode']").text();
-		var onum  = $($(this).parents()[1]).children("[name='onum']").text();
-		var state = $(this).siblings().text();
-		$("#state").val($(this).siblings().text());
-		$("[name='thisState'] option").attr("selected",false);
-		$("[name='thisState'] option[value='"+state+"']").attr("selected",true);
-		$("#ocode").val(ocode);
-		$("#onum").val(onum);
-		var state2 ="";
-		$("[name='thisState']").change(function(){
-			$("#state").val($(this).val());
-		});
-		modal.show();
-		console.log(state2);
-		$("#modyOk").click(function(){
-			location.href="/storeMem/modyState?ocode="+onum+"&onum="+onum+"&state="+$("#state").val();
-		});
-	});
-	
 });
 </script>
 </body>

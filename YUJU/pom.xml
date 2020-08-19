@@ -11,8 +11,8 @@
 	<properties>
 		<java-version>1.8</java-version>
 		<org.springframework-version>5.2.6.RELEASE</org.springframework-version>
-		<org.aspectj-version>1.6.10</org.aspectj-version>
-		<org.slf4j-version>1.6.6</org.slf4j-version>
+		<org.aspectj-version>1.9.0</org.aspectj-version>
+		<org.slf4j-version>1.7.25</org.slf4j-version>
 	</properties>
 	<dependencies>
 
@@ -168,11 +168,11 @@
 			<version>2.9.4</version>
 		</dependency>
 
-		<!-- Apache Commons FileUpload -->
+        <!-- Apache Commons FileUpload -->
         <dependency>
             <groupId>commons-fileupload</groupId>
             <artifactId>commons-fileupload</artifactId>
-            <version>1.3.1</version>
+            <version>1.4</version>
         </dependency> <!-- Apache Commons IO -->
 
         <dependency>
@@ -187,8 +187,14 @@
             <artifactId>thumbnailator</artifactId>
             <version>0.4.8</version>
         </dependency>
-
-
+        
+		 <!-- JSON -->	
+		<dependency>
+			<groupId>net.sf.json-lib</groupId>
+			<artifactId>json-lib</artifactId>
+			<version>2.4</version>
+			<classifier>jdk15</classifier>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>

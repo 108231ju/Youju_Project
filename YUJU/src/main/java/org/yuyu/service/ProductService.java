@@ -1,9 +1,8 @@
 package org.yuyu.service;
 
-import org.yuyu.domain.ProductVO;
-import org.yuyu.domain.StoreMemVO;
-
 import java.util.List;
+
+import org.yuyu.domain.ProductVO;
 
 public interface ProductService {
 	
@@ -24,7 +23,6 @@ public interface ProductService {
 	public boolean modify(ProductVO productVO);
 
 	public int showPcode();
-
 
 }
 

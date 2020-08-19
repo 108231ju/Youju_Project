@@ -274,7 +274,7 @@ public class StoreMemController {
 
         ProductVO productVO = new ProductVO();
         productVO.setPname(pname);
-        productVO.setPprice(pprice);
+        productVO.setPprice(Integer.parseInt(pprice));
         productVO.setScode(1);
         productVO.setCateCode(cateCodeRef);
         productVO.setBest(Integer.parseInt(best));
