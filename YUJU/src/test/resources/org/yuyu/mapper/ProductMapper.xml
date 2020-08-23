@@ -9,11 +9,15 @@
 		SELECT * FROM product where scode=#{scode}
 	</select>
 
+	<select id="getListForPcode" resultType="org.yuyu.domain.ProductVO">
+		SELECT * FROM product where pcode=#{pcode}
+	</select>
+	
 	<insert id="insert">
-		INSERT INTO product(pcode,scode,pname,best,today,pprice,cateCode)
-		VALUES (#{pcode},#{scode},#{pname},#{best},#{today},#{pprice},#{cateCode})
+		INSERT INTO product(pcode,scode,pname,best,today,pprice,cateCode,pimg,pThumbImg)
+		VALUES (#{pcode},#{scode},#{pname},#{best},#{today},#{pprice},#{cateCode},#{pimg},#{pthumbimg})
 	</insert>
-
+	
 	<select id="getRegisterablePcode" resultType="int">
 		select LAST_NUMBER from USER_SEQUENCES where SEQUENCE_NAME = 'SEQ_PRODUCT'
 	</select>
@@ -22,8 +26,8 @@
 		<selectKey keyProperty="pcode" order="BEFORE" resultType="int">
 			select seq_product.nextval from dual
 		</selectKey>
-		INSERT INTO product(pcode,scode,pname,best,today,pprice,cateCode)
-		VALUES (#{pcode},#{scode},#{pname},#{best},#{today},#{pprice},#{cateCode})
+		INSERT INTO product(pcode,scode,pname,best,today,pprice,cateCode,pimg,pThumbImg)
+		VALUES (#{pcode},#{scode},#{pname},#{best},#{today},#{pprice},#{cateCode},#{pimg},#{pthumbimg})
 	</insert>
 
 	<select id="read" resultType="org.yuyu.domain.ProductVO">
@@ -35,8 +39,7 @@
 	</delete>
 
 	<update id="update">
-		update product set pname =#{pname}, psize=#{psize}, pcolor= #{pcolor}, pimg=#{pimg},
-		cate1=#{cate1} ,cate2=#{cate2},cate3=#{cate3} ,updatedate = sysdate where mcode=#{mcode}
+		update product set pname =#{pname}, pprice=#{pprice},cateCode=#{cateCode},best=#{best},today = #{today} ,updatedate = sysdate, pimg = #{pimg}, pThumbImg=#{pthumbimg} where pcode=#{pcode}
 	</update>
 
 </mapper>

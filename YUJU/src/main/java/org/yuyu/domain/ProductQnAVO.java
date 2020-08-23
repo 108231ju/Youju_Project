@@ -15,6 +15,6 @@ public class ProductQnAVO {
 	private String answer;  //문의 답변
 	private String state;  //문의 답변
 	private Date regdate;  //등록날짜
-	private Date updateupdate;  // 수정날짜 
+	private Date updatedate;  // 수정날짜 
 
 }

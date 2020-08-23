@@ -92,6 +92,12 @@ public class OrderDetailServiceImpl implements OrderDetailService  {
 		mapper.insertfrombasket(orderDetailVO);
 	}
 
+	@Override
+	public OrderDetailVO readByPcode(int ocode, int pcode) {
+		// TODO Auto-generated method stub
+		return mapper.readByPcode(ocode, pcode);
+	}
+
 	
 
 }

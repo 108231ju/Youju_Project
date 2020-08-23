@@ -7,37 +7,7 @@
 <!-- Page wrapper  -->
 <!-- ============================================================== -->
 <div class="page-wrapper">
-    <!-- ============================================================== -->
-    <!-- Bread crumb and right sidebar toggle -->
-    <!-- ============================================================== -->
-    <div class="page-breadcrumb">
-        <div class="row">
-            <div class="col-7 align-self-center">
-                <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">주문 정보 처리</h4>
-                <div class="d-flex align-items-center">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb m-0 p-0">
-                            <li class="breadcrumb-item"><a href="index.html" class="text-muted">상품 정보 수정</a></li>
-                            <li class="breadcrumb-item text-muted active" aria-current="page">상품 정보 삭제</li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
-            <%--                    <div class="col-5 align-self-center">--%>
-            <%--                        <div class="customize-input float-right">--%>
-            <%--                            <select class="custom-select custom-select-set form-control bg-white border-0 custom-shadow custom-radius">--%>
-            <%--                                <option selected>Aug 19</option>--%>
-            <%--                                <option value="1">July 19</option>--%>
-            <%--                                <option value="2">Jun 19</option>--%>
-            <%--                            </select>--%>
-            <%--                        </div>--%>
-            <%--                    </div>--%>
-        </div>
-    </div>
-    <!-- ============================================================== -->
-    <!-- End Bread crumb and right sidebar toggle -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
+ 
     <!-- Container fluid  -->
     <!-- ============================================================== -->
     <div class="container-fluid">
@@ -48,8 +18,8 @@
 
             <div class="col-12">
                 <div class="card">
-                   <div class="card-body">
-                        <h3 class="card-title">상품 문의 관리</h3>
+                   <div class="card-body text-center">
+                        <h3 class="card-title font-weight-bold ">상품 문의 관리</h3>
                     </div>
                     <div class="col-md-11" style="align-self: center">
                         <div class="card border-danger">
@@ -58,33 +28,13 @@
                             </div>
                             <div class="card-body text-center">
                                 <span>
-                                <label><strong class="card-title">주문 번호 : </strong></label> <input type="text"/>
+                                <label><strong class="card-title">문의 번호 : </strong></label> <input type="text"/>
                                 </span>
-                                <span class="ml-lg-5 mr-lg-5" >
-                                    <label><strong class="card-title">카테고리 : </strong></label>
-                                    <select name="cateCodeGroup" class="p-1">
-                                            <option value="">대분류 선택</option>
-                                            <option value="100">아우터</option>
-                                            <option value="200">상의</option>
-                                            <option value="300">바지</option>
-                                            <option value="400">스커트</option>
-                                            <option value="500">신발</option>
-                                            <option value="600">가방</option>
-                                            <option value="700">주얼리</option>
-                                            <option value="800">잡화</option>
-                                            <option value="900">라이프웨어</option>
-                                            <option value="1000">빅사이즈</option>
-                                        </select>
-
-                                        <select name="cateCodeRefGroup" class="p-1">
-                                            <option value="">소분류 선택</option>
-                                            <c:forEach items="${catelist}" var="list">
-                                            	<option name="catecode" value="${list.cateCode}" date-coderef="${list.cateCodeRef}">${list.cateName}</option>
-											</c:forEach>
-                                        </select>
+                                <span class="ml-2">
+                                <label><strong class="card-title">상품 이름 : </strong></label> <input type="text"/>
                                 </span>
-                                <span class="ml-lg-5 mr-lg-5">
-                                    <label><strong class="card-title">주문자 이름 : </strong></label> <input type="text"/>
+                                <span class="ml-2 mr-lg-5">
+                                    <label><strong class="card-title">문의자 이름 : </strong></label> <input type="text"/>
                                 </span>
                                 <span class="ml-lg-5 mr-lg-5">
                                     <button type="button" class="btn btn-primary">검색</button>
@@ -92,46 +42,35 @@
                             </div>
                         </div>
                     </div>
-                    <h3 class="col-12 card-title">상품 문의 리스트</h3>
+                    <h3 class="col-12 card-title font-weight-bold text-center">상품 문의 리스트</h3>
                     <div class="table-responsive p-2 text-center">
+                    
                         <table class="table">
                             <thead class="thead-dark">
                             <tr>
-                                <th scope="col">상품 번호 </th>
-                                <th scope="col">상품 이름 </th>
-                                <th scope="col">문의자 이름 (id)</th>
-                                <th scope="col">문의 날짜</th>
-                                <th scope="col">
-                                </th>
+                                <th scope="col" style="background-color:black; color:white;">문의 번호</th>
+                                <th scope="col" style="background-color:black; color:white;">상품코드</th>
+                                <th scope="col" style="background-color:black; color:white;">상품이름</th>
+                                <th scope="col" style="background-color:black; color:white;">문의자 이름 (id)</th>
+                                <th scope="col" style="background-color:black; color:white;">문의 날짜</th>
+                                <th scope="col" style="background-color:black; color:white;">응답상태</th>
                             </tr>
                             </thead>
-                            <tbody class="list">
-                           
-                            <c:forEach items="${orderlist}" var="list">
+                            <tbody class="qnaList">
+                           <c:forEach items="${qnas}" var="qna"  varStatus="status">
                             <tr>
-                                <td scope="row" name="ocode">${list.ocode}</td>
-                                <td scope="row" name="onum">${list.onum}</td>
-                                <td scope="row" name="onum">${list.onum}</td>
-                                <td><fmt:formatDate pattern="yyyy/MM/dd" value="${list.updatedate}"/></td>
-                                <td>
-                                    <button  class="btn btn-primary btnMody" value="${list.ocode}" data-onum="${list.onum}">상세보기</button>
-                                </td>
+                                <td scope="row" class="qnacode">${qna.qnacode}</td>
+                                <td scope="row" class="pcode">${qna.pcode}</td>
+                                <td scope="row" class="pname"><a href="/storeMem/reply-question-page?qnaCode=<c:out value='${qna.qnacode}'/>">${products[status.index].pname}</a></td>
+                                 <td scope="row" class="mname">${mems[status.index].mname}</td>
+                                <td scope="row" class="regdate"><fmt:formatDate pattern="yyyy/MM/dd" value="${qna.updatedate}"/></td>
+                                <td scope="row" class="state">${qna.state}</td>
                             </tr>
                             </c:forEach>
                         </table>
                     </div>
                 </div>
- 
-
-
         </div>
-        <!-- <select name="stateGroup" class="p-1">
-					                  	<option value="결제준비중" selected>결제준비중</option>
-					                   	<option value="상품준비중">상품준비중</option>
-					                    <option value="배송준비중">배송준비중</option>
-					              		<option value="배송중">배송중</option>
-                                		<option value="배송완료">배송완료</option>
-                                	</select> -->
         <!-- ============================================================== -->
         <!-- End PAge Content -->
         <!-- ============================================================== -->
@@ -188,31 +127,10 @@
 <script src="/resources/admin/src/dist/js/custom.min.js"></script>
 <script>
 $(document).ready(function(){
-	$(".list").on("click",".btnMody",function(){
-		location.href="/storeMem/order-proc-page?ocode="+$(this).attr("value")+"&onum="+$(this).attr("data-onum");
-	});
-	
-	var modal = $("#stateModModal");
-	
-	$(".stateMody").click(function(e){
-		e.preventDefault();
-		var ocode  = $($(this).parents()[1]).children("[name='ocode']").text();
-		var onum  = $($(this).parents()[1]).children("[name='onum']").text();
-		var state = $(this).siblings().text();
-		$("#state").val($(this).siblings().text());
-		$("[name='thisState'] option").attr("selected",false);
-		$("[name='thisState'] option[value='"+state+"']").attr("selected",true);
-		$("#ocode").val(ocode);
-		$("#onum").val(onum);
-		var state2 ="";
-		$("[name='thisState']").change(function(){
-			$("#state").val($(this).val());
-		});
-		modal.show();
-		console.log(state2);
-		$("#modyOk").click(function(){
-			location.href="/storeMem/modyState?ocode="+onum+"&onum="+onum+"&state="+$("#state").val();
-		});
+	$(".state").each(function(){
+		if($(this).text() == "미답변"){
+			$(this).css("color","red");
+		}
 	});
 	
 });

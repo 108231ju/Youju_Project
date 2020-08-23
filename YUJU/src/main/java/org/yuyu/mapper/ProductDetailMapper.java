@@ -19,6 +19,9 @@ public interface ProductDetailMapper {
 	public List<ProductDetailVO> readWithPcode(int pcode);
 	public List<String> getProductColor(int pcode);
 	public List<String> getProductSize(int pcode);
+	public List<Integer> getProductAmount(int pcode);
 	public void deleteProductDetail(int pcode);
+	public List<ProductDetailVO> getList();
+	public List<ProductDetailVO> getProductPcode();
 	
 }

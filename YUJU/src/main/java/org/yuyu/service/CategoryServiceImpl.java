@@ -27,6 +27,23 @@ public class CategoryServiceImpl implements CategoryService  {
 		return mapper.getListForCateCode(cateCodeRef);
 	}
 
+	@Override
+	public String getCateName(int pcode) {
+		return mapper.getCateName(pcode);
+	}
+
+	@Override
+	public String getCateCodeName(String cateCode) {
+		// TODO Auto-generated method stub
+		return mapper.getCateCodeName(cateCode);
+	}
+
+	@Override
+	public CategoryVO readCate(String cateCode) {
+		// TODO Auto-generated method stub
+		return mapper.readCate(cateCode);
+	}
+
 
 }
 

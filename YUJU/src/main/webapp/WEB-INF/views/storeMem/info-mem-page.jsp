@@ -41,7 +41,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">01. 기본 정보 변경</h4>
+                        <h4 class="card-title"> 기본 정보 변경</h4>
                         <h6 class="card-subtitle"></h6>
                     </div>
                     <div class="table-responsive p-4">

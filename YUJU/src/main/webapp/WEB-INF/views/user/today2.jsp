@@ -24,7 +24,7 @@
 		 <c:forEach items="${list}" var="list">
 			<div id="product" onclick="location.href='/user/product1?pcode=${list.pcode}'">
 				<img
-					src="https://image.brandi.me/cproduct/2020/06/14/17368502_1592064990_image1_M.jpg">
+					src="${list.pimg}">
 				<br>
 				<a id="sname">[<c:out value="${list.sname}"/>]</a> <br>
 				<a id="pname"><c:out value="${list.pname}"/></a> <br>

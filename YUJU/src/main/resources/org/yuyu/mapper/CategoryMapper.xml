@@ -6,10 +6,22 @@
 	<select id="getList" resultType="org.yuyu.domain.CategoryVO">
 		select * from category
 	</select>
-	
+
 	
 	<select id="getListForCateCode" resultType="org.yuyu.domain.CategoryVO">
 		select * from category where cateCodeRef = ${cateCodeRef}
+	</select>
+	
+	<select id="readCate" resultType="org.yuyu.domain.CategoryVO">
+		select * from category where cateCode = ${cateCode}
+	</select>
+	
+	<select id ="getCateName" resultType="String">
+		SELECT cateName FROM product,category WHERE product.cateCode = category.cateCode  and pcode = #{pcode}
+	</select>
+	
+		<select id ="getCateCodeName" resultType="String">
+		SELECT cateName FROM CATEGORY  WHERE cateCode IN (SELECT cateCodeRef FROM category WHERE cateCode = ${cateCode})
 	</select>
 	
 	

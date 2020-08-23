@@ -13,8 +13,10 @@ public interface ProductDetailService {
 	
 	public List<String> getProductColor(int pcode);
 	public List<String> getProductSize(int pcode);
+	public List<String> getProductAmount(int pcode);
 	public void deleteProductDetail(int pcode);
-	
+	public List<ProductDetailVO> getList();
+	public List<ProductDetailVO> getProductPcode();
 
 
 }

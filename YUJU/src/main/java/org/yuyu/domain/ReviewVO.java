@@ -14,6 +14,6 @@ public class ReviewVO {
 	private int mcode;		//리뷰를 단 회원 번호
 	private String review;		//리뷰 내용
 	private Date regdate;		//등록날짜
-	private Date updateupdate;		//수정날짜
+	private Date updatedate;		//수정날짜
 
 }
