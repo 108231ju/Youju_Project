@@ -57,10 +57,24 @@ public class ProductServiceImpl implements ProductService  {
 	}
 
 	@Override
-	public List<ProductVO> getListForPcode(int pcode) {
+	public ProductVO getListForPcode(int pcode) {
 		// TODO Auto-generated method stub
 		return productMapper.getListForPcode(pcode);
 	}
+
+	@Override
+	public List<ProductVO> getListForStoreByPname(int scode, String pname) {
+		// TODO Auto-generated method stub
+		return productMapper.getListForStoreByPname(scode,pname);
+	}
+
+	@Override
+	public List<ProductVO> readByCateCode(String catecode, int scode) {
+		// TODO Auto-generated method stub
+		return productMapper.readByCateCode(catecode, scode);
+	}
+
+
 
 	
 

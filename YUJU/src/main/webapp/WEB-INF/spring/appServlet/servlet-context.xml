@@ -56,11 +56,16 @@
 
    <context:component-scan base-package="org.yuyu.controller" />
    
+ <beans:bean class="java.lang.String" id="uploadPath">
+		 <beans:constructor-arg value="C:\Users\XNOTE\Desktop\yujuproject\Youju_Project\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\YUJU\resources" />
+	</beans:bean>
+   
+	 <!-- 일반 파일 업로드 경로 -->
+	<resources mapping="/imgUpload/**" location="/resources/imgUpload/" />
 
-    <beans:bean id="multipartResolver"  class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-        <!-- 최대업로드 가능한 바이트크기 -->
-        <beans:property name="maxUploadSize" value="99999999999"/>
-    </beans:bean>
- 
+	
+	<beans:bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver" id="multipartResolver">
+	 	<beans:property name="maxUploadSize" value="10485760"/>
+	</beans:bean>
 
 </beans:beans>

@@ -22,8 +22,8 @@
    <bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
    <property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"></property>
    <property name="jdbcUrl" value="jdbc:log4jdbc:oracle:thin:@localhost:1521:XE"></property>
-   <property name="username" value="juju"></property>   
-   <property name="password" value="juju"></property>   
+   <property name="username" value="yooddong"></property>   
+   <property name="password" value="1234"></property>   
    </bean>
    
    <!-- HikariCP configuration -->
@@ -36,7 +36,7 @@
    </bean>
    
    
-   <context:component-scan base-package="org.yuyu.sample"/>
+   <context:component-scan base-package="org.yuyu.utils"/>
    
    <context:component-scan base-package="org.yuyu.service"/>
    <!--mapper 패키지 추가-->

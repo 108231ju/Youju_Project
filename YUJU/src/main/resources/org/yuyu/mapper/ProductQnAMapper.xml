@@ -3,7 +3,7 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.yuyu.mapper.ProductQnAMapper">
 	<select id="getList" resultType="org.yuyu.domain.ProductQnAVO">
-		SELECT * FROM product_qna where scode = #{scode}
+		SELECT * FROM product_qna where scode = #{scode} order by regdate desc
 	</select>
 	
 	<insert id="insert">
@@ -28,7 +28,7 @@
 	</delete>
 	
 	<update id="update">
-		update product_qna set question =#{question}, answer = #{answer}, 
+		update product_qna set question =#{question}, answer = #{answer}, state=#{state},
 		 updatedate = sysdate where qnacode=#{qnacode}
 	</update>
 	

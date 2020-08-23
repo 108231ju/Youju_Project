@@ -10,6 +10,12 @@ public interface CategoryService {
 	public List<CategoryVO> getList();
 	
 	public List<CategoryVO> getListForCateCode(String cateCodeRef);
+	
+	public String getCateName (int pcode);
+	
+	public String getCateCodeName (String cateCode);
+	
+	public CategoryVO readCate(String cateCode);
 }
 
 

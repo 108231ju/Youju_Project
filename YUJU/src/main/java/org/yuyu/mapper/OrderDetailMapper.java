@@ -27,6 +27,7 @@ public interface OrderDetailMapper {
 	
 	//주문 상세목록 데이터 조회
 	public OrderDetailVO read(int ocode);
+	public OrderDetailVO readByPcode(@Param("ocode") int ocode, @Param("pcode") int pcode);
 	
 	//주문 상세목록 데이터 삭제
 	public int delete(@Param("ocode") int ocode, @Param("onum") int onum);

@@ -1,5 +1,6 @@
 package org.yuyu.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,6 +45,30 @@ public class ProductDetailServiceImpl implements ProductDetailService  {
 	public void deleteProductDetail(int pcode) {
 		// TODO Auto-generated method stub
 		productMapper.deleteProductDetail(pcode);
+	}
+
+	@Override
+	public List<ProductDetailVO> getList() {
+		// TODO Auto-generated method stub
+		return productMapper.getList();
+	}
+
+	@Override
+	public List<ProductDetailVO> getProductPcode() {
+		// TODO Auto-generated method stub
+		return productMapper.getProductPcode();
+	}
+
+	@Override
+	public List<String> getProductAmount(int pcode) {
+		// TODO Auto-generated method stub
+		List<Integer> list = productMapper.getProductAmount(pcode);
+		List<String> slist = new ArrayList<>();
+		for(int i =0; i < list.size(); i++) {
+			slist.add(String.valueOf(list.get(i)));
+		}
+		
+		return slist;
 	}
 
 

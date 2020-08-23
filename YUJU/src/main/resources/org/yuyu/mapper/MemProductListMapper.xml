@@ -4,28 +4,28 @@
 <mapper namespace="org.yuyu.mapper.MemProductListMapper">
 
 	<select id="getList" resultType="org.yuyu.domain.MemProductListVO">
-		SELECT sm.SNAME ,p.PNAME, p.PPRICE, p.PCODE ,p.cateCode
+		SELECT sm.SNAME ,p.PNAME, p.PPRICE, p.PCODE ,p.cateCode,p.pimg
 		FROM PRODUCT p ,STORE_MEM sm 
 		WHERE 
 		p.SCODE = sm.SCODE
 		ORDER BY p.PCODE DESC
 	</select>
 <select id="getListForCatecode" resultType="org.yuyu.domain.MemProductListVO">
-		SELECT sm.SNAME ,p.PNAME, p.PPRICE, p.PCODE ,p.cateCode 
+		SELECT sm.SNAME ,p.PNAME, p.PPRICE, p.PCODE ,p.cateCode ,p.pimg
 		FROM PRODUCT p ,STORE_MEM sm 
 		where
 		p.SCODE = sm.SCODE
 		AND catecode=#{catecode}
 	</select>
 <select id="getListFortoday" resultType="org.yuyu.domain.MemProductListVO">
-		SELECT sm.SNAME ,p.PNAME, p.PPRICE, p.PCODE ,p.cateCode,p.TODAY 
+		SELECT sm.SNAME ,p.PNAME, p.PPRICE, p.PCODE ,p.cateCode,p.TODAY ,p.pimg
 		FROM PRODUCT p ,STORE_MEM sm 
 		where
 		p.SCODE = sm.SCODE
 		AND p.TODAY = #{today}
 	</select>
 <select id="getListFortodaycategory" resultType="org.yuyu.domain.MemProductListVO">
-			SELECT sm.SNAME ,p.PNAME, p.PPRICE, p.PCODE ,c.cateCode,p.TODAY 
+			SELECT sm.SNAME ,p.PNAME, p.PPRICE, p.PCODE ,c.cateCode,p.TODAY ,p.pimg
 		FROM PRODUCT p ,STORE_MEM sm ,CATEGORY c 
 		where
 		p.SCODE = sm.SCODE
@@ -34,7 +34,7 @@
 		AND p.TODAY = #{today}
 	</select>
 <select id="getListFortodaycategoryRef" resultType="org.yuyu.domain.MemProductListVO">
-			SELECT sm.SNAME ,p.PNAME, p.PPRICE, p.PCODE,c.cateCodeRef ,c.cateCode,p.TODAY 
+			SELECT sm.SNAME ,p.PNAME, p.PPRICE, p.PCODE,c.cateCodeRef ,c.cateCode,p.TODAY ,p.pimg
 		FROM PRODUCT p ,STORE_MEM sm ,CATEGORY c 
 		where
 		p.SCODE = sm.SCODE
@@ -43,22 +43,21 @@
 		AND p.TODAY = #{today}
 	</select>
 <select id="getListForbest" resultType="org.yuyu.domain.MemProductListVO">
-		SELECT sm.SNAME ,p.PNAME, p.PPRICE, p.PCODE ,p.cateCode,p.BEST 
+		SELECT sm.SNAME ,p.PNAME, p.PPRICE, p.PCODE ,p.cateCode,p.BEST ,p.pimg
 		FROM PRODUCT p ,STORE_MEM sm 
 		where
 		p.SCODE = sm.SCODE
 		AND p.BEST = #{best}
 	</select>
 <select id="getListForcategory" resultType="org.yuyu.domain.MemProductListVO">
-			SELECT sm.SNAME ,p.PNAME, p.PPRICE, p.PCODE ,c.cateCode,c.CATECODEREF ,p.BEST 
+			SELECT sm.SNAME ,p.PNAME, p.PPRICE, p.PCODE ,c.cateCode,c.CATECODEREF ,p.BEST ,p.pimg
 		FROM PRODUCT p ,STORE_MEM sm ,CATEGORY c 
 		where
-		p.SCODE = sm.SCODE
 		AND p.CATECODE = c.CATECODE 
 		AND c.CATECODEREF = #{cateCodeRef}
 	</select>
 <select id="getListForcategoryRef" resultType="org.yuyu.domain.MemProductListVO">
-			SELECT sm.SNAME ,p.PNAME, p.PPRICE, p.PCODE ,c.cateCode,c.CATECODEREF ,p.BEST 
+			SELECT sm.SNAME ,p.PNAME, p.PPRICE, p.PCODE ,c.cateCode,c.CATECODEREF ,p.BEST ,p.pimg
 		FROM PRODUCT p ,STORE_MEM sm ,CATEGORY c 
 		where
 		p.SCODE = sm.SCODE
@@ -67,7 +66,7 @@
 		AND p.BEST = #{best}
 	</select>
 <select id="getListForbesttoday" resultType="org.yuyu.domain.MemProductListVO">
-				SELECT sm.SNAME ,p.PNAME, p.TODAY ,p.PPRICE, p.PCODE ,c.cateCode,c.CATECODEREF ,p.BEST 
+				SELECT sm.SNAME ,p.PNAME, p.TODAY ,p.PPRICE, p.PCODE ,c.cateCode,c.CATECODEREF ,p.BEST ,p.pimg
 		FROM PRODUCT p ,STORE_MEM sm ,CATEGORY c 
 		where
 		p.SCODE = sm.SCODE
@@ -80,7 +79,7 @@
 	
 	
 	<select id="view" resultType="org.yuyu.domain.MemProductListVO">
-		SELECT sm.SNAME ,p.PNAME, p.PPRICE,p.PCODE,p.scode 
+		SELECT sm.SNAME ,p.PNAME, p.PPRICE,p.PCODE,p.scode ,p.pimg
 		FROM PRODUCT p ,STORE_MEM sm
 		WHERE 
 		p.SCODE = sm.SCODE
@@ -88,7 +87,7 @@
 	</select>
 	
 	<select id="color" resultType="org.yuyu.domain.MemProductListVO">
-		SELECT DISTINCT pd.PCOLOR,p.PCODE 
+		SELECT DISTINCT pd.PCOLOR,p.PCODE ,p.pimg
 		FROM PRODUCT p ,STORE_MEM sm ,PRODUCT_DETAIL pd
 		WHERE
 		p.PCODE = pd.PCODE
@@ -97,7 +96,7 @@
 	</select>
 	
 	<select id="size" resultType="org.yuyu.domain.MemProductListVO">
-		SELECT DISTINCT pd.PSIZE,p.PCODE 
+		SELECT DISTINCT pd.PSIZE,p.PCODE ,p.pimg
 		FROM PRODUCT p ,STORE_MEM sm ,PRODUCT_DETAIL pd 
 		WHERE 
 		p.PCODE = pd.PCODE 
@@ -106,7 +105,7 @@
 	</select>
 
 	<select id="review" resultType="org.yuyu.domain.MemProductListVO">
-		SELECT r.RCODE ,sm.SNAME ,p.PNAME ,o.P_DETAIL ,r.REVIEW ,r.UPDATEDATE,m.MID 
+		SELECT r.RCODE ,sm.SNAME ,p.PNAME ,o.P_DETAIL ,r.REVIEW ,r.UPDATEDATE,m.MID ,p.pimg
 		FROM ORDER_DETAIL o,PRODUCT p,REVIEW r,MEM m,STORE_MEM sm 
 		WHERE
 		p.PCODE = o.PCODE 
@@ -118,7 +117,7 @@
 	</select>
 
 	<select id="QandA" resultType="org.yuyu.domain.MemProductListVO">
-		SELECT sm.SNAME ,p.PNAME ,pq.STATE ,pq.QUESTION ,pq.UPDATEDATE ,pq.ANSWER,m.MID 
+		SELECT sm.SNAME ,p.PNAME ,pq.STATE ,pq.QUESTION ,pq.UPDATEDATE ,pq.ANSWER,m.MID ,p.pimg
 		FROM PRODUCT p ,PRODUCT_QNA pq ,STORE_MEM sm,MEM m 
 		WHERE 
 		sm.SCODE = pq.SCODE 
@@ -128,7 +127,7 @@
 	</select>
 	
 <select id="List" resultType="org.yuyu.domain.MemProductListVO">
-		SELECT sm.SNAME ,p.PNAME, p.PPRICE, p.PCODE ,p.cateCode, c.cateCodeRef, c.cateName
+		SELECT sm.SNAME ,p.PNAME, p.PPRICE, p.PCODE ,p.cateCode, c.cateCodeRef, c.cateName,p.pimg
 		FROM PRODUCT p ,STORE_MEM sm, CATEGORY c
 		WHERE
         	p.SCODE = sm.SCODE

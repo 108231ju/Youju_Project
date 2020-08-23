@@ -23,7 +23,7 @@
 	<div id="content">
 		<div id="p_img">
 			<img
-				src="https://image.brandi.me/cproduct/2020/03/24/14859033_1585031849_image1_L.jpg">
+				src="${view.pimg}">
 		</div>
 
 		<form action="/user/basketinsertOk" method="post">

@@ -23,6 +23,8 @@ public interface ReviewService {
 	
 	//상품 리뷰 데이터 수정
 	public boolean modify(ReviewVO reviewVO);
+	
+	public List<ReviewVO> getListByScode(int scode);
 		
 		
 

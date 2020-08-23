@@ -48,6 +48,12 @@ public class ReviewServiceImpl implements ReviewService  {
 		return mapper.update(reviewVO) == 1;
 		
 	}
+
+	@Override
+	public List<ReviewVO> getListByScode(int scode) {
+		// TODO Auto-generated method stub
+		return mapper.getListByScode(scode);
+	}
 	
 
 }

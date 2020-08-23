@@ -16,11 +16,22 @@
 	<select id="getProductColor" resultType="String">	
 		SELECT DISTINCT pcolor FROM product_detail WHERE pcode = #{pcode}
 	</select>
+	<select id="getProductAmount" resultType="Integer">	
+		SELECT amount FROM product_detail WHERE pcode = #{pcode}
+	</select>
 	
+		<select id="getProductPcode" resultType="String">	
+		SELECT DISTINCT pcode FROM product_detail
+	</select>
 	
 	<select id="getProductSize" resultType="String">	
 		SELECT DISTINCT psize FROM product_detail WHERE pcode = #{pcode}
 	</select>
+	
+	<select id ="getList" resultType="org.yuyu.domain.ProductDetailVO">
+		select * from product_detail
+	</select>
+	
 	
 	<delete id="deleteProductDetail">
 		delete from product_detail where pcode = #{pcode}

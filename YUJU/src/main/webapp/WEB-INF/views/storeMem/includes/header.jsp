@@ -3,6 +3,7 @@
          pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
 <html dir="ltr" lang="ko">
@@ -124,110 +125,8 @@
                 <!-- toggle and nav items -->
                 <!-- ============================================================== -->
                 <ul class="navbar-nav float-left mr-auto ml-3 pl-1">
-                    <!-- Notification -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle pl-md-3 position-relative" href="javascript:void(0)"
-                           id="bell" role="button" data-toggle="dropdown" aria-haspopup="true"
-                           aria-expanded="false">
-                            <span><i data-feather="bell" class="svg-icon"></i></span>
-                            <span class="badge badge-primary notify-no rounded-circle">5</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-left mailbox animated bounceInDown">
-                            <ul class="list-style-none">
-                                <li>
-                                    <div class="message-center notifications position-relative">
-                                        <!-- Message -->
-                                        <a href="javascript:void(0)"
-                                           class="message-item d-flex align-items-center border-bottom px-3 py-2">
-                                            <div class="btn btn-danger rounded-circle btn-circle"><i
-                                                    data-feather="airplay" class="text-white"></i></div>
-                                            <div class="w-75 d-inline-block v-middle pl-2">
-                                                <h6 class="message-title mb-0 mt-1">Luanch Admin</h6>
-                                                <span class="font-12 text-nowrap d-block text-muted">Just see
-                                                        the my new
-                                                        admin!</span>
-                                                <span class="font-12 text-nowrap d-block text-muted">9:30 AM</span>
-                                            </div>
-                                        </a>
-                                        <!-- Message -->
-                                        <a href="javascript:void(0)"
-                                           class="message-item d-flex align-items-center border-bottom px-3 py-2">
-                                                <span class="btn btn-success text-white rounded-circle btn-circle"><i
-                                                        data-feather="calendar" class="text-white"></i></span>
-                                            <div class="w-75 d-inline-block v-middle pl-2">
-                                                <h6 class="message-title mb-0 mt-1">Event today</h6>
-                                                <span
-                                                        class="font-12 text-nowrap d-block text-muted text-truncate">Just
-                                                        a reminder that you have event</span>
-                                                <span class="font-12 text-nowrap d-block text-muted">9:10 AM</span>
-                                            </div>
-                                        </a>
-                                        <!-- Message -->
-                                        <a href="javascript:void(0)"
-                                           class="message-item d-flex align-items-center border-bottom px-3 py-2">
-                                                <span class="btn btn-info rounded-circle btn-circle"><i
-                                                        data-feather="settings" class="text-white"></i></span>
-                                            <div class="w-75 d-inline-block v-middle pl-2">
-                                                <h6 class="message-title mb-0 mt-1">Settings</h6>
-                                                <span
-                                                        class="font-12 text-nowrap d-block text-muted text-truncate">You
-                                                        can customize this template
-                                                        as you want</span>
-                                                <span class="font-12 text-nowrap d-block text-muted">9:08 AM</span>
-                                            </div>
-                                        </a>
-                                        <!-- Message -->
-                                        <a href="javascript:void(0)"
-                                           class="message-item d-flex align-items-center border-bottom px-3 py-2">
-                                                <span class="btn btn-primary rounded-circle btn-circle"><i
-                                                        data-feather="box" class="text-white"></i></span>
-                                            <div class="w-75 d-inline-block v-middle pl-2">
-                                                <h6 class="message-title mb-0 mt-1">Pavan kumar</h6> <span
-                                                    class="font-12 text-nowrap d-block text-muted">Just
-                                                        see the my admin!</span>
-                                                <span class="font-12 text-nowrap d-block text-muted">9:02 AM</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a class="nav-link pt-3 text-center text-dark" href="javascript:void(0);">
-                                        <strong>Check all notifications</strong>
-                                        <i class="fa fa-angle-right"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <!-- End Notification -->
-                    <!-- ============================================================== -->
-                    <!-- create new -->
-                    <!-- ============================================================== -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i data-feather="settings" class="svg-icon"></i>
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>
-                    <li class="nav-item d-none d-md-block">
-                        <a class="nav-link" href="javascript:void(0)">
-                            <div class="customize-input">
-                                <select
-                                        class="custom-select form-control bg-white custom-radius custom-shadow border-0">
-                                    <option selected>EN</option>
-                                    <option value="1">AB</option>
-                                    <option value="2">AK</option>
-                                    <option value="3">BE</option>
-                                </select>
-                            </div>
-                        </a>
-                    </li>
+                    
+                    
                 </ul>
                 <!-- ============================================================== -->
                 <!-- Right side toggle and nav items -->
@@ -253,18 +152,14 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown"
                            aria-haspopup="true" aria-expanded="false">
-                            <img src="../resources/admin/src/assets/images/users/profile-pic.jpg" alt="user"
-                                 class="rounded-circle"
-                                 width="40">
+                            
                             <span class="ml-2 d-none d-lg-inline-block"><span>안녕하세요! </span> <span
                                     class="text-dark">${loginStoreMem.sname}</span> <i data-feather="chevron-down"
                                                                                        class="svg-icon"></i></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
-                            <a class="dropdown-item" href="javascript:void(0)"><i data-feather="settings"
-                                                                                  class="svg-icon mr-2 ml-1"></i>
-                                Account Setting</a>
-                            <div class="dropdown-divider"></div>
+                            
+<!--                             <div class="dropdown-divider"></div> -->
                             <a class="dropdown-item" href="javascript:void(0)" data-toggle="modal"
                                data-target="#logoutModal"><i data-feather="power"
                                                              class="svg-icon mr-2 ml-1"></i>
@@ -293,7 +188,7 @@
                     <li class="sidebar-item"><a class="sidebar-link sidebar-link" href="../storeMem/index"
                                                 aria-expanded="false"><i data-feather="home"
                                                                          class="feather-icon"></i><span
-                            class="hide-menu">메인 화면</span></a></li>
+                            class="hide-menu" >메인 화면</span></a></li>
                     <li class="list-divider"></li>
                     <li class="nav-small-cap"><span class="hide-menu">상품 관리</span></li>
                     <li class="sidebar-item"><a class="sidebar-link" href="../storeMem/update-product-page"
@@ -308,19 +203,19 @@
                             class="hide-menu">상품 조회/수정
                                 </span></a>
                     </li>
-                    <li class="nav-small-cap"><span class="hide-menu">주문/배송 관리</span></li>
+                    <li class="nav-small-cap"><span class="hide-menu">주문  관리</span></li>
                     <li class="sidebar-item"><a class="sidebar-link" href="../storeMem/info-order-page"
                                                 aria-expanded="false"><i data-feather="tag"
                                                                          class="feather-icon"></i><span
                             class="hide-menu">주문 정보 관리
                                 </span></a>
                     </li>
-                    <li class="sidebar-item"><a class="sidebar-link" href="../storeMem/info-delivery-page"
-                                                aria-expanded="false"><i data-feather="tag"
-                                                                         class="feather-icon"></i><span
-                            class="hide-menu">배송 관리
-                                </span></a>
-                    </li>
+<!--                     <li class="sidebar-item"><a class="sidebar-link" href="../storeMem/info-delivery-page" -->
+<!--                                                 aria-expanded="false"><i data-feather="tag" -->
+<!--                                                                          class="feather-icon"></i><span -->
+<!--                             class="hide-menu">배송 관리 -->
+<!--                                 </span></a> -->
+<!--                     </li> -->
                     <li class="nav-small-cap"><span class="hide-menu">회원 정보 관리</span></li>
                     <li class="sidebar-item"><a class="sidebar-link" href="../storeMem/info-mem-page"
                                                 aria-expanded="false"><i data-feather="tag"
@@ -333,6 +228,13 @@
                                                 aria-expanded="false"><i data-feather="tag"
                                                                          class="feather-icon"></i><span
                             class="hide-menu">상품 문의 관리
+                                </span></a>
+                    </li>
+                     <li class="nav-small-cap"><span class="hide-menu">상품 리뷰 관리</span></li>
+                    <li class="sidebar-item"><a class="sidebar-link" href="../storeMem/review-product-page"
+                                                aria-expanded="false"><i data-feather="tag"
+                                                                         class="feather-icon"></i><span
+                            class="hide-menu">상품 리뷰 관리
                                 </span></a>
                     </li>
                 </ul>
@@ -393,16 +295,16 @@
 
     <div class="modal fade" role="dialog" id="tableRemoveConFirm" tabindex="-1" aria-labelledby="TableRemoveModalLabel"
          aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="TableRemoveModalLabel"> 회원 탈퇴 </h5>
+                    <h5 class="modal-title" id="TableRemoveModalLabel"> 색상/ 사이즈 변경 </h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
                 <div class="modal-body text-center">
-                    <h4> 옵션 변경 시 테이블 내용이 초기화 됩니다. 변경하시겠습니까?</h4> <br>
+                    <h4> 옵션 변경 시 테이블 내용이 초기화 됩니다.변경하시겠습니까?</h4> <br>
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-default" type="button" data-dismiss="modal"> 취소</button>
@@ -411,10 +313,9 @@
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
     </div>
     
-        <div class="modal fade" role="dialog" id="stateModModal" tabindex="-1" aria-labelledby="stateModyModalH"
+	<div class="modal fade" role="dialog" id="stateModModal" tabindex="-1" aria-labelledby="stateModyModalH"
          aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -444,6 +345,115 @@
             </div>
         </div>
     </div>
-=======
+    
+    <div class="modal fade" role="dialog" id="orderListModal" tabindex="-1" aria-labelledby="orderListModalH"
+         aria-hidden="true">
+        <div class="modal-dialog modal-lg" style="max-width: 100%; width: auto; display: table;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="orderListModalH"> 주문 내역 확인</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center ordermodal">
+                
+                	<div class="table-responsive p-2 text-center">
+                	
+                        <table class="table">
+                            <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">주문 번호 </th>
+                                <th scope="col">주문 상세번호 </th>
+                                <th scope="col">상품이름</th>
+                                <th scope="col">색상/사이즈</th>
+                                <th scope="col">구매 개수</th>
+                                <th scope="col">주문 총 가격</th>
+                                <th scope="col">주문 처리 상태</th>
+                            </tr>
+                            </thead>
+                            <tbody class="orderlist">
+                            <tr id="modalorder">
+<%--                                 <td scope="row" name="ocode">${list.ocode}</td> --%>
+<%--                                 <td scope="row" name="onum">${list.onum}</td> --%>
+<%--                                 <td scope="row">${list.mname}(${list.mid}) </td> --%>
+<%--                                 <td><c:out value="${list.amount}"/></td> --%>
+<%--                                 <td><c:out value="${list.total}"/>원</td> --%>
+<%--                                 <td name="state"><span><c:out value="${list.state}"/></span><button data-toggle="modal" --%>
+<!--                                data-target="#stateModModal" class="stateMody btn btn-danger ml-2">변경</button></td> -->
+                             <td> 
+                             <select name="thisState" class="p-1">
+			                  	<option value="결제준비중">결제준비중</option>
+			                   	<option value="상품준비중">상품준비중</option>
+			                    <option value="배송준비중">배송준비중</option>
+			              		<option value="배송중">배송중</option>
+                              		<option value="배송완료">배송완료</option>
+		                    </select> 
+		                    </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" type="button" data-dismiss="modal"> 취소</button>
+                    <button class="btn btn-default ok" type="button" id="okokok" data-dismiss="modal"> 확인
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
->>>>>>> refs/heads/master
+    
+        <div class="modal fade" role="dialog" id="reviewItemModal" tabindex="-1" aria-labelledby="reviewItemModalT"
+         aria-hidden="true">
+        <div class="modal-dialog modal-lg" style="max-width: 100%; width: 800px; display: table;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="reviewItemModalT"> 리뷰 내용 확인</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center ordermodal">
+                
+                	<div class="table-responsive p-2 text-center">
+                	
+                        <table class="table">
+                            <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">상품 번호 </th>
+                                <th scope="col">상품이름</th>
+                                <th scope="col">색상/사이즈</th>
+                                <th scope="col">구매날짜</th>
+                            </tr>
+                            </thead>
+                            <tbody class="orderlist">
+                            <tr id="modalorder">
+                             <td name="mopcode">상품번호</td>
+                             <td name="mopname">이름</td>
+                             <td name="mop_detail">색상/사이즈</td>
+                             <td name="mopregdate">구매날짜</td>
+                            </tr>
+                        </table>
+                         <table class="table">
+                            <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">리뷰 내용</th>
+                            </tr>
+                            </thead>
+                            <tbody class="orderlist">
+                            <tr id="modalorder">
+                            <td name="m_review">
+		                    </td>
+                            </tr>
+                        </table>
+                    </div>
+                        <button class="btn btn-danger deleteReviewBtn" type="button">삭제</button>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" type="button" data-dismiss="modal"> 취소</button>
+                    <button class="btn btn-default ok" type="button" id="okokok" data-dismiss="modal"> 확인
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>

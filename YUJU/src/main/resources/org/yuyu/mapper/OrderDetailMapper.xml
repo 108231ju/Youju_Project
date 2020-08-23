@@ -35,17 +35,23 @@
 		<selectKey keyProperty="onum" order="BEFORE" resultType="int">
 			select seq_onum.nextval from dual
 		</selectKey>
-		INSERT INTO orderdetail(ocode,onum,pcode,p_detail,amount,totalprice) 
+		INSERT INTO order_detail(ocode,onum,pcode,p_detail,amount,totalprice) 
 		VALUES (#{ocode},#{onum},#{pcode},#{p_detail},#{amount},#{totalprice})
 	</insert>
 	
 	
 	<select id="read" resultType="org.yuyu.domain.OrderDetailVO">
-		select * from orderdetail where ocode = #{ocode}
+		select * from order_detail where ocode = #{ocode}
 	</select>
 	
+		<select id="readByPcode" resultType="org.yuyu.domain.OrderDetailVO">
+		select * from order_detail where ocode = #{ocode} and pcode = #{pcode}
+	</select>
+	
+	
+	
 	<delete id="delete">
-	delete from orderdetail where ocode = #{ocode} and onum= #{onum}
+	delete from order_detail where ocode = #{ocode} and onum= #{onum}
 	</delete>
 	
 	<update id="update">
@@ -53,7 +59,7 @@
 	</update>
 	
 	<select id="readPerStore" resultType="org.yuyu.domain.StoreOrderDetailVO">
-		SELECT order_detail.*, orderlist.mcode,mem.mname, mem.mid FROM order_detail, orderlist,product,mem WHERE orderlist.ocode = order_detail.ocode AND product.pcode = order_detail.pcode and mem.mcode = orderlist.mcode and product.scode=#{scode}
+		SELECT order_detail.*, orderlist.mcode,mem.mname, mem.mid,product.pname FROM order_detail, orderlist,product,mem WHERE orderlist.ocode = order_detail.ocode AND product.pcode = order_detail.pcode and mem.mcode = orderlist.mcode and product.scode=#{scode} order by orderlist.regdate desc
 	</select>
 	
 	<update id="modifyOfState">

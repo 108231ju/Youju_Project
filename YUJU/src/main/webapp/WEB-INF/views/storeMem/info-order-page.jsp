@@ -8,36 +8,7 @@
 <!-- ============================================================== -->
 <div class="page-wrapper">
     <!-- ============================================================== -->
-    <!-- Bread crumb and right sidebar toggle -->
-    <!-- ============================================================== -->
-    <div class="page-breadcrumb">
-        <div class="row">
-            <div class="col-7 align-self-center">
-                <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">주문 정보 처리</h4>
-                <div class="d-flex align-items-center">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb m-0 p-0">
-                            <li class="breadcrumb-item"><a href="index.html" class="text-muted">상품 정보 수정</a></li>
-                            <li class="breadcrumb-item text-muted active" aria-current="page">상품 정보 삭제</li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
-            <%--                    <div class="col-5 align-self-center">--%>
-            <%--                        <div class="customize-input float-right">--%>
-            <%--                            <select class="custom-select custom-select-set form-control bg-white border-0 custom-shadow custom-radius">--%>
-            <%--                                <option selected>Aug 19</option>--%>
-            <%--                                <option value="1">July 19</option>--%>
-            <%--                                <option value="2">Jun 19</option>--%>
-            <%--                            </select>--%>
-            <%--                        </div>--%>
-            <%--                    </div>--%>
-        </div>
-    </div>
-    <!-- ============================================================== -->
-    <!-- End Bread crumb and right sidebar toggle -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
+ 
     <!-- Container fluid  -->
     <!-- ============================================================== -->
     <div class="container-fluid">
@@ -49,7 +20,7 @@
             <div class="col-12">
                 <div class="card">
                    <div class="card-body">
-                        <h3 class="card-title">주문 정보 조회/수정</h3>
+                        <h3 class="card-title font-weight-bold text-center">주문 정보 조회/수정</h3>
                     </div>
                     <div class="col-md-11" style="align-self: center">
                         <div class="card border-danger">
@@ -57,12 +28,14 @@
                                 <h3 class="mb-0 text-white text-center ">검색 조건</h3>
                             </div>
                             <div class="card-body text-center">
-                                <span>
-                                <label><strong class="card-title">주문 번호 : </strong></label> <input type="text"/>
+                            <div class="col-lg-10">                        
+                                
+                                <span class="ml-lg-5 mr-lg-5">
+                                  <label><strong class="card-title">주문 번호 : </strong></label> <input type="text"/>
                                 </span>
-                                <span class="ml-lg-5 mr-lg-5" >
-                                    <label><strong class="card-title">카테고리 : </strong></label>
-                                    <select name="cateCodeGroup" class="p-1">
+                                <span class="ml-lg-5 mr-lg-5"> 
+                                <label><strong class="card-title">카테고리 : </strong></label>
+                                   <select name="cateCodeGroup" class="p-1">
                                             <option value="">대분류 선택</option>
                                             <option value="100">아우터</option>
                                             <option value="200">상의</option>
@@ -83,62 +56,99 @@
 											</c:forEach>
                                         </select>
                                 </span>
-                                <span class="ml-lg-5 mr-lg-5">
+                            </div>
+                             <div class="col-lg-10">                        
+                                <span class="ml-lg-5 mr-lg-5"> 
                                     <label><strong class="card-title">주문자 이름 : </strong></label> <input type="text"/>
                                 </span>
                                 <span class="ml-lg-5 mr-lg-5">
-                                    <button type="button" class="btn btn-primary">검색</button>
+                                    <label><strong class="card-title">상품 이름 : </strong></label> <input type="text"/>
                                 </span>
+                            </div>
+                             <div class="col-lg-10">                        
+                               <button type="button" class="btn btn-primary">검색</button>
+                            </div>
+<!--                                 <span> -->
+<!--                                 	<label><strong class="card-title">주문 번호 : </strong></label> <input type="text"/> -->
+<!--                                 </span> -->
+<!--                                 <span class="ml-lg-5 mr-lg-5" > -->
+<!--                                     <label><strong class="card-title">카테고리 : </strong></label> -->
+<!--                                     <select name="cateCodeGroup" class="p-1"> -->
+<!--                                             <option value="">대분류 선택</option> -->
+<!--                                             <option value="100">아우터</option> -->
+<!--                                             <option value="200">상의</option> -->
+<!--                                             <option value="300">바지</option> -->
+<!--                                             <option value="400">스커트</option> -->
+<!--                                             <option value="500">신발</option> -->
+<!--                                             <option value="600">가방</option> -->
+<!--                                             <option value="700">주얼리</option> -->
+<!--                                             <option value="800">잡화</option> -->
+<!--                                             <option value="900">라이프웨어</option> -->
+<!--                                             <option value="1000">빅사이즈</option> -->
+<!--                                         </select> -->
+
+<!--                                         <select name="cateCodeRefGroup" class="p-1"> -->
+<!--                                             <option value="">소분류 선택</option> -->
+<%--                                             <c:forEach items="${catelist}" var="list"> --%>
+<%--                                             	<option name="catecode" value="${list.cateCode}" date-coderef="${list.cateCodeRef}">${list.cateName}</option> --%>
+<%-- 											</c:forEach> --%>
+<!--                                         </select> -->
+<!--                                 </span> -->
+<!--                                 <br/> -->
+<!--                                 <span class="ml-lg-5 mr-lg-5"> -->
+<!--                                     <label><strong class="card-title">주문자 이름 : </strong></label> <input type="text"/> -->
+<!--                                 </span> -->
+<!--                                 <span class="ml-lg-5 mr-lg-5"> -->
+<!--                                     <label><strong class="card-title">상품 이름 : </strong></label> <input type="text"/> -->
+<!--                                 </span> -->
+<!--                                 <span class="ml-lg-5 mr-lg-5"> -->
+<!--                                     <button type="button" class="btn btn-primary">검색</button> -->
+<!--                                 </span> -->
+                                
+                                
                             </div>
                         </div>
                     </div>
-                    <h3 class="col-12 card-title">주문 정보 조회 결과</h3>
+                    <h3 class="col-12 card-title text-center font-weight-bold">주문 정보 조회 결과</h3>
                     <div class="table-responsive p-2 text-center">
                         <table class="table">
-                            <thead class="thead-dark">
+                            <thead >
                             <tr>
-                                <th scope="col">주문 번호 </th>
-                                <th scope="col">주문 상세번호 </th>
-                                <th scope="col">주문자 이름(id)</th>
-                                <th scope="col">상품 주문 수량</th>
-                                <th scope="col">주문 총 가격</th>
-                                <th scope="col">주문 처리 상태</th>
-                                <th scope="col">업데이트 시간</th>
-                                <th scope="col">
+                                <th scope="col" style="background-color:black; color:white;">주문 번호 </th>
+                                <th scope="col" style="background-color:black;color:white;">주문 상세번호 </th>
+                                <th scope="col" style="background-color:black;color:white;">주문자 이름(id)</th>
+                                <th scope="col" style="background-color:black;color:white;">상품 이름</th>
+                                <th scope="col" style="background-color:black;color:white;">상품 주문 수량</th>
+                                <th scope="col" style="background-color:black;color:white;">주문 총 가격</th>
+                                <th scope="col" style="background-color:black;color:white;">주문 처리 상태</th>
+                                <th scope="col" style="background-color:black;color:white;">업데이트 시간</th>
+                                <th scope="col" style="background-color:black;color:white;">
                                 </th>
                             </tr>
                             </thead>
-                            <tbody class="list">
-                           
+                            <tbody class="tbody">
                             <c:forEach items="${orderlist}" var="list">
-                            <tr>
+                            <tr class="orderTr">
                                 <td scope="row" name="ocode">${list.ocode}</td>
                                 <td scope="row" name="onum">${list.onum}</td>
-                                <td scope="row">${list.mname}</td>
-                                <td><c:out value="${list.amount}"/></td>
-                                <td><c:out value="${list.total}"/>원</td>
-                                <td><span><c:out value="${list.state}"/></span><button data-toggle="modal"
-                               data-target="#stateModModal" class="stateMody btn btn-danger ml-2">변경</button></td>
+                                <td scope="row" name="minfo">${list.mname}(${list.mid})<input type="hidden" name="p_detail" value="${list.p_detail}"></td>
+                                <td scope="row"name="pname">${list.pname}</td>
+                                <td name="amount"><c:out value="${list.amount}"/></td>
+                                <td name="price"><c:out value="${list.total}"/>원</td>
+                                <td name ="stateP"><span><c:out value="${list.state}"/></td>
                                 <td><fmt:formatDate pattern="yyyy/MM/dd" value="${list.updatedate}"/></td>
-                                <td>
-                                    <button  class="btn btn-primary btnMody" value="${list.ocode}" data-onum="${list.onum}">상세보기</button>
+                                <td>	
+                                    <button  data-toggle="modal" data-target="#orderListModal" class="btn btn-primary detail"  >상세보기</button>
+<!--                                 data-toggle="modal" data-target="#orderListModal" -->
                                 </td>
                             </tr>
                             </c:forEach>
                         </table>
                     </div>
                 </div>
- 
 
 
         </div>
-        <!-- <select name="stateGroup" class="p-1">
-					                  	<option value="결제준비중" selected>결제준비중</option>
-					                   	<option value="상품준비중">상품준비중</option>
-					                    <option value="배송준비중">배송준비중</option>
-					              		<option value="배송중">배송중</option>
-                                		<option value="배송완료">배송완료</option>
-                                	</select> -->
         <!-- ============================================================== -->
         <!-- End PAge Content -->
         <!-- ============================================================== -->
@@ -216,8 +226,66 @@ $(document).ready(function(){
 			$("#state").val($(this).val());
 		});
 		modal.show();
-		console.log(state2);
-		$("#modyOk").click(function(){
+
+	});
+	
+	
+	$(".tbody").on("click",".detail",function(e){
+		
+
+		var modal2 = $("#orderListModal");
+		
+		var tr = $(this).parents(".orderTr");
+		var appendTr = tr.clone(true);
+
+
+		appendTr.text("");
+		appendTr.removeClass("orderTr");
+		if($("#modalorder").children().length > 2){
+			$("#modalorder").children(":eq(0)").remove();
+			$("#modalorder").children(":eq(0)").remove();
+			$("#modalorder").children(":eq(0)").remove();
+			$("#modalorder").children(":eq(0)").remove();
+			$("#modalorder").children(":eq(0)").remove();
+			$("#modalorder").children(":eq(0)").remove();
+		}
+		
+		var ocodeTd="<td scope='row'>"+tr.children("[name='ocode']").text()+"</td>";		
+		var onumTd="<td scope='row'>"+tr.children("[name='onum']").text()+"</td>";
+		var pname="<td scope='row'>"+tr.children("[name='pname']").text()+"</td>";
+		var detail="<td scope='row'>"+tr.children(8).children("[name='p_detail']").val()+"</td>"
+		var amount = "<td scope='row'>"+tr.children("[name='amount']").text()+"</td>";
+		var price = "<td scope='row'>"+tr.children("[name='price']").text()+"</td>";
+		
+		$("#modalorder").prepend(price);
+		$("#modalorder").prepend(amount);
+		$("#modalorder").prepend(detail);
+		$("#modalorder").prepend(pname);
+		$("#modalorder").prepend(onumTd);
+		$("#modalorder").prepend(ocodeTd);
+		
+		
+		var selectstate=tr.children("[name='stateP']").text();
+		
+		$(".ordermodal").append("<input type='hidden' id ='state' value='"+selectstate+"'/>");
+		
+		$("[name='thisState'] option").attr("selected",false);
+		$("[name='thisState'] option[value='"+selectstate+"']").attr("selected",true);
+		
+		$("[name='thisState']").change(function(){
+			$("#state").val($(this).val());
+		});
+		
+		
+		$("#state").remove();
+		$(".modalorder").append(appendTr);
+		
+
+		modal2.show();
+		var ocode  = $($(this).parents()[1]).children("[name='ocode']").text();
+		var onum  = $($(this).parents()[1]).children("[name='onum']").text();
+		
+		$("#okokok").click(function(){
 			location.href="/storeMem/modyState?ocode="+onum+"&onum="+onum+"&state="+$("#state").val();
 		});
 	});

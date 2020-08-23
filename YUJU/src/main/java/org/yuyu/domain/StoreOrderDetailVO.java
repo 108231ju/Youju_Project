@@ -10,6 +10,7 @@ public class StoreOrderDetailVO {
 	private int mcode; //주문한사람
 	private String mid; //주문한사람
 	private String mname; //주문한사람
+	private String pname; //주문한사람
 	private int ocode; //주문번호
 	private int onum;  //주문번호 - 일련번호
 	private int pcode; //상품번호
